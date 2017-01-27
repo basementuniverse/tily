@@ -1,7 +1,5 @@
 # ![Tily Logo](https://basementuniverse.github.io/tily/images/tily.svg "Tily Logo") Tily
 
----
-
 A basic Javascript tile engine that is (somewhat) inspired by the Windows console API.
 
 ### Features

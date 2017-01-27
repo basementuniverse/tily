@@ -88,7 +88,7 @@ window.addEventListener("load", function() {
 		wallLayer.background = "#555";
 		for (var x = 0; x < maze.width; x++) {
 			for (var y = 0; y < maze.height; y++) {
-				wallLayer.tiles[y * maze.width + x] = maze.tiles[x][y] == 1 ? " " : "";
+				wallLayer.setTile(x, y, maze.tiles[x][y] == 1 ? " " : "");
 			}
 		}
 		mazeBuffer.addLayer(pathLayer);

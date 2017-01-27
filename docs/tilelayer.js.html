@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>tilelayer.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Tily.ActiveTile.html">ActiveTile</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTile.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.ActiveTile.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTile.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTile.html#getData">getData</a></li><li data-type='method'><a href="Tily.ActiveTile.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTile.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTile.html#removeLayer">removeLayer</a></li></ul></li><li><a href="Tily.ActiveTileBase.html">ActiveTileBase</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTileBase.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#removeLayer">removeLayer</a></li></ul></li><li><a href="Tily.ActiveTileLayer.html">ActiveTileLayer</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTileLayer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateText">animateText</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#getData">getData</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#removeLayer">removeLayer</a></li></ul></li><li><a href="Tily.Animation.html">Animation</a><ul class='methods'><li data-type='method'><a href="Tily.Animation.html#update">update</a></li></ul></li><li><a href="Tily.Buffer.html">Buffer</a><ul class='methods'><li data-type='method'><a href="Tily.Buffer.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.Buffer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.Buffer.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.Buffer.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#draw">draw</a></li><li data-type='method'><a href="Tily.Buffer.html#getData">getData</a></li><li data-type='method'><a href="Tily.Buffer.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.Buffer.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.Buffer.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.Buffer.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.Buffer.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.Buffer.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.Buffer.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#resize">resize</a></li><li data-type='method'><a href="Tily.Buffer.html#serialize">serialize</a></li><li data-type='method'><a href="Tily.Buffer.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.Buffer.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.Buffer.html#zoom">zoom</a></li></ul></li><li><a href="Tily.BufferBase.html">BufferBase</a><ul class='methods'><li data-type='method'><a href="Tily.BufferBase.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.BufferBase.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.BufferBase.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.BufferBase.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.BufferBase.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.BufferBase.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.BufferBase.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.BufferBase.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.BufferBase.html#zoom">zoom</a></li></ul></li><li><a href="Tily.BufferTransition.html">BufferTransition</a><ul class='methods'><li data-type='method'><a href="Tily.BufferTransition.html#update">update</a></li></ul></li><li><a href="Tily.Cell.html">Cell</a><ul class='methods'><li data-type='method'><a href="Tily.Cell.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.Cell.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.Cell.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.Cell.html#draw">draw</a></li><li data-type='method'><a href="Tily.Cell.html#getData">getData</a></li><li data-type='method'><a href="Tily.Cell.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.Cell.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.Cell.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.Cell.html#serialize">serialize</a></li></ul></li><li><a href="Tily.CellBuffer.html">CellBuffer</a><ul class='methods'><li data-type='method'><a href="Tily.CellBuffer.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.CellBuffer.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.CellBuffer.html#draw">draw</a></li><li data-type='method'><a href="Tily.CellBuffer.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.CellBuffer.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.CellBuffer.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.CellBuffer.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.CellBuffer.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.CellBuffer.html#serialize">serialize</a></li><li data-type='method'><a href="Tily.CellBuffer.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.CellBuffer.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.CellBuffer.html#zoom">zoom</a></li></ul></li><li><a href="Tily.ForegroundAnimation.html">ForegroundAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.ForegroundAnimation.html#update">update</a></li></ul></li><li><a href="Tily.Main.html">Main</a><ul class='methods'><li data-type='method'><a href="Tily.Main.html#activateBuffer">activateBuffer</a></li><li data-type='method'><a href="Tily.Main.html#draw">draw</a></li></ul></li><li><a href="Tily.OffsetAnimation.html">OffsetAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.OffsetAnimation.html#update">update</a></li></ul></li><li><a href="Tily.OffsetTransition.html">OffsetTransition</a><ul class='methods'><li data-type='method'><a href="Tily.OffsetTransition.html#update">update</a></li></ul></li><li><a href="Tily.OpacityAnimation.html">OpacityAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.OpacityAnimation.html#update">update</a></li></ul></li><li><a href="Tily.RotationAnimation.html">RotationAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.RotationAnimation.html#update">update</a></li></ul></li><li><a href="Tily.ScaleAnimation.html">ScaleAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.ScaleAnimation.html#update">update</a></li></ul></li><li><a href="Tily.ScaleTransition.html">ScaleTransition</a><ul class='methods'><li data-type='method'><a href="Tily.ScaleTransition.html#update">update</a></li></ul></li><li><a href="Tily.TextAnimation.html">TextAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.TextAnimation.html#update">update</a></li></ul></li><li><a href="Tily.TileLayer.html">TileLayer</a><ul class='methods'><li data-type='method'><a href="Tily.TileLayer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.TileLayer.html#clear">clear</a></li><li data-type='method'><a href="Tily.TileLayer.html#draw">draw</a></li><li data-type='method'><a href="Tily.TileLayer.html#fill">fill</a></li><li data-type='method'><a href="Tily.TileLayer.html#getData">getData</a></li><li data-type='method'><a href="Tily.TileLayer.html#getTile">getTile</a></li><li data-type='method'><a href="Tily.TileLayer.html#resize">resize</a></li><li data-type='method'><a href="Tily.TileLayer.html#setTile">setTile</a></li></ul></li><li><a href="Tily.Transition.html">Transition</a><ul class='methods'><li data-type='method'><a href="Tily.Transition.html#update">update</a></li></ul></li></ul><h3>Namespaces</h3><ul><li><a href="Tily.html">Tily</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">tilelayer.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>Tily.TileLayer = (function() {
+	"use strict";
+	
+	/**
+	 * A layer of tiles displayed in a buffer or a cell.
+	 * @class
+	 * @memberof Tily
+	 * @param {Tily.Buffer|Tily.Cell} container The buffer or cell that this layer belongs to.
+	 */
+	function TileLayer(container) {
+		/**
+		 * The buffer or cell that this layer belongs to.
+		 * @type {Tily.Buffer|Tily.Cell}
+		 */
+		this.container = container;
+		
+		/**
+		 * The font to use for this layer's tiles.
+		 * @default "sans-serif"
+		 * @type {String}
+		 */
+		this.font = "sans-serif";
+		
+		/**
+		 * The colour to use for this layer's tile characters.
+		 * @default "white"
+		 * @type {String}
+		 */
+		this.foreground = "white";
+		
+		/**
+		 * The colour to use for this layer's tile backgrounds. If the string is empty, tile
+		 * backgrounds won't be rendered.
+		 * @default ""
+		 * @type {String}
+		 */
+		this.background = "";
+		
+		/**
+		 * The opacity of this layer's tiles.
+		 * @default 1
+		 * @type {Number}
+		 */
+		this.opacity = 1;
+		
+		/**
+		 * Whether or not to clip this layer's tiles at their edges.
+		 * @default false
+		 * @type {Boolean}
+		 */
+		this.clip = false;
+		
+		/**
+		 * An array of strings for each tile. If any element in this array has length greater than
+		 * 1, the string characters will be rendered on top of each other. If any element is an
+		 * empty string, the tile won't be rendered.
+		 * @type {String[]}
+		 */
+		this.tiles = [];
+	}
+	
+	/**
+	 * Return the array index from a given position.
+	 * @param {Number} x The x-coordinate of the position.
+	 * @param {Number} y The y-coordinate of the position.
+	 * @param {Number} w The width of this layer.
+	 * @returns {Number} An array index.
+	 */
+	function index(x, y, w) {
+		return w * y + x;
+	}
+	
+	/**
+	 * Return the position from a given array index.
+	 * @param {Number} i The array index.
+	 * @param {Number} w The width of this layer.
+	 * @returns {vec2} A 2d position.
+	 */
+	function position(i, w) {
+		return vec2(i % w, Math.floor(i / w));
+	}
+	
+	/**
+	 * Return information about the region between (x1, y1) and (x2, y2). The second corner must be
+	 * below and to the right of the first corner. Corners will default to the top-left and
+	 * bottom-right corners of the layer if undefined.
+	 * @param {Number} x1 The x-coordinate of the top-left corner of the region.
+	 * @param {Number} y1 The y-coordinate of the top-left corner of the region.
+	 * @param {Number} x2 The x-coordinate of the bottom-right corner of the region.
+	 * @param {Number} y2 The y-coordinate of the bottom-right corner of the region.
+	 * @param {Number} w The width of this layer.
+	 * @param {Number} h The height of this layer.
+	 * @returns {Object} An object containing the start offset into the tiles array, the width and
+	 * height of the region and the gap between row sections.
+	 */
+	function region(x1, y1, x2, y2, w, h) {
+		x1 = x1 || 0;
+		y1 = y1 || 0;
+		x2 = x2 || w;
+		y2 = y2 || h;
+		
+		// Make sure (x2, y2) is below and to the right of (x1, y1), or at the same position.
+		x2 = Math.max(x1, x2);
+		y2 = Math.max(y1, y2);
+		
+		// Make sure both corners are within layer bounds
+		x1 = Math.clamp(x1, 0, w);
+		y1 = Math.clamp(y1, 0, h);
+		x2 = Math.clamp(x2, 0, w);
+		y2 = Math.clamp(y2, 0, h);
+		const width = x2 - x1;
+		return {
+			start: index(x1, y1, w),
+			width: Math.abs(width),
+			height: Math.abs(y2 - y1),
+			gap: w - width
+		};
+	}
+	
+	/**
+	 * Get the characters at the specified tile position, or an empty string if there are no
+	 * characters at this tile position.
+	 * @name getTile
+	 * @function
+	 * @instance
+	 * @memberof Tily.TileLayer
+	 * @param {Number} x The x-coordinate of the position.
+	 * @param {Number} y The y-coordinate of the position.
+	 * @returns {String} The character or characters at the specified position.
+	 */
+	TileLayer.prototype.getTile = function(x, y) {
+		if (
+			x >= 0 &amp;&amp; x &lt; this.container.size.width &amp;&amp;
+			y >= 0 &amp;&amp; y &lt; this.container.size.height
+		) {
+			return this.tiles[index(x, y, this.container.size.width)] || "";
+		}
+		return "";
+	};
+	
+	/**
+	 * Set the characters at the specified tile position.
+	 * @name setTile
+	 * @function
+	 * @instance
+	 * @memberof Tily.TileLayer
+	 * @param {Number} x The x-coordinate of the position.
+	 * @param {Number} y The y-coordinate of the position.
+	 * @param {String} character The character or characters to set.
+	 * @returns {Boolean} True if the tile was set successfully.
+	 */
+	TileLayer.prototype.setTile = function(x, y, character) {
+		if (
+			x >= 0 &amp;&amp; x &lt; this.container.size.width &amp;&amp;
+			y >= 0 &amp;&amp; y &lt; this.container.size.height
+		) {
+			this.tiles[index(x, y, this.container.size.width)] = character;
+			return true;
+		}
+		return false;
+	};
+	
+	/**
+	 * Set the characters for all tiles in a rectangular region. If x2 and y2 are not specified
+	 * then fill from (x1, y1) to the bottom-right corner, and if no coordinates are specified then
+	 * fill the entire layer. Top-left corner is inclusive, bottom-right corner is exclusive.
+	 * @name fill
+	 * @function
+	 * @instance
+	 * @memberof Tily.TileLayer
+	 * @param {String} character The character or characters to set.
+	 * @param {Number} x1 The x-coordinate of the top-left corner of the region.
+	 * @param {Number} y1 The y-coordinate of the top-left corner of the region.
+	 * @param {Number} x2 The x-coordinate of the bottom-right corner of the region.
+	 * @param {Number} y2 The y-coordinate of the bottom-right corner of the region.
+	 */
+	TileLayer.prototype.fill = function(character, x1, y1, x2, y2) {
+		const r = region(x1, y1, x2, y2, this.container.size.width, this.container.size.height);
+		for (let i = r.start, y = r.height; y--; i += r.gap) {
+			for (let x = r.width; x--; i++) {
+				this.tiles[i] = character;
+			}
+		}
+	};
+	
+	/**
+	 * Clear all tiles in a rectangular region. If x2 and y2 are not specified then clear from
+	 * (x1, y1) to the bottom-right corner, and if no coordinates are specified then clear the
+	 * entire layer. Top-left corner is inclusive, bottom-right corner is exclusive.
+	 * @name clear
+	 * @function
+	 * @instance
+	 * @memberof Tily.TileLayer
+	 * @param {Number} x1 The x-coordinate of the top-left corner of the region.
+	 * @param {Number} y1 The y-coordinate of the top-left corner of the region.
+	 * @param {Number} x2 The x-coordinate of the bottom-right corner of the region.
+	 * @param {Number} y2 The y-coordinate of the bottom-right corner of the region.
+	 */
+	TileLayer.prototype.clear = function(x1, y1, x2, y2) {
+		const r = region(x1, y1, x2, y2, this.container.size.width, this.container.size.height);
+		for (let i = r.start, y = r.height; y--; i += r.gap) {
+			for (let x = r.width; x--; i++) {
+				this.tiles[i] = "";
+			}
+		}
+	};
+	
+	/**
+	 * Rearrange the tiles in this layer so they align with the specified width and height.
+	 * @name resize
+	 * @function
+	 * @instance
+	 * @memberof Tily.TileLayer
+	 * @param {Number} width The new layer width.
+	 * @param {Number} height The new layer height.
+	 */
+	TileLayer.prototype.resize = function(width, height) {
+		if (width == this.container.size.width &amp;&amp; height == this.container.size.height) { return; }
+		const tiles = [];
+		for (let x = 0; x &lt; width; x++) {
+			for (let y = 0; y &lt; height; y++) {
+				tiles[index(x, y, width)] = this.getTile(x, y);
+			}
+		}
+		this.tiles = tiles;
+	};
+	
+	/**
+	 * Render this layer onto the specified context. If a tile has a string with length greater
+	 * than 1, draw each character of the string on top of each other.
+	 * @name draw
+	 * @function
+	 * @instance
+	 * @memberof Tily.TileLayer
+	 * @param {CanvasRenderingContext2D} context The context to render the layer onto.
+	 * @param {Number} tileSize The size of each tile measured in pixels.
+	 * @param {vec2} tl The top-left tile position currently in view.
+	 * @param {vec2} br The bottom-right tile position currently in view.
+	 */
+	TileLayer.prototype.draw = function(context, tileSize, tl, br) {
+		if (!this.container || !this.tiles) { return; }	// Layer has no container or no tiles
+		const width = this.container.size.width,
+			height = this.container.size.height,
+			r = region(tl.x, tl.y, br.x, br.y, width, height);
+		var p = null;
+		context.save();
+		context.font = (tileSize + 1) + "px " + this.font;
+		context.globalAlpha = this.opacity;
+		
+		// Render background tiles if a background colour is defined
+		if (this.background) {
+			context.fillStyle = this.background;
+			for (let i = r.start, y = r.height; y--; i += r.gap) {
+				for (let x = r.width; x--; i++) {
+					if (!this.tiles[i]) { continue; }
+					p = position(i, width);
+					context.fillRect(
+						p.x * tileSize - 0.5,
+						p.y * tileSize - 0.5,
+						tileSize + 1,
+						tileSize + 1
+					);
+				}
+			}
+		}
+		
+		// Render foreground characters
+		context.fillStyle = this.foreground;
+		for (let i = r.start, y = r.height; y--; i += r.gap) {
+			for (let x = r.width; x--; i++) {
+				if (!this.tiles[i]) { continue; }
+				p = position(i, width);
+				if (this.clip) {	// Clip tile boundaries if clipping is enabled
+					context.save();
+					context.rect(p.x * tileSize, p.y * tileSize, tileSize, tileSize);
+					context.clip();
+				}
+				for (let j = 0, length = this.tiles[i].length; j &lt; length; j++) {
+					context.fillText(this.tiles[i][j], p.x * tileSize - 0.5, p.y * tileSize - 0.5);
+				}
+				if (this.clip) {
+					context.restore();
+				}
+			}
+		}
+		context.restore();
+	};
+	
+	/**
+	 * Get serializable data for this tile layer.
+	 * @name getData
+	 * @function
+	 * @instance
+	 * @memberof Tily.TileLayer
+	 * @returns {Object} This tile layer's data.
+	 */
+	TileLayer.prototype.getData = function() {
+		return {
+			font: this.font,
+			foreground: this.foreground,
+			background: this.background,
+			opacity: this.opacity,
+			clip: this.clip,
+			tiles: this.tiles
+		};
+	};
+	
+	/**
+	 * Create a tile layer from data.
+	 * @name fromData
+	 * @function
+	 * @static
+	 * @memberof Tily.TileLayer
+	 * @param {Tily.Buffer|Tily.Cell} container The buffer or cell that the layer belongs to.
+	 * @param {Object} data Serialized buffer layer data.
+	 * @returns {Tily.TileLayer} A buffer layer created from the provided data.
+	 */
+	TileLayer.fromData = function(container, data) {
+		const layer = new Tily.TileLayer(container);
+		layer.font = data.font;
+		layer.foreground = data.foreground;
+		layer.background = data.background;
+		layer.opacity = data.opacity;
+		layer.clip = data.clip;
+		layer.tiles = data.tiles;
+		return layer;
+	};
+	return TileLayer;
+}());</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Jan 27 2017 14:41:37 GMT+0000 (GMT Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

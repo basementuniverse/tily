@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'scenery_icons';
+	src: url('scenery_icons.eot?33486354');
+	src: url('scenery_icons.eot?33486354#iefix') format('embedded-opentype'),
+		url('scenery_icons.woff2?33486354') format('woff2'),
+		url('scenery_icons.woff?33486354') format('woff'),
+		url('scenery_icons.ttf?33486354') format('truetype'),
+		url('scenery_icons.svg?33486354#scenery_icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'road_icons';
+	src: url('road_icons.eot?43438124');
+	src: url('road_icons.eot?43438124#iefix') format('embedded-opentype'),
+		url('road_icons.woff2?43438124') format('woff2'),
+		url('road_icons.woff?43438124') format('woff'),
+		url('road_icons.ttf?43438124') format('truetype'),
+		url('road_icons.svg?43438124#road_icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

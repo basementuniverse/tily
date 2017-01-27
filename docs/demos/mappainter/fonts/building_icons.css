@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'building_icons';
+	src: url('building_icons.eot?91163034');
+	src: url('building_icons.eot?91163034#iefix') format('embedded-opentype'),
+		url('building_icons.woff2?91163034') format('woff2'),
+		url('building_icons.woff?91163034') format('woff'),
+		url('building_icons.ttf?91163034') format('truetype'),
+		url('building_icons.svg?91163034#building_icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

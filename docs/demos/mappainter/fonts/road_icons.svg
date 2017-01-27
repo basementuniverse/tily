@@ -1,0 +1,100 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2017 by original authors @ fontello.com</metadata>
+<defs>
+<font id="road_icons" horiz-adv-x="1000" >
+<font-face font-family="road_icons" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="roadbridge_tbr" unicode="&#x41;" d="M245-145h-100v1000h100v-1000z m600 750h150v100h-148c0 0-1 0-2 0v150h-100c0 0 0-50 0-150s100-100 100-100z m0-500c-100 0-100-100-100-100v-150h100v50h150v200c0 0-50 0-150 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_tl" unicode="&#x42;" d="M145 605h-150v100h150c0 1 0 2 0 2v148h100v-150c0 0 0-100-100-100z m600 250v-250c0 0 0-500-500-500h-250v-200h250c309 0 457 166 527 305 72 145 73 289 73 295v350h-100z m-476-850c-8 0-16 0-24 0 8 0 16 0 24 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_tlr" unicode="&#x43;" d="M145 605c-100 0-150 0-150 0v100h150c0 1 0 2 0 2v148h100v-150c0 0 0-100-100-100z m700 0h150v100h-148c0 0-1 0-2 0v150h-100c0 0 0-50 0-150s100-100 100-100z m-850-500v-200h100c0 44 78 80 175 80s175-36 175-80h100c0 44 78 80 175 80 97 0 175-36 175-80h100v200h-1000z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_tr" unicode="&#x44;" d="M745 705v150h100v-150c1 0 2 0 2 0h148v-100h-150c0 0-100 0-100 100z m0-600c0 0-500 0-500 500v250h-100v-350c0-309 166-457 305-527 145-72 289-73 295-73h250v200h-250z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_b" unicode="&#x45;" d="M495-145m-15 0v50h30v-50h-30z m0 250v-100h30v100h-30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_bl" unicode="&#x46;" d="M495-145m-500 515h61v-30h-61v30z m285-3c-21 3-34 3-35 3h0-78v-30h78 0 0c1 0 13 0 30-3l5 30z m194-118c-23 37-54 63-85 81l-15-26c28-16 55-38 74-70l26 15z m36-223c0 24 0 50 0 79 0 12 0 23-1 33l-30-3c1-9 1-19 1-30 0-29 0-55 0-79h30z m-30-171c0 15 0 35 0 60h30c0-25 0-45 0-60h-30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_blr" unicode="&#x47;" d="M495-145m-15 0v50h30v-50h-30z m0 250v-100h30v100h-30z m515 235h-50v30h50v-30z m-250 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-100 30v-30h-50v30h50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_br" unicode="&#x48;" d="M495-145m-15 0v61h30v-61h-30z m3 285c-3-21-3-34-3-35v0-78h30v78 0 0c0 1 0 13 3 30l-30 5z m118 194c-37-23-63-54-81-85l26-15c16 28 38 55 71 74l-16 26z m223 36c-24 0-50 0-79 0-11 0-22 0-33-1l3-30c9 1 19 1 30 1 29 0 55 0 79 0v30z m171-30c-15 0-35 0-60 0v30c25 0 45 0 60 0v-30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_l" unicode="&#x49;" d="M145 340h100v30h-100v-30z m-100 30v-30h-50v30h50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_lr" unicode="&#x4a;" d="M495-145m500 485h-50v30h50v-30z m-250 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-100 30v-30h-50v30h50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_r" unicode="&#x4b;" d="M995 340h-50v30h50v-30z m-250 0h100v30h-100v-30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_t" unicode="&#x4c;" d="M480 705v-100h30v100h-30z m30 150v-50h-30v50h30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_tb" unicode="&#x4d;" d="M495-145m-15 0v50h30v-50h-30z m0 250v-100h30v100h-30z m0 200v-100h30v100h-30z m0 200v-100h30v100h-30z m0 200v-100h30v100h-30z m30 150v-50h-30v50h30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_tbl" unicode="&#x4e;" d="M495-145m-15 0v50h30v-50h-30z m0 250v-100h30v100h-30z m0 200v-100h30v100h-30z m0 200v-100h30v100h-30z m0 200v-100h30v100h-30z m30 150v-50h-30v50h30z m-365-515h100v30h-100v-30z m-100 30v-30h-50v30h50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_tblr" unicode="&#x4f;" d="M495-145m-15 0v50h30v-50h-30z m0 250v-100h30v100h-30z m0 600v-100h30v100h-30z m30 150v-50h-30v50h30z m485-515h-50v30h50v-30z m-250 0h100v30h-100v-30z m-600 0h100v30h-100v-30z m-100 30v-30h-50v30h50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_tbr" unicode="&#x50;" d="M495-145m-15 0v50h30v-50h-30z m0 250v-100h30v100h-30z m0 200v-100h30v100h-30z m0 200v-100h30v100h-30z m0 200v-100h30v100h-30z m30 150v-50h-30v50h30z m485-515h-50v30h50v-30z m-250 0h100v30h-100v-30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_tl" unicode="&#x51;" d="M495-145m15 1000v-61h-30v61h30z m-3-284c3 20 3 33 3 34v0 78h-30v-78 0 0c0-1 0-12-3-30l30-4z m-118-195c37 23 63 54 81 85l-26 15c-16-28-38-54-70-74l15-26z m-223-36c24 0 50 0 79 0 12 0 23 1 33 2l-3 29c-9 0-19-1-30-1-29 0-55 0-79 0v-30z m-171 30c16 0 35 0 61 0v-30c-26 0-45 0-61 0v30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_tlr" unicode="&#x52;" d="M495-145m-15 850v-100h30v100h-30z m30 150v-50h-30v50h30z m485-515h-50v30h50v-30z m-250 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-200 0h100v30h-100v-30z m-100 30v-30h-50v30h50z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadmarkings_tr" unicode="&#x53;" d="M495-145m500 485h-61v30h61v-30z m-284 3c20-3 33-3 34-3h0 78v30h-78 0 0c-1 0-12 0-30 3l-4-30z m-195 118c23-37 54-63 85-81l15 26c-28 16-54 38-74 71l-26-16z m-36 223c0-24 0-50 0-79 0-11 1-22 2-33l29 3c0 9-1 19-1 30 0 29 0 55 0 79h-30z m30 171c0-15 0-35 0-60h-30c0 25 0 45 0 60h30z" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_b" unicode="&#x61;" d="M245-145c0 0 0 150 0 250s100 100 100 100 200 0 300 0 100-100 100-100v-250" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_bl" unicode="&#x62;" d="M-5 605h250c500 0 500-500 500-500v-250h-500v150c0 0 0 100-100 100h-150" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_blr" unicode="&#x63;" d="M-5 605v-500c0 0 50 0 150 0s100-100 100-100v-150h500c0 0 0 50 0 150s100 100 100 100h150v500" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_br" unicode="&#x64;" d="M245-145v250c0 500 500 500 500 500h250v-500h-150c0 0-100 0-100-100v-150" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_l" unicode="&#x65;" d="M-5 605c0 0 150 0 250 0s100-100 100-100 0-200 0-300-100-100-100-100h-250" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_lr" unicode="&#x66;" d="M-5 605h1000v-500h-1000" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_r" unicode="&#x67;" d="M995 605c0 0-150 0-250 0s-100-100-100-100 0-200 0-300 100-100 100-100h250" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_t" unicode="&#x68;" d="M245 855c0 0 0-150 0-250s100-100 100-100 200 0 300 0 100 100 100 100v250" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_tb" unicode="&#x69;" d="M245 855h500v-1000h-500" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_tbl" unicode="&#x6a;" d="M745-145h-500c0 0 0 50 0 150s-100 100-100 100h-150v500c0 0 50 0 150 0s100 100 100 100v150h500" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_tblr" unicode="&#x6b;" d="M-5 105c0 0 50 0 150 0s100-100 100-100v-150h500c0 0 0 50 0 150s100 100 100 100h150v500c0 0-50 0-150 0s-100 100-100 100v150h-500c0 0 0-50 0-150s-100-100-100-100h-150" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_tbr" unicode="&#x6c;" d="M245 855h500c0 0 0-50 0-150s100-100 100-100h150v-500c0 0-50 0-150 0s-100-100-100-100v-150h-500" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_tl" unicode="&#x6d;" d="M-5 105h250c500 0 500 500 500 500v250h-500v-150c0 0 0-100-100-100h-150" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_tlr" unicode="&#x6e;" d="M-5 105v500c0 0 50 0 150 0s100 100 100 100v150h500c0 0 0-50 0-150s100-100 100-100h150v-500" horiz-adv-x="1000" />
+
+<glyph glyph-name="road_tr" unicode="&#x6f;" d="M245 855v-250c0-500 500-500 500-500h250v500h-150c0 0-100 0-100 100v150" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_b" unicode="&#x70;" d="M245-145h-100v250c0 130 103 200 200 200h300c130 0 200-103 200-200v-250h-100v250c0 0 0 100-100 100s-300 0-300 0-100 0-100-100 0-250 0-250z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_bl" unicode="&#x71;" d="M245 605h-250v100h250c309 0 457-166 527-305 72-145 73-289 73-295v-250h-100v250c0 0 0 500-500 500z m-100-500h-150v-200h150v-50h100v150c0 0 0 100-100 100z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_blr" unicode="&#x72;" d="M995 605h-1000v100h1000v-100z m-850-500c-100 0-150 0-150 0v-200h150v-50h100v150c0 0 0 100-100 100z m700 0c0 0-100 0-100-100s0-150 0-150h100v50h150v200h-150z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_br" unicode="&#x73;" d="M745 705c-6 0-150-1-295-73-139-70-305-218-305-527v-250h100v250c0 500 500 500 500 500h250v100h-250z m250-600v-200h-150v-50h-100v150c0 100 100 100 100 100h150z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_l" unicode="&#x74;" d="M245 705h-250v-100c0 0 150 0 250 0s100-100 100-100 0-102 0-197v-103c0-100-100-100-100-100h-250v-200h250c97 0 200 70 200 200v400c0 97-70 200-200 200z m1-700c-1 0-1 0-1 0 0 0 1 0 1 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_lr" unicode="&#x75;" d="M-5 705h1000v-100h-1000v100z m0-600v-200h100c0 44 78 80 175 80s175-36 175-80h100c0 44 78 80 175 80 97 0 175-36 175-80h100v200h-1000z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_r" unicode="&#x76;" d="M645 505c0 0 0 100 100 100s250 0 250 0v100h-250c-130 0-200-103-200-200v-400c0-130 103-200 200-200h250v200h-250c0 0-100 0-100 100v117c0 90 0 183 0 183z m99-500c0 0 1 0 1 0 0 0 0 0-1 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_t" unicode="&#x77;" d="M745 855v-250c0 0 0-100-100-100s-300 0-300 0-100 0-100 100v150c0 56 0 100 0 100h-100v-350c0-130 103-200 200-200h300c130 0 200 103 200 200v350h-100z m-401-450c0 0 1 0 1 0 0 0 0 0-1 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_tb" unicode="&#x78;" d="M245-145h-100v1000h100v-1000z m600 1000h-100v-1000h100v1000z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_tbl" unicode="&#x79;" d="M145 855v-148c0 0 0-1 0-2h-150v-100c0 0 50 0 150 0s100 100 100 100v150h-100z m600-1000h100v1000h-100v-1000z m-500 150c0-100 0-150 0-150h-100v50h-150v200h150c0 0 100 0 100-100z" horiz-adv-x="1000" />
+
+<glyph glyph-name="roadbridge_tblr" unicode="&#x7a;" d="M145 705c-1 0-1 0-2 0h-148v-100h150c0 0 100 0 100 100s0 150 0 150h-100v-150z m700 0c0 1 0 2 0 2v148h-100v-150c0 0 0-100 100-100s150 0 150 0v100h-150z m-600-700v-150h-100v50h-150v200c0 0 50 0 150 0s100-100 100-100z m750 100v-200h-150v-50h-100c0 0 0 50 0 150s100 100 100 100h150z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

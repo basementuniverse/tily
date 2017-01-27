@@ -216,10 +216,10 @@ Tily.CellBuffer = (function(_super) {
 				// If the cell isn't already in the cell cache and there is a cell function,
 				// generate a cell and temporarily mark it as loading
 				if (this.cellCache[h] === undefined) {
+					this.cellCache[h] = true;	// Mark it as currently loading
 					if (this.options.cellFunction) {
 						this.options.cellFunction(this, x, y, getResolve(x, y), getReject(x, y));
 					}
-					this.cellCache[h] = true;	// Mark it as currently loading
 				
 				// Otherwise, if the cell isn't currently loading, render the cell
 				} else if (this.cellCache[h] !== true) {

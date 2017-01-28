@@ -32,4 +32,4 @@ Full documentation coming soon! In the meantime, check out the demos below.
 - [A really big buffer](https://basementuniverse.github.io/tily/demos/largebuffer/index.htm)
 - [Lots of animations and transitions](https://basementuniverse.github.io/tily/demos/animations/index.htm)
 - [An infinite procedurally-generated buffer](https://basementuniverse.github.io/tily/demos/proceduralbuffer/index.htm)
-- [Map Painter](https://basementuniverse.github.io/tily/demos/mappainter/index.js)
+- [Map Painter](https://basementuniverse.github.io/tily/demos/mappainter/index.htm)

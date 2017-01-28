@@ -1,5 +1,7 @@
 # ![Tily Logo](https://basementuniverse.github.io/tily/images/tily.svg "Tily Logo") Tily
 
+---
+
 A basic Javascript tile engine that is (somewhat) inspired by the Windows console API.
 
 ### Features
@@ -24,7 +26,7 @@ Just load `tily.min.js` in your page and create a [`Tily.Main`](https://basement
 
     </script>
 
-Full documentation coming soon! In the meantime, check out the demos below.
+[Read the documentation!](https://basementuniverse.github.io/tily/)
 
 ### Demos
 

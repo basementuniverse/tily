@@ -194,7 +194,8 @@ Tily.ActiveTileBase = (function() {
 	/**
 	 * @typedef OffsetAnimationOptions
 	 * @type {AnimationOptions}
-	 * @property {Boolean} relative True if the movement should be relative to the current offset.
+	 * @property {Boolean} [relative=false] True if the movement should be relative to the current
+	 * offset.
 	 */
 	/**
 	 * Animate this active tile's offset.
@@ -220,8 +221,9 @@ Tily.ActiveTileBase = (function() {
 	/**
 	 * @typedef RotationAnimationOptions
 	 * @type {AnimationOptions}
-	 * @property {Boolean} relative True if the rotation should be relative to the current angle.
-	 * @property {String} direction The rotation direction. This should be 'cw' for clockwise,
+	 * @property {Boolean} [relative=false] True if the rotation should be relative to the current
+	 * angle.
+	 * @property {String} [direction=""] The rotation direction. This should be 'cw' for clockwise,
 	 * 'ccw' for counter-clockwise. If this is not 'cw' or 'ccw', the rotation will be in the
 	 * direction of the smallest change in angle.
 	 */

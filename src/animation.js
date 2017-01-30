@@ -5,12 +5,13 @@ Tily.Animation = (function(_super) {
 	/**
 	 * @typedef AnimationOptions
 	 * @type {TransitionOptions}
-	 * @property {Boolean} repeat Whether or not this animation should repeat until stopped or only
-	 * play once.
-	 * @property {Boolean} reverse Whether or not the animation should play in reverse, ie. from
-	 * finish to start.
-	 * @property {Boolean} alternate Whether or not the animation's direction should alternate
-	 * between forward/reverse on each repeat. This is only valid if repeat is set to true.
+	 * @property {Boolean} [repeat=false] Whether or not this animation should repeat until stopped
+	 * or only play once.
+	 * @property {Boolean} [reverse=false] Whether or not the animation should play in reverse, ie.
+	 * from finish to start.
+	 * @property {Boolean} [alternate=false] Whether or not the animation's direction should
+	 * alternate between forward/reverse on each repeat. This is only valid if repeat is set to
+	 * true.
 	 */
 	/**
 	 * Default animation options, used as a fall-back for options passed to animation methods.

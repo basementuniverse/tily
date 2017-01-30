@@ -22,17 +22,17 @@ Tily.CellBuffer = (function(_super) {
 	/**
 	 * @typedef CellBufferOptions
 	 * @type {BufferOptions}
-	 * @property {Number} cellWidth The width of each cell measured in tiles.
-	 * @property {Number} cellHeight The height of each cell measured in tiles.
-	 * @property {?Number} minimumX The minimum cell x-coordinate. If this is null, the cell buffer
-	 * will scroll infinitely in the negative-x direction.
-	 * @property {?Number} minimumY The minimum cell y-coordinate. If this is null, the cell buffer
-	 * will scroll infinitely in the negative-x direction.
-	 * @property {?Number} maximumX The maximum cell x-coordinate. If this is null, the cell buffer
-	 * will scroll infinitely in the positive-x direction.
-	 * @property {?Number} maximumY The maximum cell y-coordinate. If this is null, the cell buffer
-	 * will scroll infinitely in the positive-y direction.
-	 * @property {?cellFunction} cellFunction A function for generating cells.
+	 * @property {Number} [cellWidth=16] The width of each cell measured in tiles.
+	 * @property {Number} [cellHeight=16] The height of each cell measured in tiles.
+	 * @property {?Number} [minimumX=null] The minimum cell x-coordinate. If this is null, the cell
+	 * buffer will scroll infinitely in the negative-x direction.
+	 * @property {?Number} [minimumY=null] The minimum cell y-coordinate. If this is null, the cell
+	 * buffer will scroll infinitely in the negative-x direction.
+	 * @property {?Number} [maximumX=null] The maximum cell x-coordinate. If this is null, the cell
+	 * buffer will scroll infinitely in the positive-x direction.
+	 * @property {?Number} [maximumY=null] The maximum cell y-coordinate. If this is null, the cell
+	 * buffer will scroll infinitely in the positive-y direction.
+	 * @property {?cellFunction} [cellFunction=null] A function for generating cells.
 	 */
 	/**
 	 * Default cell buffer options, used as a fall-back for options passed to the constructor.

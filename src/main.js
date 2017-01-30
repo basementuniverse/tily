@@ -8,12 +8,28 @@ Tily.Main = (function() {
 	 * @property {Number} height The height.
 	 */
 	/**
+	 * @callback beforeDrawFunction
+	 * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
+	 */
+	/**
+	 * @callback afterDrawFunction
+	 * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
+	 */
+	/**
 	 * @typedef TilyOptions
 	 * @type {Object}
-	 * @property {?Size} size The viewport size, or null to use the canvas element dimensions.
-	 * @property {Boolean} handleResize True if the window resize event should be handled.
-	 * @property {Boolean} showFPS True if the FPS should be displayed.
-	 * @property {Boolean} renderLoop True if the render loop should be started automatically.
+	 * @property {?Size} [size=null] The viewport size, or null to use the canvas element
+	 * dimensions.
+	 * @property {Boolean} [handleResize=true] True if the window resize event should be handled.
+	 * @property {Boolean} [showFPS=false] True if the FPS should be displayed.
+	 * @property {Boolean} [renderLoop=true] True if the render loop should be started
+	 * automatically.
+	 * @property {?beforeDrawFunction} [beforeDrawFunction=null] A function that will be called
+	 * after clearing the context but before drawing the active buffer. In the context of the
+	 * function, 'this' will point to the Tily instance.
+	 * @property {?afterDrawFunction} [afterDrawFunction=null] A function that will be called after
+	 * drawing the active buffer but before drawing any debug text. In the context of the function,
+	 * 'this' will point to the Tily instance.
 	 */
 	/**
 	 * Default Tily options, used as a fall-back for options passed to the constructor.
@@ -23,7 +39,9 @@ Tily.Main = (function() {
 		size: null,
 		handleResize: true,
 		showFPS: false,
-		renderLoop: true
+		renderLoop: true,
+		beforeDrawFunction: null,
+		afterDrawFunction: null
 	};
 	
 	/**
@@ -172,6 +190,9 @@ Tily.Main = (function() {
 		if (this.options.showFPS) {
 			debug.show("FPS", this.frameRate);
 		}
+		if (typeof this.options.beforeDrawFunction == "function") {
+			this.options.beforeDrawFunction.call(this, elapsedTime);
+		}
 		
 		// Draw the active buffer and handle buffer fade transition
 		const width = this.width,
@@ -192,6 +213,9 @@ Tily.Main = (function() {
 		} else if (this.activeBuffer) {
 			this.context.globalAlpha = 1;
 			this.activeBuffer.draw(this.context, elapsedTime, width, height);
+		}
+		if (typeof this.options.afterDrawFunction == "function") {
+			this.options.afterDrawFunction.call(this, elapsedTime);
 		}
 		debug.draw(this.context);
 		this.context.restore();

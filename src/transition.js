@@ -16,11 +16,12 @@ Tily.Transition = (function() {
 	/**
 	 * @typedef TransitionOptions
 	 * @type {Object}
-	 * @property {Number} time The amount of time in seconds that this transition should take to
-	 * complete.
-	 * @property {easeFunction} easeFunction The easing function to use while transitioning.
-	 * @property {?finishedCallback} finishedCallback A callback function that will be called once
-	 * the transition has finished.
+	 * @property {Number} [time=0] The amount of time in seconds that this transition should take
+	 * to complete.
+	 * @property {easeFunction} [easeFunction=Math.lerp] The easing function to use while
+	 * transitioning.
+	 * @property {?finishedCallback} [finishedCallback=null] A callback function that will be
+	 * called once the transition has finished.
 	 */
 	/**
 	 * Default transition options, used as a fall-back for options passed to the constructor.

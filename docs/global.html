@@ -479,7 +479,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -504,10 +508,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">Whether or not this animation should repeat until stopped or onlyplay once.</td>
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">Whether or not this animation should repeat until stoppedor only play once.</td>
         </tr>
 
     
@@ -527,10 +545,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">Whether or not the animation should play in reverse, ie. fromfinish to start.</td>
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">Whether or not the animation should play in reverse, ie.from finish to start.</td>
         </tr>
 
     
@@ -550,10 +582,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">Whether or not the animation's direction should alternatebetween forward/reverse on each repeat. This is only valid if repeat is set to true.</td>
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">Whether or not the animation's direction shouldalternate between forward/reverse on each repeat. This is only valid if repeat is set totrue.</td>
         </tr>
 
     
@@ -724,7 +770,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line259">line 259</a>
+        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line263">line 263</a>
     </li></ul></dd>
     
 
@@ -919,7 +965,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -944,10 +994,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">Indicates which axis is used for scaling the tiles, the scaleparameter will indicate how many tiles are visible on the locked axis. Should be either "x"or "y".</td>
+            
+                <td class="default">
+                
+                    <code>"x"</code>
+                
+                </td>
+            
+
+            <td class="description last">Indicates which axis is used for scaling the tiles, thescale parameter will indicate how many tiles are visible on the locked axis. Should beeither "x" or "y".</td>
         </tr>
 
     
@@ -967,7 +1031,21 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
             
 
             <td class="description last">The starting offset x-coordinate for this buffer.</td>
@@ -990,7 +1068,21 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
             
 
             <td class="description last">The starting offset y-coordinate for this buffer.</td>
@@ -1013,10 +1105,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">The starting scale, represents the number of visible tilesalong the locked axis.</td>
+            
+                <td class="default">
+                
+                    <code>16</code>
+                
+                </td>
+            
+
+            <td class="description last">The starting scale, represents the number of visibletiles along the locked axis.</td>
         </tr>
 
     
@@ -1036,10 +1142,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">The maximum number of tiles visible along the locked axis.</td>
+            
+                <td class="default">
+                
+                    <code>32</code>
+                
+                </td>
+            
+
+            <td class="description last">The maximum number of tiles visible along the lockedaxis.</td>
         </tr>
 
     
@@ -1059,10 +1179,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">The minimum number of tiles visible along the locked axis.</td>
+            
+                <td class="default">
+                
+                    <code>4</code>
+                
+                </td>
+            
+
+            <td class="description last">The minimum number of tiles visible along the lockedaxis.</td>
         </tr>
 
     
@@ -1082,10 +1216,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">Clamp the camera offset and zoom so that the buffer alwaysfills the canvas.</td>
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">Clamp the camera offset and zoom so that the bufferalways fills the canvas.</td>
         </tr>
 
     
@@ -1303,6 +1451,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -1328,11 +1478,19 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
             
 
+            
+                <td class="default">
+                
+                    <code>16</code>
+                
+                </td>
             
 
             <td class="description last">The width of each cell measured in tiles.</td>
@@ -1357,11 +1515,19 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
             
 
+            
+                <td class="default">
+                
+                    <code>16</code>
+                
+                </td>
             
 
             <td class="description last">The height of each cell measured in tiles.</td>
@@ -1386,6 +1552,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -1394,8 +1562,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last">The minimum cell x-coordinate. If this is null, the cell bufferwill scroll infinitely in the negative-x direction.</td>
+            <td class="description last">The minimum cell x-coordinate. If this is null, the cellbuffer will scroll infinitely in the negative-x direction.</td>
         </tr>
 
     
@@ -1417,6 +1591,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -1425,8 +1601,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last">The minimum cell y-coordinate. If this is null, the cell bufferwill scroll infinitely in the negative-x direction.</td>
+            <td class="description last">The minimum cell y-coordinate. If this is null, the cellbuffer will scroll infinitely in the negative-x direction.</td>
         </tr>
 
     
@@ -1448,6 +1630,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -1456,8 +1640,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last">The maximum cell x-coordinate. If this is null, the cell bufferwill scroll infinitely in the positive-x direction.</td>
+            <td class="description last">The maximum cell x-coordinate. If this is null, the cellbuffer will scroll infinitely in the positive-x direction.</td>
         </tr>
 
     
@@ -1479,6 +1669,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -1487,8 +1679,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last">The maximum cell y-coordinate. If this is null, the cell bufferwill scroll infinitely in the positive-y direction.</td>
+            <td class="description last">The maximum cell y-coordinate. If this is null, the cellbuffer will scroll infinitely in the positive-y direction.</td>
         </tr>
 
     
@@ -1510,6 +1708,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -1517,6 +1717,12 @@
                 </td>
             
 
+            
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
             
 
             <td class="description last">A function for generating cells.</td>
@@ -2275,7 +2481,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line175">line 175</a>
+        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line177">line 177</a>
     </li></ul></dd>
     
 
@@ -2326,7 +2532,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2351,10 +2561,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">The unit of measurement for the new offset, either "px" or "tile".</td>
+            
+                <td class="default">
+                
+                    <code>""</code>
+                
+                </td>
+            
+
+            <td class="description last">The unit of measurement for the new offset. If this is set to'px', the unit will be pixels and if it is set to anything else the unit will be tiles.</td>
         </tr>
 
     
@@ -2374,10 +2598,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">True if the movement should be relative to the current offset.</td>
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">True if the movement should be relative to the currentoffset.</td>
         </tr>
 
     
@@ -2470,7 +2708,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2495,10 +2737,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">True if the movement should be relative to the current offset.</td>
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">True if the movement should be relative to the currentoffset.</td>
         </tr>
 
     
@@ -2798,7 +3054,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line220">line 220</a>
+        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line221">line 221</a>
     </li></ul></dd>
     
 
@@ -2849,7 +3105,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2874,10 +3134,24 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
             
 
-            <td class="description last">True if the rotation should be relative to the current angle.</td>
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">True if the rotation should be relative to the currentangle.</td>
         </tr>
 
     
@@ -2897,7 +3171,21 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>""</code>
+                
+                </td>
             
 
             <td class="description last">The rotation direction. This should be 'cw' for clockwise,'ccw' for counter-clockwise. If this is not 'cw' or 'ccw', the rotation will be in thedirection of the smallest change in angle.</td>
@@ -3141,6 +3429,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -3166,6 +3456,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -3174,8 +3466,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last">The viewport size, or null to use the canvas element dimensions.</td>
+            <td class="description last">The viewport size, or null to use the canvas elementdimensions.</td>
         </tr>
 
     
@@ -3197,11 +3495,19 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
             
 
+            
+                <td class="default">
+                
+                    <code>true</code>
+                
+                </td>
             
 
             <td class="description last">True if the window resize event should be handled.</td>
@@ -3226,11 +3532,19 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
             
 
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
             
 
             <td class="description last">True if the FPS should be displayed.</td>
@@ -3255,14 +3569,22 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
             
 
             
+                <td class="default">
+                
+                    <code>true</code>
+                
+                </td>
+            
 
-            <td class="description last">True if the render loop should be started automatically.</td>
+            <td class="description last">True if the render loop should be startedautomatically.</td>
         </tr>
 
     
@@ -3284,6 +3606,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -3292,8 +3616,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last">A function that will be called afterclearing the context but before drawing the active buffer. In the context of the function,'this' will point to the Tily instance.</td>
+            <td class="description last">A function that will be calledafter clearing the context but before drawing the active buffer. In the context of thefunction, 'this' will point to the Tily instance.</td>
         </tr>
 
     
@@ -3315,6 +3645,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -3322,6 +3654,12 @@
                 </td>
             
 
+            
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
             
 
             <td class="description last">A function that will be called afterdrawing the active buffer but before drawing any debug text. In the context of the function,'this' will point to the Tily instance.</td>
@@ -3421,6 +3759,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -3446,14 +3786,22 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
             
 
             
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
 
-            <td class="description last">The amount of time in seconds that this transition should take tocomplete.</td>
+            <td class="description last">The amount of time in seconds that this transition should taketo complete.</td>
         </tr>
 
     
@@ -3475,14 +3823,22 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
             
 
             
+                <td class="default">
+                
+                    <code>Math.lerp</code>
+                
+                </td>
+            
 
-            <td class="description last">The easing function to use while transitioning.</td>
+            <td class="description last">The easing function to use whiletransitioning.</td>
         </tr>
 
     
@@ -3504,6 +3860,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                     &lt;nullable><br>
@@ -3512,8 +3870,14 @@
             
 
             
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
 
-            <td class="description last">A callback function that will be called oncethe transition has finished.</td>
+            <td class="description last">A callback function that will becalled once the transition has finished.</td>
         </tr>
 
     
@@ -3558,7 +3922,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Jan 30 2017 20:18:58 GMT+0000 (GMT Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Jan 30 2017 20:45:40 GMT+0000 (GMT Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

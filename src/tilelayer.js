@@ -169,10 +169,10 @@ Tily.TileLayer = (function() {
 	 * @instance
 	 * @memberof Tily.TileLayer
 	 * @param {String} character The character or characters to set.
-	 * @param {Number} x1 The x-coordinate of the top-left corner of the region.
-	 * @param {Number} y1 The y-coordinate of the top-left corner of the region.
-	 * @param {Number} x2 The x-coordinate of the bottom-right corner of the region.
-	 * @param {Number} y2 The y-coordinate of the bottom-right corner of the region.
+	 * @param {Number} [x1] The x-coordinate of the top-left corner of the region.
+	 * @param {Number} [y1] The y-coordinate of the top-left corner of the region.
+	 * @param {Number} [x2] The x-coordinate of the bottom-right corner of the region.
+	 * @param {Number} [y2] The y-coordinate of the bottom-right corner of the region.
 	 */
 	TileLayer.prototype.fill = function(character, x1, y1, x2, y2) {
 		const r = region(x1, y1, x2, y2, this.container.size.width, this.container.size.height);
@@ -191,10 +191,10 @@ Tily.TileLayer = (function() {
 	 * @function
 	 * @instance
 	 * @memberof Tily.TileLayer
-	 * @param {Number} x1 The x-coordinate of the top-left corner of the region.
-	 * @param {Number} y1 The y-coordinate of the top-left corner of the region.
-	 * @param {Number} x2 The x-coordinate of the bottom-right corner of the region.
-	 * @param {Number} y2 The y-coordinate of the bottom-right corner of the region.
+	 * @param {Number} [x1] The x-coordinate of the top-left corner of the region.
+	 * @param {Number} [y1] The y-coordinate of the top-left corner of the region.
+	 * @param {Number} [x2] The x-coordinate of the bottom-right corner of the region.
+	 * @param {Number} [y2] The y-coordinate of the bottom-right corner of the region.
 	 */
 	TileLayer.prototype.clear = function(x1, y1, x2, y2) {
 		const r = region(x1, y1, x2, y2, this.container.size.width, this.container.size.height);

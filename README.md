@@ -16,7 +16,7 @@ A basic Javascript tile engine that is (somewhat) inspired by the Windows consol
 
 Just load `tily.min.js` in your page and create a [`Tily.Main`](https://basementuniverse.github.io/tily/Tily.Main.html) instance, passing in the canvas element on which you want to render as an argument, like so:
 
-    <script src="scripts/tily.min.js"></script>
+    <script src="tily.min.js"></script>
     <canvas id="tily-canvas"></canvas>
     <script>
 

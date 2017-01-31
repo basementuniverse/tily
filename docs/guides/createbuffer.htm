@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tily Guide - Creating and Activating Buffers</title>
+    <script src="../scripts/prettify/prettify.js"></script>
+    <script src="../scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="../styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="../styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+<h2><a href="../index.html">Home</a></h2>
+<h3>Guides</h3>
+<ul><li><a href="overview.htm">Overview</a><ul class='methods'><li data-type='method'><a href="overview.htm#the-starting-point-tily-main-">The Starting Point</a></li><li data-type='method'><a href="overview.htm#buffers-tily-buffer-and-tily-cellbuffer-">Buffers</a></li><li data-type='method'><a href="overview.htm#layers-tily-tilelayer-">Layers</a></li><li data-type='method'><a href="overview.htm#active-tiles-tily-activetile-and-tily-activetilelayer-">Active Tiles</a></li></ul></li></ul>
+<ul><li><a href="createbuffer.htm">Creating and Activating Buffers</a><ul class='methods'><li data-type='method'><a href="createbuffer.htm#creating-a-buffer">Creating a Buffer</a></li><li data-type='method'><a href="createbuffer.htm#adding-layers-and-tiles">Adding Layers and Tiles</a></li><li data-type='method'><a href="createbuffer.htm#creating-a-cell-buffer">Creating a Cell-Buffer</a></li></ul></li></ul>
+<ul><li><a href="camera.htm">Panning and Zooming the Camera</a></li></ul>
+<ul><li><a href="createactivetile.htm">Creating Active Tiles</a></li></ul>
+<ul><li><a href="animation.htm">Animating Active Tiles</a></li></ul>
+</nav>
+
+<div id="main">
+<section class="readme">
+<h1 id="-tily-logo-images-tily-svg-tily-logo-tily"><img src="../images/tily.svg" alt="Tily Logo" title="Tily Logo"> Tily</h1>
+<h2 id="creating-and-activating-buffers">Creating and Activating Buffers</h2>
+<hr>
+<h2 id="creating-a-buffer">Creating a Buffer</h2>
+<p>For these examples, we&#39;ll assume that you have included <code>tile.min.js</code> and you&#39;ve got a canvas element with the id <code>tily-canvas</code> somewhere on the page.</p>
+<p>Anyway, here&#39;s how to create a buffer and activate it:</p>
+<pre class="prettyprint source"><code>var tily = new Tily.Main(document.querySelector("#tily-canvas"));
+
+// Create buffer
+var buffer = new Tily.Buffer(32, 24);    // Creates a buffer 32 tiles wide by 24 tiles high
+
+// Start rendering the buffer
+tily.activateBuffer(buffer);
+</code></pre>
+
+<p>Of course, you won&#39;t be able to see anything because we didn&#39;t add any layers or tiles to the buffer.</p>
+<h2 id="adding-layers-and-tiles">Adding Layers and Tiles</h2>
+<p>Let&#39;s add two layers. The bottom layer (we&#39;ll call this the <em>grass</em> layer) will be filled with coloured squares and the top layer will have a few tiles added (we&#39;ll call this the <em>trees</em> layer).</p>
+<pre class="prettyprint source"><code>var tily = new Tily.Main(document.querySelector("#tily-canvas"));
+
+// First, set up some options for our buffer
+var options = {
+    clampCamera: true,    // This means there won't be any empty area around the edges
+    initialScale: 24    // Initially, we'll see 24 tiles along the x-axis
+}
+
+// Create a buffer
+var buffer = new Tily.Buffer(32, 24, options);    // Creates a buffer 32 tiles wide by 24 tiles high
+
+// Create some layers and add them to the buffer
+var grassLayer = new Tily.TileLayer(buffer),
+    treesLayer = new Tily.TileLayer(buffer);
+buffer.addLayer(grassLayer);
+buffer.addLayer(treesLayer);
+
+// Set some layer properties
+grassLayer.background = "lightgreen";
+treesLayer.foreground = "darkgreen";
+
+// Fill the grass layer with space characters, so that only the background colour gets drawn
+grassLayer.fill(" ");
+
+// Add some tiles to the trees layer
+treesLayer.setTile(3, 4, "#");
+treesLayer.setTile(5, 2, "#");
+treesLayer.setTile(7, 2, "#");
+
+// Start rendering the buffer
+tily.activateBuffer(buffer);
+</code></pre>
+
+<p>Check out the result <a href="createbuffer_1.htm">here</a>!</p>
+<p>Some notes about the above code:</p>
+<ul>
+<li>Notice that when we created each layer, we passed in the buffer as an argument. This is optional, because when we add them to the buffer it will automatically make sure they have a reference to the buffer. However in order to set or fill tiles, the layer will need to know about the buffer in which it is contained (so it knows the dimensions), so it&#39;s probably best to pass the buffer into the constructor like this.</li>
+<li>When we filled the grass layer with tiles, we didn&#39;t pass any other arguments in. We could have defined an area to fill by setting top-left and bottom-right corners, but by not passing any arguments in, it just fills the entire layer.</li>
+</ul>
+<h2 id="creating-a-cell-buffer">Creating a Cell-Buffer</h2>
+<p>Creating a cell-buffer is pretty much the same, except that we add layers to each cell as we generate them. Cells are generated using a cell function. Here&#39;s an example of this:</p>
+<pre class="prettyprint source"><code>var tily = new Tily.Main(document.querySelector("#tily-canvas"));
+
+// First, set up some options for our buffer
+var options = {
+    initialScale: 64,    // Initially, we'll see 64 tiles along the x-axis
+    maximumScale: 64,    // The maximum number of tiles visible along the x-axis
+    cellWidth: 8,    // Set the size of each cell
+    cellHeight: 8,
+
+    // This is our cell function, which is responsible for generating cells
+    // For this example we'll generate a tartan-like pattern but this could be anything, really -
+    // terrain with biomes, endless dungeons, whatever you like
+    cellFunction: function(cellBuffer, x, y, resolve, reject) {
+        var cell = new Tily.Cell(cellBuffer),
+            backgroundLayer = new Tily.TileLayer(cell),
+            stripesLayer1 = new Tily.TileLayer(cell),
+            stripesLayer2 = new Tily.TileLayer(cell);
+        cell.addLayer(backgroundLayer);
+        cell.addLayer(stripesLayer1);
+        cell.addLayer(stripesLayer2);
+
+        // Set the background colour depending on x and y
+        if (x % 2) {
+            if (y % 2) {
+                backgroundLayer.background = "#383556";
+            } else {
+                backgroundLayer.background = "#d92026";
+            }
+        } else {
+            if (y % 2) {
+                backgroundLayer.background = "#416856";
+            } else {
+                backgroundLayer.background = "#c9c4af";
+            }
+        }
+        backgroundLayer.fill(" ");
+
+        // Set up the stripe layers and add some stripes
+        stripesLayer1.foreground = "white";
+        stripesLayer1.opacity = 0.5;
+        stripesLayer2.foreground = "black";
+        stripesLayer2.opacity = 0.5;
+        stripesLayer1.fill(String.fromCharCode(9617), 1, 0, 2, 8);
+        stripesLayer1.fill(String.fromCharCode(9618), 6, 0, 7, 8);
+        stripesLayer2.fill(String.fromCharCode(9617), 0, 1, 8, 2);
+        stripesLayer2.fill(String.fromCharCode(9618), 0, 6, 8, 7);
+
+        // Resolve the promise with the cell we just created
+        resolve(cell);
+    }
+}
+
+// Create a cell-buffer
+var buffer = new Tily.CellBuffer(options);
+
+// Start rendering the buffer
+tily.activateBuffer(buffer);
+</code></pre>
+
+<p>And there you go, <a href="createbuffer_2.htm">infinite Tily tartan!</a>!</p>
+
+</section>
+</div>
+<br class="clear">
+<script>prettyPrint();</script>
+<script src="../scripts/linenumber.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<script src="https://rawgit.com/basementuniverse/tily/master/tily.min.js"></script>
+<canvas id="tily-canvas"></canvas>
+<style>
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+</style>
+<script>
+
+var tily = new Tily.Main(document.querySelector("#tily-canvas"));
+
+// First, set up some options for our buffer
+var options = {
+	clampCamera: true,	// This means there won't be any empty area around the edges
+	initialScale: 24	// Initially, we'll see 24 tiles along the x-axis
+}
+
+// Create a buffer
+var buffer = new Tily.Buffer(32, 24, options);	// Creates a buffer 32 tiles wide by 24 tiles high
+
+// Create some layers and add them to the buffer
+var grassLayer = new Tily.TileLayer(buffer),
+	treesLayer = new Tily.TileLayer(buffer);
+buffer.addLayer(grassLayer);
+buffer.addLayer(treesLayer);
+
+// Set some layer properties
+grassLayer.background = "lightgreen";
+treesLayer.foreground = "darkgreen";
+
+// Fill the grass layer with space characters, so that only the background colour gets drawn
+grassLayer.fill(" ");
+
+// Add some tiles to the trees layer
+treesLayer.setTile(3, 4, "#");
+treesLayer.setTile(5, 2, "#");
+treesLayer.setTile(7, 2, "#");
+
+// Start rendering the buffer
+tily.activateBuffer(buffer);
+
+// Create an active tile at position (3, 3)
+var activeTile = new Tily.ActiveTile(3, 3);
+
+// Add the active tile to the buffer
+buffer.addActiveTile(activeTile);
+
+// Set the foreground colour
+activeTile.foreground = "#f99";
+
+// Create a layer and set the layer text to a smiley face character (unicode 263a)
+var layer1 = new Tily.ActiveTileLayer(activeTile, activeTile);
+layer1.text = String.fromCharCode(parseInt("263a", 16));
+
+// Add the layer to the active tile
+activeTile.addLayer(layer1);
+
+// Create another layer under layer1 in the heirarchy
+// For this layer, we'll use unicode character 25b6 (a sideways triangle)
+var layer2 = new Tily.ActiveTileLayer(activeTile, layer1);
+layer2.foreground = "blue";
+layer2.text = String.fromCharCode(parseInt("25b6", 16));
+
+// Transform the layer so that it resembles a wizards hat...sort of
+layer2.scale = { x: 0.8, y: 0.5 };
+layer2.offset = { x: 0, y: -0.4 };
+layer2.rotation = -Math.PI * 0.5;
+
+// Add the layer to layer1
+layer1.addLayer(layer2);
+
+// And another layer (also under layer1 in the heirarchy) with a pickaxe character (unicode 26cf)
+var layer3 = new Tily.ActiveTileLayer(activeTile, layer1);
+layer3.foreground = "black";
+layer3.text = String.fromCharCode(parseInt("26cf", 16));
+
+// Transform the layer so that it's positioned correctly
+layer3.scale = { x: -0.5, y: 0.5 };
+layer3.offset = { x: 0.4, y: 0.1 };
+
+// Add the layer to layer1
+layer1.addLayer(layer3);
+
+</script>

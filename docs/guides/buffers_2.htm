@@ -1,0 +1,74 @@
+<script src="https://rawgit.com/basementuniverse/tily/master/tily.min.js"></script>
+<canvas id="tily-canvas"></canvas>
+<style>
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+</style>
+<script>
+
+var tily = new Tily.Main(document.querySelector("#tily-canvas"));
+
+// First, set up some options for our buffer
+var options = {
+	initialScale: 64,	// Initially, we'll see 64 tiles along the x-axis
+	maximumScale: 64,	// The maximum number of tiles visible along the x-axis
+	cellWidth: 8,	// Set the size of each cell
+	cellHeight: 8,
+	
+	// This is our cell function, which is responsible for generating cells
+	// For this example we'll generate a tartan-like pattern but this could be anything, really -
+	// terrain with biomes, endless dungeons, whatever you like
+	cellFunction: function(cellBuffer, x, y, resolve, reject) {
+		var cell = new Tily.Cell(cellBuffer),
+			backgroundLayer = new Tily.TileLayer(cell),
+			stripesLayer1 = new Tily.TileLayer(cell),
+			stripesLayer2 = new Tily.TileLayer(cell);
+		cell.addLayer(backgroundLayer);
+		cell.addLayer(stripesLayer1);
+		cell.addLayer(stripesLayer2);
+		
+		// Set the background colour depending on x and y
+		if (x % 2) {
+			if (y % 2) {
+				backgroundLayer.background = "#383556";
+			} else {
+				backgroundLayer.background = "#d92026";
+			}
+		} else {
+			if (y % 2) {
+				backgroundLayer.background = "#416856";
+			} else {
+				backgroundLayer.background = "#c9c4af";
+			}
+		}
+		backgroundLayer.fill(" ");
+		
+		// Set up the stripe layers and add some stripes
+		stripesLayer1.foreground = "white";
+		stripesLayer1.opacity = 0.5;
+		stripesLayer2.foreground = "black";
+		stripesLayer2.opacity = 0.5;
+		stripesLayer1.fill(String.fromCharCode(9617), 1, 0, 2, 8);
+		stripesLayer1.fill(String.fromCharCode(9618), 6, 0, 7, 8);
+		stripesLayer2.fill(String.fromCharCode(9617), 0, 1, 8, 2);
+		stripesLayer2.fill(String.fromCharCode(9618), 0, 6, 8, 7);
+		
+		// Resolve the promise with the cell we just created
+		resolve(cell);
+	}
+};
+
+// Create a cell-buffer
+var buffer = new Tily.CellBuffer(options);
+
+// Start rendering the buffer
+tily.activateBuffer(buffer);
+
+</script>

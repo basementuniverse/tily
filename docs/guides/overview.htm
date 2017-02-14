@@ -42,7 +42,7 @@
 <h2 id="buffers">Buffers</h2>
 <p>A buffer is a container for tiles. Specifically, a buffer has a z-ordered list of layers, where each layer has various settings like foreground/background colours, font, opacity and also an array of strings for each tile.</p>
 <p>Cell-buffers are slightly different. When you create a cell-buffer, you define a cell function which is responsible for generating cells, each of which is a rectangular chunk of tiles. The cell-buffer figures out which cells are currently visible, gets them from the cell function, caches them, then renders them in the correct position. This means you can make infinite-scrolling buffers if you like.</p>
-<p>Buffers are handle their own camera offset and zoom settings, so you can have different initial settings and constraints for each buffer.</p>
+<p>Buffers handle their own camera offset and zoom settings, so you can have different initial settings and constraints for each buffer.</p>
 <p>Both kinds of buffer also have a list of active tiles. Active tiles can be used for moving objects, animations, and so on.</p>
 <h2 id="layers">Layers</h2>
 <p>Tile layers are grids of tiles, where each tile is a character or string.</p>

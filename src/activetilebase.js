@@ -41,6 +41,13 @@ Tily.ActiveTileBase = (function() {
 		 * @type {?Number}
 		 */
 		this.opacity = null;
+
+		/**
+		 * The composite operation to use when drawing this active tile.
+		 * @default "source-over"
+		 * @type {String}
+		 */
+		this.compositeMode = "source-over";
 		
 		/**
 		 * The offset of this active tile measured in tiles. Set this to null to inherit from the
@@ -112,6 +119,15 @@ Tily.ActiveTileBase = (function() {
 	 * @type {Number}
 	 */
 	createInheritedProperty("opacity", "inheritedOpacity");
+
+	/**
+	 * @name inheritedCompositeMode
+	 * @description The composite operation set in this layer or inherited from the parent object if null.
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @type {String}
+	 */
+	createInheritedProperty("compositeMode", "inheritedCompositeMode");
 	
 	/**
 	 * @name inheritedOffset

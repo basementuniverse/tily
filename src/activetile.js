@@ -67,6 +67,13 @@ Tily.ActiveTile = (function(_super) {
 		 * @type {Number}
 		 */
 		this.opacity = 1;
+
+		/**
+		 * The composite operation to use when drawing this active tile.
+		 * @default "source-over"
+		 * @type {String}
+		 */
+		this.compositeMode = "source-over";
 		
 		/**
 		 * An offset from this active tile's position measured in tiles.
@@ -149,6 +156,7 @@ Tily.ActiveTile = (function(_super) {
 		context.font = (tileSize + 1) + "px " + this.font;
 		context.fillStyle = this.foreground;
 		context.globalAlpha = this.opacity;
+		context.globalCompositeOperation = this.compositeMode;
 		context.translate(this.position.x * tileSize - 0.5, this.position.y * tileSize - 0.5);
 		
 		// Clip tile boundaries if clipping is enabled
@@ -206,6 +214,7 @@ Tily.ActiveTile = (function(_super) {
 			font: this.font,
 			foreground: this.foreground,
 			opacity: this.opacity,
+			compositeMode: this.compositeMode,
 			offset: this.offset,
 			scale: this.scale,
 			rotation: this.rotation
@@ -230,6 +239,7 @@ Tily.ActiveTile = (function(_super) {
 		tile.font = data.font;
 		tile.foreground = data.foreground;
 		tile.opacity = data.opacity;
+		tile.compositeMode = data.compositeMode;
 		tile.offset = data.offset;
 		tile.scale = data.scale;
 		tile.rotation = data.rotation;

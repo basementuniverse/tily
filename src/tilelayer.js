@@ -42,6 +42,13 @@ Tily.TileLayer = (function() {
 		 * @type {Number}
 		 */
 		this.opacity = 1;
+
+		/**
+		 * The composite operation to use when drawing this layer.
+		 * @default "source-over"
+		 * @type {String}
+		 */
+		this.compositeMode = "source-over";
 		
 		/**
 		 * Whether or not to clip this layer's tiles at their edges.
@@ -246,6 +253,7 @@ Tily.TileLayer = (function() {
 		context.save();
 		context.font = (tileSize + 1) + "px " + this.font;
 		context.globalAlpha = this.opacity;
+		context.globalCompositeOperation = this.compositeMode;
 		
 		// Render background tiles if a background colour is defined
 		if (this.background) {
@@ -300,6 +308,7 @@ Tily.TileLayer = (function() {
 			foreground: this.foreground,
 			background: this.background,
 			opacity: this.opacity,
+			compositeMode: this.compositeMode,
 			clip: this.clip,
 			tiles: this.tiles
 		};
@@ -321,6 +330,7 @@ Tily.TileLayer = (function() {
 		layer.foreground = data.foreground;
 		layer.background = data.background;
 		layer.opacity = data.opacity;
+		layer.compositeMode = data.compositeMode;
 		layer.clip = data.clip;
 		layer.tiles = data.tiles;
 		return layer;

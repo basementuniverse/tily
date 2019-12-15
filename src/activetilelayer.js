@@ -103,6 +103,9 @@ Tily.ActiveTileLayer = (function(_super) {
 		if (this.opacity !== null) {
 			context.globalAlpha = this.opacity;
 		}
+		if (this.compositeMode !== null) {
+			context.globalCompositeOperation = this.compositeMode;
+		}
 		if (this.offset !== null) {
 			context.translate(this.offset.x * tileSize, this.offset.y * tileSize);
 		}
@@ -136,6 +139,7 @@ Tily.ActiveTileLayer = (function(_super) {
 			font: this.font,
 			foreground: this.foreground,
 			opacity: this.opacity,
+			compositeMode: this.compositeMode,
 			offset: this.offset,
 			scale: this.scale,
 			rotation: this.rotation
@@ -160,6 +164,7 @@ Tily.ActiveTileLayer = (function(_super) {
 		layer.font = data.font;
 		layer.foreground = data.foreground;
 		layer.opacity = data.opacity;
+		layer.compositeMode = data.compositeMode;
 		layer.offset = data.offset;
 		layer.scale = data.scale;
 		layer.rotation = data.rotation;

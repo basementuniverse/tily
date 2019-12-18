@@ -193,8 +193,13 @@ Tily.BufferBase = (function() {
 	 * @param {MoveOffsetTransitionOptions} [options] An optional options object.
 	 */
 	BufferBase.prototype.moveOffset = function(x, y, options) {
+		options = {
+			unit: "",
+			relative: false,
+			...options
+		};
 		var offset = vec2(x, y);
-		if (options && options.unit == "px") {	// Adjust the offset position if moving in pixels
+		if (options.unit == "px") {	// Adjust the offset position if moving in pixels
 			offset = vec2.div(offset, this.tileSize);
 		}
 		if (this.offsetTransition) {

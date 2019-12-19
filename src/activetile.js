@@ -53,6 +53,20 @@ Tily.ActiveTile = (function(_super) {
 		 * @type {String}
 		 */
 		this.font = "sans-serif";
+
+		/**
+		 * The font style to use when rendering this active tile's layers.
+		 * @default "normal"
+		 * @type {String}
+		 */
+		this.fontStyle = "normal";
+
+		/**
+		 * The font size to use when rendering this active tile's layers. If null, fit characters to the tile.
+		 * @default null
+		 * @type {?String}
+		 */
+		this.fontSize = null;
 		
 		/**
 		 * The foreground colour, used for rendering text on this active tile's layers.
@@ -153,7 +167,8 @@ Tily.ActiveTile = (function(_super) {
 		if (!this.layers) { return; }	// Active tile has no layers so don't render
 		_super.prototype.draw.call(this, elapsedTime);
 		context.save();
-		context.font = (tileSize + 1) + "px " + this.font;
+		const fontSize = this.fontSize || ((tileSize + 1) + 'px');
+		context.font = `${this.fontStyle} ${fontSize} ${this.font}`;
 		context.fillStyle = this.foreground;
 		context.globalAlpha = this.opacity;
 		context.globalCompositeOperation = this.compositeMode;
@@ -212,6 +227,8 @@ Tily.ActiveTile = (function(_super) {
 			wrap: this.wrap,
 			flip: this.flip,
 			font: this.font,
+			fontStyle: this.fontStyle,
+			fontSize: this.fontSize,
 			foreground: this.foreground,
 			opacity: this.opacity,
 			compositeMode: this.compositeMode,
@@ -237,6 +254,8 @@ Tily.ActiveTile = (function(_super) {
 		tile.wrap = data.wrap;
 		tile.flip = data.flip;
 		tile.font = data.font;
+		tile.fontStyle = data.fontStyle;
+		tile.fontSize = data.fontSize;
 		tile.foreground = data.foreground;
 		tile.opacity = data.opacity;
 		tile.compositeMode = data.compositeMode;

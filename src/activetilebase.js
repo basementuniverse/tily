@@ -26,6 +26,22 @@ Tily.ActiveTileBase = (function() {
 		 * @type {?String}
 		 */
 		this.font = null;
+
+		/**
+		 * The font style to use when rendering this active tile. Set this to null to inherit from the
+		 * parent object.
+		 * @default null
+		 * @type {?String}
+		 */
+		this.fontStyle = null;
+
+		/**
+		 * The font size to use when rendering this active tile. Set this to null to inherit from the
+		 * parent object.
+		 * @default null
+		 * @type {?String}
+		 */
+		this.fontSize = null;
 		
 		/**
 		 * The foreground colour of this active tile. Set this to null to inherit from the parent
@@ -100,6 +116,24 @@ Tily.ActiveTileBase = (function() {
 	 * @type {String}
 	 */
 	createInheritedProperty("font", "inheritedFont");
+
+	/**
+	 * @name inheritedFontStyle
+	 * @description The font style set in this layer or inherited from the parent object if null.
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @type {String}
+	 */
+	createInheritedProperty("fontStyle", "inheritedFontStyle");
+
+	/**
+	 * @name inheritedFontSize
+	 * @description The font size set in this layer or inherited from the parent object if null.
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @type {String}
+	 */
+	createInheritedProperty("fontSize", "inheritedFontSize");
 	
 	/**
 	 * @name inheritedForeground

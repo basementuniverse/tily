@@ -94,8 +94,11 @@ Tily.ActiveTileLayer = (function(_super) {
 		if (!this.parent) { return; }	// Layer doesn't belong to an active tile or another layer
 		_super.prototype.draw.call(this, elapsedTime);
 		context.save();
-		if (this.font !== null) {
-			context.font = (tileSize + 1) + "px " + this.font;
+		if (this.font !== null || this.fontStyle !== null || this.fontSize !== null) {
+			const font = this.font || this.inheritedFont;
+			const style = this.fontStyle || this.inheritedFontStyle;
+			const size = this.fontSize || this.inheritedFontSize || ((tileSize + 1) + 'px');
+			context.font = `${style} ${size} ${font}`;
 		}
 		if (this.foreground !== null) {
 			context.fillStyle = this.foreground;
@@ -137,6 +140,8 @@ Tily.ActiveTileLayer = (function(_super) {
 			layers: this.layers.map(i => i.getData()),
 			text: this.text,
 			font: this.font,
+			fontStyle: this.fontStyle,
+			fontSize: this.fontSize,
 			foreground: this.foreground,
 			opacity: this.opacity,
 			compositeMode: this.compositeMode,
@@ -162,6 +167,8 @@ Tily.ActiveTileLayer = (function(_super) {
 		layer.layers = data.layers.map(i => Tily.ActiveTileLayer.fromData(activeTile, layer, i));
 		layer.text = data.text;
 		layer.font = data.font;
+		layer.fontStyle = data.fontStyle;
+		layer.fontSize = data.fontSize;
 		layer.foreground = data.foreground;
 		layer.opacity = data.opacity;
 		layer.compositeMode = data.compositeMode;

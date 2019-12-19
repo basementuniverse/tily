@@ -31,12 +31,16 @@ Tily.Buffer = (function(_super) {
 	 * @function
 	 * @instance
 	 * @memberof Tily.Buffer
-	 * @param {Tily.TileLayer} layer The layer to add.
+	 * @param {?Tily.TileLayer} [layer] The layer to add. If null, add an empty new layer.
 	 * @param {Number} [z] The z-index at which to add the layer. If this is -1, the layer will be
 	 * added below existing layers and if it is undefined the layer will be added above existing
 	 * layers.
+	 * @returns {Tily.TileLayer} The layer that was added.
 	 */
 	Buffer.prototype.addLayer = function(layer, z) {
+		// If no layer is specified, create a new one
+		layer = layer || new Tily.TileLayer(this);
+
 		// Make sure the layer has a reference to this buffer
 		layer.container = this;
 		if (z === undefined) {
@@ -46,6 +50,7 @@ Tily.Buffer = (function(_super) {
 		} else {
 			this.layers.splice(z, 0, layer);
 		}
+		return layer;
 	};
 	
 	/**

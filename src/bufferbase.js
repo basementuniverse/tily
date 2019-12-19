@@ -143,12 +143,12 @@ Tily.BufferBase = (function() {
 	 * @function
 	 * @instance
 	 * @memberof Tily.BufferBase
-	 * @param {...Tily.ActiveTile} tile The tile(s) to add.
+	 * @param {...Tily.ActiveTile} tiles The tile(s) to add.
+	 * @returns {Tily.ActiveTile|array} The tile(s) that were added
 	 */
-	BufferBase.prototype.addActiveTile = function(tile) {
-		for (let i = 0, length = arguments.length; i < length; i++) {
-			this.activeTiles.push(arguments[i]);
-		}
+	BufferBase.prototype.addActiveTile = function(...tiles) {
+		this.activeTiles.push(...tiles);
+		return tiles.length == 1 ? tiles[0] : tiles;
 	};
 	
 	/**

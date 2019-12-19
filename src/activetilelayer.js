@@ -70,14 +70,18 @@ Tily.ActiveTileLayer = (function(_super) {
 	 * @param {Number} [z] The z-index at which to add the layer. If this is -1, the layer will be
 	 * added below existing layers and if it is undefined the layer will be added above existing
 	 * layers.
+	 * @returns {Tily.ActiveTileLayer} The layer that was added.
 	 */
 	ActiveTileLayer.prototype.addLayer = function(layer, z) {
+		// If no layer is specified, create a new one
+		layer = layer || new Tily.ActiveTileLayer(this.activeTile);
+
 		// Make sure the layer has a reference to the top-level active tile
 		layer.activeTile = this.activeTile;
 		
 		// Make sure the layer has a reference to its parent (ie. this active tile layer)
 		layer.parent = this;
-		_super.prototype.addLayer.call(this, layer, z);
+		return _super.prototype.addLayer.call(this, layer, z);
 	};
 	
 	/**

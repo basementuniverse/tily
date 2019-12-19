@@ -308,6 +308,7 @@ Tily.ActiveTileBase = (function() {
 	 * @param {Number} [z] The z-index at which to add the layer. If this is -1, the layer will be
 	 * added below existing layers and if it is undefined the layer will be added above existing
 	 * layers.
+	 * @returns {Tily.ActiveTileLayer} The layer that was added.
 	 */
 	ActiveTileBase.prototype.addLayer = function(layer, z) {
 		if (z === undefined) {
@@ -317,6 +318,7 @@ Tily.ActiveTileBase = (function() {
 		} else {
 			this.layers.splice(z, 0, layer);
 		}
+		return layer;
 	};
 	
 	/**

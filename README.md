@@ -36,4 +36,4 @@ Just load `tily.min.js` in your page and create a [`Tily.Main`](https://basement
 
 ### Notes
 
-Tily includes [vec2.js](https://github.com/basementuniverse/vec2) and [common.js](https://github.com/basementuniverse/commonjs). See their repositories for documentation.
+Tily includes [vec2.js](https://github.com/basementuniverse/vec2) ~and [common.js](https://github.com/basementuniverse/commonjs)~. See their repositories for documentation.

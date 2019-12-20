@@ -69,7 +69,7 @@ Tily.CellBuffer = (function(_super) {
 		 * Options for configuring this cell buffer.
 		 * @type {CellBufferOptions}
 		 */
-		this.options = this.options.extend(_defaultCellBufferOptions, options || {});
+		this.options = { ..._defaultCellBufferOptions, ...options || {} };
 	}
 	
 	/**
@@ -160,7 +160,7 @@ Tily.CellBuffer = (function(_super) {
 				lockedAxis = "y";
 			}
 		}
-		this.scale = Math.clamp(
+		this.scale = Tily.utility.clamp(
 			this.scale,
 			Math.max(this.options.minimumScale, 1),	// Minimum scale cannot go below 1 tile
 			maximumScale
@@ -174,10 +174,10 @@ Tily.CellBuffer = (function(_super) {
 			const centerX = this.viewSize.width * 0.5 - 0.5,
 				centerY = this.viewSize.height * 0.5 - 0.5;
 			if (isFinite(size.width)) {
-				this.offset.x = offset.x = Math.clamp(offset.x, centerX, size.width - centerX - 1);
+				this.offset.x = offset.x = Tily.utility.clamp(offset.x, centerX, size.width - centerX - 1);
 			}
 			if (isFinite(size.height)) {
-				this.offset.y = offset.y = Math.clamp(offset.y, centerY, size.height - centerY - 1);
+				this.offset.y = offset.y = Tily.utility.clamp(offset.y, centerY, size.height - centerY - 1);
 			}
 		}
 		

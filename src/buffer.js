@@ -102,7 +102,7 @@ Tily.Buffer = (function(_super) {
 		if (this.layers.length < 2) { return false; }
 		if (zFrom < 0 || zFrom >= this.layers.length) { return false; }
 		const layer = this.layers.splice(zFrom, 1)[0],
-			toIndex = Math.clamp(relative ? zFrom + zTo : zTo, 0, this.layers.length);
+			toIndex = Tily.utility.clamp(relative ? zFrom + zTo : zTo, 0, this.layers.length);
 		this.layers.splice(toIndex, 0, layer);
 		return true;
 	};
@@ -178,7 +178,7 @@ Tily.Buffer = (function(_super) {
 				lockedAxis = "y";
 			}
 		}
-		this.scale = Math.clamp(
+		this.scale = Tily.utility.clamp(
 			this.scale,
 			Math.max(this.options.minimumScale, 1),	// Minimum scale cannot go below 1 tile
 			maximumScale
@@ -192,8 +192,8 @@ Tily.Buffer = (function(_super) {
 			const centerX = this.viewSize.width * 0.5 - 0.5,
 				centerY = this.viewSize.height * 0.5 - 0.5;
 			this.offset = offset = vec2(
-				Math.clamp(offset.x, centerX, this.size.width - centerX - 1),
-				Math.clamp(offset.y, centerY, this.size.height - centerY - 1)
+				Tily.utility.clamp(offset.x, centerX, this.size.width - centerX - 1),
+				Tily.utility.clamp(offset.y, centerY, this.size.height - centerY - 1)
 			);
 		}
 		

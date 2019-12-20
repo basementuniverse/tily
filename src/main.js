@@ -66,7 +66,7 @@ Tily.Main = (function() {
 		 * Options for configuring this Tily instance.
 		 * @type {TilyOptions}
 		 */
-		this.options = {}.extend(_defaultTilyOptions, options || {});
+		this.options = { ..._defaultTilyOptions, ...options || {} };
 		
 		/**
 		 * The canvas element in which to draw tiles.

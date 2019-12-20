@@ -111,10 +111,10 @@ Tily.TileLayer = (function() {
 		y2 = Math.max(y1, y2);
 		
 		// Make sure both corners are within layer bounds
-		x1 = Math.clamp(x1, 0, w);
-		y1 = Math.clamp(y1, 0, h);
-		x2 = Math.clamp(x2, 0, w);
-		y2 = Math.clamp(y2, 0, h);
+		x1 = Tily.utility.clamp(x1, 0, w);
+		y1 = Tily.utility.clamp(y1, 0, h);
+		x2 = Tily.utility.clamp(x2, 0, w);
+		y2 = Tily.utility.clamp(y2, 0, h);
 		const width = x2 - x1;
 		return {
 			start: index(x1, y1, w),

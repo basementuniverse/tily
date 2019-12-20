@@ -18,7 +18,7 @@ Tily.Transition = (function() {
 	 * @type {Object}
 	 * @property {Number} [time=0] The amount of time in seconds that this transition should take
 	 * to complete.
-	 * @property {easeFunction} [easeFunction=Math.lerp] The easing function to use while
+	 * @property {easeFunction} [easeFunction=Tily.utility.lerp] The easing function to use while
 	 * transitioning.
 	 * @property {?finishedCallback} [finishedCallback=null] A callback function that will be
 	 * called once the transition has finished.
@@ -43,7 +43,7 @@ Tily.Transition = (function() {
 	 * transition.
 	 */
 	function Transition(start, finish, options) {
-		options = {}.extend(_defaultTransitionOptions, options || {});
+		options = { ..._defaultTransitionOptions, ...options || {} };
 		
 		/**
 		 * The starting value.
@@ -71,10 +71,10 @@ Tily.Transition = (function() {
 		
 		/**
 		 * The easing function to use while transitioning.
-		 * @default Math.lerp
+		 * @default Tily.utility.lerp
 		 * @type {easeFunction}
 		 */
-		this.easeFunction = options.easeFunction || Math.lerp;
+		this.easeFunction = options.easeFunction || Tily.utility.lerp;
 		
 		/**
 		 * A callback function that will be called once the transition has finished.
@@ -124,7 +124,7 @@ Tily.Transition = (function() {
 	 */
 	Object.defineProperty(Transition.prototype, "amount", {
 		get: function() {
-			return Math.clamp(this.currentTime / this.totalTime);
+			return Tily.utility.clamp(this.currentTime / this.totalTime);
 		}
 	});
 	return Transition;

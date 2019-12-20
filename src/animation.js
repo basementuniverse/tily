@@ -36,7 +36,10 @@ Tily.Animation = (function(_super) {
 	 * animation.
 	 */
 	function Animation(activeTile, start, finish, options) {
-		options = {}.extend(_defaultAnimationOptions, options || {});
+		options = {
+			..._defaultAnimationOptions,
+			...options || {}
+		};
 		_super.call(this, start, finish, options);
 		
 		/**

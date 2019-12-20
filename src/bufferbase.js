@@ -68,7 +68,7 @@ Tily.BufferBase = (function() {
 		 * Options for configuring this buffer.
 		 * @type {BufferOptions}
 		 */
-		this.options = {}.extend(_defaultBufferOptions, options || {});
+		this.options = { ..._defaultBufferOptions, ...options || {} };
 		
 		/**
 		 * A camera offset position for this buffer measured in pixels.

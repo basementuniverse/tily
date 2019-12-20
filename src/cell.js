@@ -106,7 +106,7 @@ Tily.Cell = (function() {
 		if (this.layers.length < 2) { return false; }
 		if (zFrom < 0 || zFrom >= this.layers.length) { return false; }
 		const layer = this.layers.splice(zFrom, 1)[0],
-			toIndex = Math.clamp(relative ? zFrom + zTo : zTo, 0, this.layers.length);
+			toIndex = Tily.utility.clamp(relative ? zFrom + zTo : zTo, 0, this.layers.length);
 		this.layers.splice(toIndex, 0, layer);
 		return true;
 	};

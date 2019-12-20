@@ -50,6 +50,22 @@ Tily.ActiveTileBase = (function() {
 		 * @type {?String}
 		 */
 		this.foreground = null;
+
+		/**
+		 * The outline width and colour of this active tile. Set this to null to inherit from the parent
+		 * object.
+		 * @default null
+		 * @type {?String}
+		 */
+		this.outline = null;
+
+		/**
+		 * The shadow width, offset and colour of this active tile. Set this to null to inherit from the parent
+		 * object.
+		 * @default null
+		 * @type {?String}
+		 */
+		this.shadow = null;
 		
 		/**
 		 * The opacity of this active tile. Set this to null to inherit from the parent object.
@@ -144,6 +160,26 @@ Tily.ActiveTileBase = (function() {
 	 * @type {String}
 	 */
 	createInheritedProperty("foreground", "inheritedForeground");
+
+	/**
+	 * @name inheritedOutline
+	 * @description The outline set in this layer or inherited from the parent object if
+	 * null.
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @type {String}
+	 */
+	createInheritedProperty("outline", "inheritedOutline");
+
+	/**
+	 * @name inheritedShadow
+	 * @description The shadow set in this layer or inherited from the parent object if
+	 * null.
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @type {String}
+	 */
+	createInheritedProperty("shadow", "inheritedShadow");
 	
 	/**
 	 * @name inheritedOpacity
@@ -203,6 +239,40 @@ Tily.ActiveTileBase = (function() {
 		const current = parseColor(this.inheritedForeground),
 			target = parseColor(foreground),
 			animation = new Tily.ForegroundAnimation(this, current, target, options);
+		this.animations.push(animation);
+		return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
+	};
+
+	/**
+	 * Animate this active tile's outline.
+	 * @name animateOutline
+	 * @function
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @param {String} outline The target outline.
+	 * @param {AnimationOptions} [options] An optional options object.
+	 */
+	ActiveTileBase.prototype.animateOutline = function(outline, options) {
+		const current = this.inheritedOutline,
+			target = outline,
+			animation = new Tily.OutlineAnimation(this, current, target, options);
+		this.animations.push(animation);
+		return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
+	};
+
+	/**
+	 * Animate this active tile's fshadow.
+	 * @name animateShadow
+	 * @function
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @param {String} shadow The target shadow.
+	 * @param {AnimationOptions} [options] An optional options object.
+	 */
+	ActiveTileBase.prototype.animateShadow = function(shadow, options) {
+		const current = this.inheritedShadow,
+			target = shadow,
+			animation = new Tily.ShadowAnimation(this, current, target, options);
 		this.animations.push(animation);
 		return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
 	};
@@ -370,7 +440,7 @@ Tily.ActiveTileBase = (function() {
 		if (this.layers.length < 2) { return false; }
 		if (zFrom < 0 || zFrom >= this.layers.length) { return false; }
 		const layer = this.layers.splice(zFrom, 1)[0],
-			toIndex = Math.clamp(relative ? zFrom + zTo : zTo, 0, this.layers.length);
+			toIndex = Tily.utility.clamp(relative ? zFrom + zTo : zTo, 0, this.layers.length);
 		this.layers.splice(toIndex, 0, layer);
 		return true;
 	};

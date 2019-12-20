@@ -74,6 +74,20 @@ Tily.ActiveTile = (function(_super) {
 		 * @type {String}
 		 */
 		this.foreground = "white";
+
+		/**
+		 * The outline width and colour for this active tile's layers.
+		 * @default null
+		 * @type {?String}
+		 */
+		this.outline = null;
+
+		/**
+		 * The shadow amount, offset and colour for this active tile's layers.
+		 * @default null
+		 * @type {?String}
+		 */
+		this.shadow = null;
 		
 		/**
 		 * The opacity of this active tile.
@@ -176,9 +190,30 @@ Tily.ActiveTile = (function(_super) {
 		context.fillStyle = this.foreground;
 		context.globalAlpha = this.opacity;
 		context.globalCompositeOperation = this.compositeMode;
-		context.translate(this.position.x * tileSize - 0.5, this.position.y * tileSize - 0.5);
+		
+		// Outline
+		if (this.outline) {
+			const { width: outlineWidth, colour: outlineColour } = Tily.utility.outline(this.outline);
+			context.lineWidth = Math.floor(outlineWidth * tileSize);
+			context.strokeStyle = outlineColour;
+		}
+
+		// Shadow
+		if (this.shadow) {
+			const {
+				blur: shadowBlur,
+				xOffset: shadowXOffset,
+				yOffset: shadowYOffset,
+				colour: shadowColour
+			} = Tily.utility.shadow(this.shadow);
+			context.shadowBlur = shadowBlur * tileSize;
+			context.shadowOffsetX = Math.floor(shadowXOffset * tileSize);
+			context.shadowOffsetY = Math.floor(shadowYOffset * tileSize);
+			context.shadowColor = shadowColour;
+		}
 		
 		// Clip tile boundaries if clipping is enabled
+		context.translate(this.position.x * tileSize - 0.5, this.position.y * tileSize - 0.5);
 		if (this.clip) {
 			context.rect(0, 0, tileSize + 1, tileSize + 1);
 			context.clip();
@@ -234,6 +269,8 @@ Tily.ActiveTile = (function(_super) {
 			fontStyle: this.fontStyle,
 			fontSize: this.fontSize,
 			foreground: this.foreground,
+			outline: this.outline,
+			shadow: this.shadow,
 			opacity: this.opacity,
 			compositeMode: this.compositeMode,
 			offset: this.offset,
@@ -261,6 +298,8 @@ Tily.ActiveTile = (function(_super) {
 		tile.fontStyle = data.fontStyle;
 		tile.fontSize = data.fontSize;
 		tile.foreground = data.foreground;
+		tile.outline = data.outline;
+		tile.shadow = data.shadow;
 		tile.opacity = data.opacity;
 		tile.compositeMode = data.compositeMode;
 		tile.offset = data.offset;

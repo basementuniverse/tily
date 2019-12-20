@@ -30,7 +30,9 @@ const paths = [
 	"src/foregroundanimation.js",
 	"src/opacityanimation.js",
 	"src/rotationanimation.js",
-	"src/textanimation.js"
+	"src/textanimation.js",
+	"src/outlineanimation.js",
+	"src/shadowanimation.js"
 ];
 
 function scripts() {

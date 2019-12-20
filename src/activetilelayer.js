@@ -113,6 +113,23 @@ Tily.ActiveTileLayer = (function(_super) {
 		if (this.compositeMode !== null) {
 			context.globalCompositeOperation = this.compositeMode;
 		}
+		if (this.outline !== null) {
+			const { width: outlineWidth, colour: outlineColour } = Tily.utility.outline(this.outline);
+			context.lineWidth = Math.floor(outlineWidth * tileSize);
+			context.strokeStyle = outlineColour;
+		}
+		if (this.shadow !== null) {
+			const {
+				blur: shadowBlur,
+				xOffset: shadowXOffset,
+				yOffset: shadowYOffset,
+				colour: shadowColour
+			} = Tily.utility.shadow(this.shadow);
+			context.shadowBlur = shadowBlur * tileSize;
+			context.shadowOffsetX = Math.floor(shadowXOffset * tileSize);
+			context.shadowOffsetY = Math.floor(shadowYOffset * tileSize);
+			context.shadowColor = shadowColour;
+		}
 		if (this.offset !== null) {
 			context.translate(this.offset.x * tileSize, this.offset.y * tileSize);
 		}
@@ -123,6 +140,9 @@ Tily.ActiveTileLayer = (function(_super) {
 			context.scale(this.scale.x, this.scale.y);
 		}
 		context.fillText(this.text, -tileSize * 0.5, -tileSize * 0.5);
+		if (this.inheritedOutline !== null) {
+			context.strokeText(this.text, -tileSize * 0.5, -tileSize * 0.5);
+		}
 		
 		// Render sub-layers contained in this layer
 		for (let i = 0, length = this.layers.length; i < length; i++) {
@@ -147,6 +167,8 @@ Tily.ActiveTileLayer = (function(_super) {
 			fontStyle: this.fontStyle,
 			fontSize: this.fontSize,
 			foreground: this.foreground,
+			outline: this.outline,
+			shadow: this.shadow,
 			opacity: this.opacity,
 			compositeMode: this.compositeMode,
 			offset: this.offset,
@@ -174,6 +196,8 @@ Tily.ActiveTileLayer = (function(_super) {
 		layer.fontStyle = data.fontStyle;
 		layer.fontSize = data.fontSize;
 		layer.foreground = data.foreground;
+		layer.outline = data.outline;
+		layer.shadow = data.shadow;
 		layer.opacity = data.opacity;
 		layer.compositeMode = data.compositeMode;
 		layer.offset = data.offset;

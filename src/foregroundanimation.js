@@ -34,11 +34,7 @@ Tily.ForegroundAnimation = (function(_super) {
 				b: this.easeFunction(this.start.b, this.finish.b, amount),
 				a: this.easeFunction(this.start.a, this.finish.a, amount)
 			};
-		this.activeTile.foreground = "rgba(" +
-			Math.round(c.r) + ", " +
-			Math.round(c.g) + ", " +
-			Math.round(c.b) + ", " +
-			(Math.round(c.a * 100) / 100) + ")";
+		this.activeTile.foreground = Tily.utility.colour(c);
 	};
 	return ForegroundAnimation;
 }(Tily.Animation));

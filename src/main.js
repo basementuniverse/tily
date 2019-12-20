@@ -28,8 +28,7 @@ Tily.Main = (function() {
 	 * after clearing the context but before drawing the active buffer. In the context of the
 	 * function, 'this' will point to the Tily instance.
 	 * @property {?afterDrawFunction} [afterDrawFunction=null] A function that will be called after
-	 * drawing the active buffer but before drawing any debug text. In the context of the function,
-	 * 'this' will point to the Tily instance.
+	 * drawing the active buffer. In the context of the function, 'this' will point to the Tily instance.
 	 */
 	/**
 	 * Default Tily options, used as a fall-back for options passed to the constructor.
@@ -187,9 +186,6 @@ Tily.Main = (function() {
 	Main.prototype.draw = function(elapsedTime) {
 		this.context.save();
 		this.context.clearRect(0, 0, this.width, this.height);
-		if (this.options.showFPS) {
-			debug.show("FPS", this.frameRate);
-		}
 		if (typeof this.options.beforeDrawFunction == "function") {
 			this.options.beforeDrawFunction.call(this, elapsedTime);
 		}
@@ -217,8 +213,18 @@ Tily.Main = (function() {
 		if (typeof this.options.afterDrawFunction == "function") {
 			this.options.afterDrawFunction.call(this, elapsedTime);
 		}
-		debug.draw(this.context);
 		this.context.restore();
+		if (this.options.showFPS) {
+			this.context.save();
+			this.context.font = '20px monospace';
+			this.context.fillStyle = 'rgba(0, 0, 0, 0.5)';
+			this.context.fillRect(this.width - (10 + 80), 10, 80, 30);
+			this.context.fillStyle = 'white';
+			this.context.textBaseline = 'top';
+			this.context.textAlign = 'right';
+			this.context.fillText(this.frameRate, this.width - 15, 15);
+			this.context.restore();
+		}
 	};
 	
 	/**

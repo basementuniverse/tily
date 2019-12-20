@@ -6,12 +6,11 @@ const wrap = require("gulp-wrap");
 const jsmin = require("gulp-jsmin");
 
 const paths = [
-	"src/utility.js",
 	"src/vec2.js",
 	"src/parsecolor.js",
-	"src/debug.js",
 	"src/extends.js",
 	"src/tily.js",
+	"src/utility.js",
 	"src/main.js",
 	"src/transition.js",
 	"src/buffertransition.js",

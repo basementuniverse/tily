@@ -15,6 +15,12 @@ Tily.OffsetAnimation = (function(_super) {
 	 * animation.
 	 */
 	function OffsetAnimation(activeTile, start, finish, options) {
+		if (!options.easeFunction) {
+			options.easeFunction = (a, b, i) => vec2(
+				Tily.utility.lerp(a.x, b.x, i),
+				Tily.utility.lerp(a.y, b.y, i)
+			);
+		}
 		_super.call(this, activeTile, start, finish, options);
 	}
 	
@@ -28,10 +34,7 @@ Tily.OffsetAnimation = (function(_super) {
 	 */
 	OffsetAnimation.prototype.update = function(elapsedTime) {
 		const amount = _super.prototype.update.call(this, elapsedTime);
-		this.activeTile.offset = vec2(
-			this.easeFunction(this.start.x, this.finish.x, amount),
-			this.easeFunction(this.start.y, this.finish.y, amount)
-		);
+		this.activeTile.offset = this.easeFunction(this.start, this.finish, amount);
 	};
 	return OffsetAnimation;
 }(Tily.Animation));

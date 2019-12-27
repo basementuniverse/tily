@@ -15,6 +15,24 @@ Tily.OutlineAnimation = (function(_super) {
 	 * animation.
 	 */
 	function OutlineAnimation(activeTile, start, finish, options) {
+		if (!options.easeFunction) {
+			options.easeFunction = (a, b, i) => {
+				const ao = Tily.utility.outline(a);
+				const bo = Tily.utility.outline(b);
+				ao.colour = parseColor(ao.colour);
+				bo.colour = parseColor(bo.colour);
+				const result = {
+					width: Tily.utility.lerp(ao.width, bo.width, i),
+					colour: Tily.utility.colour({
+						r: Tily.utility.lerp(ao.colour.r, bo.colour.r, i),
+						g: Tily.utility.lerp(ao.colour.g, bo.colour.g, i),
+						b: Tily.utility.lerp(ao.colour.b, bo.colour.b, i),
+						a: Tily.utility.lerp(ao.colour.a, bo.colour.a, i)
+					})
+				};
+				return `${result.width} ${result.colour}`;
+			};
+		}
 		_super.call(this, activeTile, start, finish, options);
 	}
 	
@@ -28,18 +46,7 @@ Tily.OutlineAnimation = (function(_super) {
 	 */
 	OutlineAnimation.prototype.update = function(elapsedTime) {
 		const amount = _super.prototype.update.call(this, elapsedTime);
-		const start = Tily.utility.outline(this.start);
-		start.colour = parseColor(start.colour);
-		const finish = Tily.utility.outline(this.finish);
-		finish.colour = parseColor(finish.colour);
-		const outlineWidth = this.easeFunction(start.width, finish.width, amount);
-		const outlineColour = {
-			r: this.easeFunction(start.colour.r, finish.colour.r, amount),
-			g: this.easeFunction(start.colour.g, finish.colour.g, amount),
-			b: this.easeFunction(start.colour.b, finish.colour.b, amount),
-			a: this.easeFunction(start.colour.a, finish.colour.a, amount)
-		};
-		this.activeTile.outline = `${outlineWidth} ${Tily.utility.colour(outlineColour)}`;
+		this.activeTile.outline = this.easeFunction(this.start, this.finish, amount);
 	};
 	return OutlineAnimation;
 }(Tily.Animation));

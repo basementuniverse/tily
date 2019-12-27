@@ -15,6 +15,14 @@ Tily.ForegroundAnimation = (function(_super) {
 	 * animation.
 	 */
 	function ForegroundAnimation(activeTile, start, finish, options) {
+		if (!options.easeFunction) {
+			options.easeFunction = (a, b, i) => ({
+				r: Tily.utility.lerp(a.r, b.r, i),
+				g: Tily.utility.lerp(a.g, b.g, i),
+				b: Tily.utility.lerp(a.b, b.b, i),
+				a: Tily.utility.lerp(a.a, b.a, i)
+			});
+		}
 		_super.call(this, activeTile, start, finish, options);
 	}
 	
@@ -27,14 +35,8 @@ Tily.ForegroundAnimation = (function(_super) {
 	 * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
 	 */
 	ForegroundAnimation.prototype.update = function(elapsedTime) {
-		const amount = _super.prototype.update.call(this, elapsedTime),
-			c = {
-				r: this.easeFunction(this.start.r, this.finish.r, amount),
-				g: this.easeFunction(this.start.g, this.finish.g, amount),
-				b: this.easeFunction(this.start.b, this.finish.b, amount),
-				a: this.easeFunction(this.start.a, this.finish.a, amount)
-			};
-		this.activeTile.foreground = Tily.utility.colour(c);
+		const amount = _super.prototype.update.call(this, elapsedTime);
+		this.activeTile.foreground = Tily.utility.colour(this.easeFunction(this.start, this.finish, amount));
 	};
 	return ForegroundAnimation;
 }(Tily.Animation));

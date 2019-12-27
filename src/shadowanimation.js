@@ -15,6 +15,26 @@ Tily.ShadowAnimation = (function(_super) {
 	 * animation.
 	 */
 	function ShadowAnimation(activeTile, start, finish, options) {
+		if (!options.easeFunction) {
+			options.easeFunction = (a, b, i) => {
+				const as = Tily.utility.shadow(a);
+				const bs = Tily.utility.shadow(b);
+				as.colour = parseColor(as.colour);
+				bs.colour = parseColor(bs.colour);
+				const result = {
+					blur: Tily.utility.lerp(as.blur, bs.blur, i),
+					xOffset: Tily.utility.lerp(as.xOffset, bs.xOffset, i),
+					yOffset: Tily.utility.lerp(as.yOffset, bs.yOffset, i),
+					colour: Tily.utility.colour({
+						r: Tily.utility.lerp(as.colour.r, bs.colour.r, i),
+						g: Tily.utility.lerp(as.colour.g, bs.colour.g, i),
+						b: Tily.utility.lerp(as.colour.b, bs.colour.b, i),
+						a: Tily.utility.lerp(as.colour.a, bs.colour.a, i)
+					})
+				};
+				return `${result.blur} ${result.xOffset} ${result.yOffset} ${result.colour}`;
+			};
+		}
 		_super.call(this, activeTile, start, finish, options);
 	}
 	
@@ -28,20 +48,7 @@ Tily.ShadowAnimation = (function(_super) {
 	 */
 	ShadowAnimation.prototype.update = function(elapsedTime) {
 		const amount = _super.prototype.update.call(this, elapsedTime);
-		const start = Tily.utility.shadow(this.start);
-		start.colour = parseColor(start.colour);
-		const finish = Tily.utility.shadow(this.finish);
-		finish.colour = parseColor(finish.colour);
-		const shadowBlur = this.easeFunction(start.blur, finish.blur, amount);
-		const shadowXOffset = this.easeFunction(start.xOffset, finish.xOffset, amount);
-		const shadowYOffset = this.easeFunction(start.yOffset, finish.yOffset, amount);
-		const shadowColour = {
-			r: this.easeFunction(start.colour.r, finish.colour.r, amount),
-			g: this.easeFunction(start.colour.g, finish.colour.g, amount),
-			b: this.easeFunction(start.colour.b, finish.colour.b, amount),
-			a: this.easeFunction(start.colour.a, finish.colour.a, amount)
-		};
-		this.activeTile.shadow = `${shadowBlur} ${shadowXOffset} ${shadowYOffset} ${Tily.utility.colour(shadowColour)}`;
+		this.activeTile.shadow = this.easeFunction(this.start, this.finish, amount);
 	};
 	return ShadowAnimation;
 }(Tily.Animation));

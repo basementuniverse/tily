@@ -15,6 +15,12 @@ Tily.ScaleAnimation = (function(_super) {
 	 * animation.
 	 */
 	function ScaleAnimation(activeTile, start, finish, options) {
+		if (!options.easeFunction) {
+			options.easeFunction = (a, b, i) => vec2(
+				Tily.utility.lerp(a.x, b.x, i),
+				Tily.utility.lerp(a.y, b.y, i)
+			);
+		}
 		_super.call(this, activeTile, start, finish, options);
 	}
 	
@@ -28,10 +34,7 @@ Tily.ScaleAnimation = (function(_super) {
 	 */
 	ScaleAnimation.prototype.update = function(elapsedTime) {
 		const amount = _super.prototype.update.call(this, elapsedTime);
-		this.activeTile.scale = vec2(
-			this.easeFunction(this.start.x, this.finish.x, amount),
-			this.easeFunction(this.start.y, this.finish.y, amount)
-		);
+		this.activeTile.scale = this.easeFunction(this.start, this.finish, amount);
 	};
 	return ScaleAnimation;
 }(Tily.Animation));

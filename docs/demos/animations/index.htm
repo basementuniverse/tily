@@ -9,6 +9,8 @@
 <script src="https://cdn.jsdelivr.net/gh/basementuniverse/tily@master/tily.min.js"></script>
 <script>
 
+const randomIntBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 window.addEventListener("load", function() {
 	var tily = new Tily.Main(document.querySelector("#tily"), { showFPS: true }),
 		hammer = new Hammer.Manager(document, { recognizers: [
@@ -62,17 +64,17 @@ window.addEventListener("load", function() {
 		});
 	
 	// Get a random colour
-	var randomColour = () => COLOURS[Math.randomIntBetween(0, COLOURS.length - 1)];
+	var randomColour = () => COLOURS[randomIntBetween(0, COLOURS.length - 1)];
 	
 	// Create a randomised active tile
 	function createActiveTile() {
-		var x = Math.randomIntBetween(0, WIDTH - 1),
-			y = Math.randomIntBetween(0, HEIGHT - 1),
+		var x = randomIntBetween(0, WIDTH - 1),
+			y = randomIntBetween(0, HEIGHT - 1),
 			activeTile = new Tily.ActiveTile(x, y);
 		addAnimations(activeTile);
 		
 		// Add layers to the active tile
-		for (var i = Math.randomIntBetween(1, MAX_LAYERS); i--;) {
+		for (var i = randomIntBetween(1, MAX_LAYERS); i--;) {
 			activeTile.addLayer(createActiveTileLayer(activeTile, activeTile, 0));
 		}
 		return activeTile;
@@ -82,12 +84,12 @@ window.addEventListener("load", function() {
 	function createActiveTileLayer(activeTile, parent, depth) {
 		var layer = new Tily.ActiveTileLayer(activeTile, parent);
 		layer.foreground = randomColour();
-		layer.text = String.fromCharCode(Math.randomIntBetween(9632, 9727));
+		layer.text = String.fromCharCode(randomIntBetween(9632, 9727));
 		addAnimations(layer);
 		
 		// Add sub-layers to this layer if maximum depth hasn't been reached
 		if (depth < MAX_DEPTH) {
-			for (var i = Math.randomIntBetween(1, MAX_LAYERS); i--;) {
+			for (var i = randomIntBetween(1, MAX_LAYERS); i--;) {
 				layer.addLayer(createActiveTileLayer(activeTile, layer, depth + 1));
 			}
 		}
@@ -96,7 +98,7 @@ window.addEventListener("load", function() {
 	
 	// Add a random number of random animations to an active tile or active tile layer
 	function addAnimations(activeTile) {
-		for (var i = Math.randomIntBetween(1, MAX_ANIMATIONS); i--;) {
+		for (var i = randomIntBetween(1, MAX_ANIMATIONS); i--;) {
 			randomAnimation(activeTile);
 		}
 	}
@@ -104,25 +106,25 @@ window.addEventListener("load", function() {
 	// Add a random animation to an active tile or active tile layer
 	function randomAnimation(activeTile) {
 		var options = {
-				time: Math.randomBetween(0.5, 2),
+				time: randomBetween(0.5, 2),
 				repeat: true,
 				alternate: true
 			};
-		switch (Math.randomIntBetween(0, 10)) {
+		switch (randomIntBetween(0, 10)) {
 			case 0: activeTile.animateForeground(randomColour(), options); break;
 			case 1: activeTile.animateOpacity(Math.random(), options); break;
 			case 2: activeTile.animateScale(
-						Math.randomBetween(0, 2),
-						Math.randomBetween(0, 2),
+						randomBetween(0, 2),
+						randomBetween(0, 2),
 						options
 					); break;
 			case 3: activeTile.animateOffset(
-						Math.randomBetween(-1, 1),
-						Math.randomBetween(-1, 1),
+						randomBetween(-1, 1),
+						randomBetween(-1, 1),
 						options
 					); break;
 			case 4: activeTile.animateRotation(
-						Math.randomBetween(-Math.PI * 2, Math.PI * 2),
+						randomBetween(-Math.PI * 2, Math.PI * 2),
 						options
 					); break;
 			default: break;

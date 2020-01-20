@@ -20,7 +20,8 @@ Tily.Animation = (function(_super) {
 	const _defaultAnimationOptions = {
 		repeat: false,
 		reverse: false,
-		alternate: false
+		alternate: false,
+		repeatCallback: null
 	};
 	
 	/**
@@ -65,6 +66,12 @@ Tily.Animation = (function(_super) {
 		 * @type {Boolean}
 		 */
 		this.alternate = !!options.alternate;
+
+		/**
+		 * A function to call on each repetition of the animation.
+		 * @type {Function}
+		 */
+		this.repeatCallback = options.repeatCallback;
 		
 		/**
 		 * True if this animation is currently running, false if the animation is currently paused.
@@ -95,6 +102,9 @@ Tily.Animation = (function(_super) {
 		}
 		
 		// Otherwise, if this is a repeating animation then reset the current animation time
+		if (this.repeatCallback) {
+			this.repeatCallback();
+		}
 		if (this.repeat) {
 			if (this.alternate) {
 				this.reverse = !this.reverse;

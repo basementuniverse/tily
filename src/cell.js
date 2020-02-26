@@ -46,7 +46,10 @@ Tily.Cell = (function() {
 	 * layers.
 	 */
 	Cell.prototype.addLayer = function(layer, z) {
-		// Make sure the layer has a reference to this cell
+		// If no layer is specified, create a new one
+		layer = layer || new Tily.TileLayer(this);
+
+		// Make sure the layer has a reference to this buffer
 		layer.container = this;
 		if (z === undefined) {
 			this.layers.push(layer);
@@ -55,6 +58,7 @@ Tily.Cell = (function() {
 		} else {
 			this.layers.splice(z, 0, layer);
 		}
+		return layer;
 	};
 	
 	/**

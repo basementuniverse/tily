@@ -139,9 +139,19 @@ Tily.ActiveTileLayer = (function(_super) {
 		if (this.scale !== null) {
 			context.scale(this.scale.x, this.scale.y);
 		}
-		context.fillText(this.text, -tileSize * 0.5, -tileSize * 0.5);
+		let p;
+		if (this.centered === true) {
+			p = vec2(0, 0);
+			context.textAlign = "center";
+			context.textBaseline = "middle";
+		} else {
+			p = vec2(-tileSize * 0.5, -tileSize * 0.5);
+			context.textAlign = "left";
+			context.textBaseline = "top";
+		}
+		context.fillText(this.text, p.x, p.y);
 		if (this.inheritedOutline !== null) {
-			context.strokeText(this.text, -tileSize * 0.5, -tileSize * 0.5);
+			context.strokeText(this.text, p.x, p.y);
 		}
 		
 		// Render sub-layers contained in this layer
@@ -173,7 +183,8 @@ Tily.ActiveTileLayer = (function(_super) {
 			compositeMode: this.compositeMode,
 			offset: this.offset,
 			scale: this.scale,
-			rotation: this.rotation
+			rotation: this.rotation,
+			centered: this.centered
 		};
 	};
 	
@@ -203,6 +214,7 @@ Tily.ActiveTileLayer = (function(_super) {
 		layer.offset = data.offset;
 		layer.scale = data.scale;
 		layer.rotation = data.rotation;
+		layer.centered = data.centered;
 		return layer;
 	};
 	return ActiveTileLayer;

@@ -160,7 +160,7 @@ Tily.Buffer = (function(_super) {
 		this.canvas.width = width;
 		this.canvas.height = height;
 		this.context.save();
-		this.context.textBaseline = "top";
+		// this.context.textBaseline = "top";
 		this.context.clearRect(0, 0, width, height);
 		var offset = this.updateTransitions(elapsedTime);
 		

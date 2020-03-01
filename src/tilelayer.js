@@ -56,6 +56,13 @@ Tily.TileLayer = (function() {
 		 * @type {Boolean}
 		 */
 		this.clip = false;
+
+		/**
+		 * True if the text in this layer's tiles should be centered.
+		 * @default false
+		 * @type {Boolean}
+		 */
+		this.centered = false;
 		
 		/**
 		 * An array of strings for each tile. If any element in this array has length greater than
@@ -273,6 +280,16 @@ Tily.TileLayer = (function() {
 		}
 		
 		// Render foreground characters
+		let c;
+		if (this.centered === true) {
+			c = vec2.mul(vec2(0.5, 0.5), tileSize);
+			context.textAlign = "center";
+			context.textBaseline = "middle";
+		} else {
+			c = vec2.mul(vec2(0, 0), tileSize);
+			context.textAlign = "left";
+			context.textBaseline = "top";
+		}
 		context.fillStyle = this.foreground;
 		for (let i = r.start, y = r.height; y--; i += r.gap) {
 			for (let x = r.width; x--; i++) {
@@ -284,7 +301,7 @@ Tily.TileLayer = (function() {
 					context.clip();
 				}
 				for (let j = 0, length = this.tiles[i].length; j < length; j++) {
-					context.fillText(this.tiles[i][j], p.x * tileSize - 0.5, p.y * tileSize - 0.5);
+					context.fillText(this.tiles[i][j], p.x * tileSize + c.x, p.y * tileSize + c.y);
 				}
 				if (this.clip) {
 					context.restore();
@@ -310,6 +327,7 @@ Tily.TileLayer = (function() {
 			opacity: this.opacity,
 			compositeMode: this.compositeMode,
 			clip: this.clip,
+			centered: this.centered,
 			tiles: this.tiles
 		};
 	};
@@ -332,6 +350,7 @@ Tily.TileLayer = (function() {
 		layer.opacity = data.opacity;
 		layer.compositeMode = data.compositeMode;
 		layer.clip = data.clip;
+		layer.centered = data.centered;
 		layer.tiles = data.tiles;
 		return layer;
 	};

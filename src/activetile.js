@@ -123,6 +123,13 @@ Tily.ActiveTile = (function(_super) {
 		 * @type {Number}
 		 */
 		this.rotation = 0;
+
+		/**
+		 * True if the text in this active tile should be centered.
+		 * @default false
+		 * @type {Boolean}
+		 */
+		this.centered = false;
 		
 		/**
 		 * True if this active tile should be removed in the next frame.
@@ -275,7 +282,8 @@ Tily.ActiveTile = (function(_super) {
 			compositeMode: this.compositeMode,
 			offset: this.offset,
 			scale: this.scale,
-			rotation: this.rotation
+			rotation: this.rotation,
+			centered: this.centered
 		};
 	};
 	
@@ -305,6 +313,7 @@ Tily.ActiveTile = (function(_super) {
 		tile.offset = data.offset;
 		tile.scale = data.scale;
 		tile.rotation = data.rotation;
+		tile.centered = data.centered;
 		return tile;
 	};
 	return ActiveTile;

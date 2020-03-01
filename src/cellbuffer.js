@@ -132,7 +132,7 @@ Tily.CellBuffer = (function(_super) {
 		this.canvas.width = width;
 		this.canvas.height = height;
 		this.context.save();
-		this.context.textBaseline = "top";
+		// this.context.textBaseline = "top";
 		this.context.clearRect(0, 0, width, height);
 		
 		// Update transitions

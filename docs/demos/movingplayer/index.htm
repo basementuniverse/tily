@@ -100,7 +100,6 @@ window.addEventListener("load", function() {
 				playerTileLayer = new Tily.ActiveTileLayer(playerTile, playerTile);
 			playerTileLayer.foreground = "green";
 			playerTileLayer.text = String.fromCharCode(parseInt("263a", 16));
-			playerTileLayer.offset = vec2(0, -0.15);
 			playerTile.addLayer(playerTileLayer);
 			player.activeTile = playerTile;
 			player.position = maze.entrance;
@@ -113,7 +112,7 @@ window.addEventListener("load", function() {
 		var finishTile = new Tily.ActiveTile(maze.exit.x, maze.exit.y, 2),
 			finishTileLayer = new Tily.ActiveTileLayer(finishTile, finishTile);
 		finishTileLayer.foreground = "red";
-		finishTileLayer.offset = vec2(0.1, 0);
+		finishTileLayer.offset = vec2(0, 0.1);
 		finishTileLayer.text = String.fromCharCode(parseInt("2691", 16));
 		finishTile.addLayer(finishTileLayer);
 		mazeBuffer.addActiveTile(finishTile);

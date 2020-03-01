@@ -103,6 +103,13 @@ Tily.ActiveTileBase = (function() {
 		 * @type {?Number}
 		 */
 		this.rotation = null;
+
+		/**
+		 * If the text in this tile should be centered. Set this to null to inherit from the parent object.
+		 * @default null
+		 * @type {?Boolean}
+		 */
+		this.centered = null;
 	}
 	
 	/**
@@ -225,6 +232,15 @@ Tily.ActiveTileBase = (function() {
 	 * @type {Number}
 	 */
 	createInheritedProperty("rotation", "inheritedRotation");
+
+	/**
+	 * @name inheritedCentered
+	 * @description The centering mode in this layer or inherited from the parent object if null.
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @type {Boolean}
+	 */
+	createInheritedProperty("centered", "inheritedCentered");
 	
 	/**
 	 * Animate this active tile's foreground colour.

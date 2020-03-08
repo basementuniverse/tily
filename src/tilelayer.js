@@ -35,6 +35,20 @@ Tily.TileLayer = (function() {
 		 * @type {String}
 		 */
 		this.background = "";
+
+		/**
+		 * Optional map of foreground colours
+		 * @default null
+		 * @type {String}
+		 */
+		this.foregroundMap = null;
+
+		/**
+		 * Optional map of background colours
+		 * @default null
+		 * @type {String}
+		 */
+		this.backgroundMap = null;
 		
 		/**
 		 * The opacity of this layer's tiles.
@@ -151,6 +165,28 @@ Tily.TileLayer = (function() {
 		}
 		return "";
 	};
+
+	TileLayer.prototype.getForeground = function(x, y) {
+		if (
+			this.foregroundMap !== null &&
+			x >= 0 && x < this.container.size.width &&
+			y >= 0 && y < this.container.size.height
+		) {
+			return this.foregroundMap[index(x, y, this.container.size.width)] || this.foreground;
+		}
+		return this.foreground;
+	};
+
+	TileLayer.prototype.getBackground = function(x, y) {
+		if (
+			this.backgroundMap !== null &&
+			x >= 0 && x < this.container.size.width &&
+			y >= 0 && y < this.container.size.height
+		) {
+			return this.backgroundMap[index(x, y, this.container.size.width)] || this.background;
+		}
+		return this.background;
+	};
 	
 	/**
 	 * Set the characters at the specified tile position.
@@ -161,14 +197,28 @@ Tily.TileLayer = (function() {
 	 * @param {Number} x The x-coordinate of the position.
 	 * @param {Number} y The y-coordinate of the position.
 	 * @param {String} character The character or characters to set.
+	 * @param {String} foreground The foreground colour for this tile, or null to use default
+	 * @param {String} background The background colour for this tile, or null to use default
 	 * @returns {Boolean} True if the tile was set successfully.
 	 */
-	TileLayer.prototype.setTile = function(x, y, character) {
+	TileLayer.prototype.setTile = function(x, y, character, foreground = null, background = null) {
 		if (
 			x >= 0 && x < this.container.size.width &&
 			y >= 0 && y < this.container.size.height
 		) {
 			this.tiles[index(x, y, this.container.size.width)] = character;
+			if (foreground !== null) {
+				if (this.foregroundMap === null) {
+					this.foregroundMap = [];
+				}
+				this.foregroundMap[index(x, y, this.container.size.width)] = foreground;
+			}
+			if (background !== null) {
+				if (this.backgroundMap === null) {
+					this.backgroundMap = [];
+				}
+				this.backgroundMap[index(x, y, this.container.size.width)] = background;
+			}
 			return true;
 		}
 		return false;
@@ -188,11 +238,23 @@ Tily.TileLayer = (function() {
 	 * @param {Number} [x2] The x-coordinate of the bottom-right corner of the region.
 	 * @param {Number} [y2] The y-coordinate of the bottom-right corner of the region.
 	 */
-	TileLayer.prototype.fill = function(character, x1, y1, x2, y2) {
+	TileLayer.prototype.fill = function(character, x1, y1, x2, y2, foreground = null, background = null) {
 		const r = region(x1, y1, x2, y2, this.container.size.width, this.container.size.height);
 		for (let i = r.start, y = r.height; y--; i += r.gap) {
 			for (let x = r.width; x--; i++) {
 				this.tiles[i] = character;
+				if (foreground !== null) {
+					if (this.foregroundMap === null) {
+						this.foregroundMap = [];
+					}
+					this.foregroundMap[i] = foreground;
+				}
+				if (background !== null) {
+					if (this.backgroundMap === null) {
+						this.backgroundMap = [];
+					}
+					this.backgroundMap[i] = background;
+				}
 			}
 		}
 	};
@@ -215,6 +277,12 @@ Tily.TileLayer = (function() {
 		for (let i = r.start, y = r.height; y--; i += r.gap) {
 			for (let x = r.width; x--; i++) {
 				this.tiles[i] = "";
+				if (this.foregroundMap !== null) {
+					this.foregroundMap[i] = null;
+				}
+				if (this.backgroundMap !== null) {
+					this.backgroundMap[i] = null;
+				}
 			}
 		}
 	};
@@ -230,13 +298,22 @@ Tily.TileLayer = (function() {
 	 */
 	TileLayer.prototype.resize = function(width, height) {
 		if (width == this.container.size.width && height == this.container.size.height) { return; }
-		const tiles = [];
+		const tiles = [], foreground = [], background = [];
 		for (let x = 0; x < width; x++) {
 			for (let y = 0; y < height; y++) {
-				tiles[index(x, y, width)] = this.getTile(x, y);
+				const i = index(x, y, width);
+				tiles[i] = this.getTile(x, y);
+				foreground[i] = this.getForeground(x, y);
+				background[i] = this.getBackground(x, y);
 			}
 		}
 		this.tiles = tiles;
+		if (this.foregroundMap) {
+			this.foregroundMap = foreground;
+		}
+		if (this.backgroundMap) {
+			this.backgroundMap = background;
+		}
 	};
 	
 	/**
@@ -262,19 +339,24 @@ Tily.TileLayer = (function() {
 		context.globalAlpha = this.opacity;
 		context.globalCompositeOperation = this.compositeMode;
 		
-		// Render background tiles if a background colour is defined
-		if (this.background) {
+		// Render background tiles if a background colour or background map is defined
+		if (this.background || this.backgroundMap) {
 			context.fillStyle = this.background;
 			for (let i = r.start, y = r.height; y--; i += r.gap) {
 				for (let x = r.width; x--; i++) {
 					if (!this.tiles[i]) { continue; }
 					p = position(i, width);
+					context.save();
+					if (this.backgroundMap && this.backgroundMap[i]) {
+						context.fillStyle = this.backgroundMap[i];
+					}
 					context.fillRect(
 						p.x * tileSize - 0.5,
 						p.y * tileSize - 0.5,
 						tileSize + 1,
 						tileSize + 1
 					);
+					context.restore();
 				}
 			}
 		}
@@ -295,17 +377,18 @@ Tily.TileLayer = (function() {
 			for (let x = r.width; x--; i++) {
 				if (!this.tiles[i]) { continue; }
 				p = position(i, width);
+				context.save();
+				if (this.foregroundMap && this.foregroundMap[i]) {
+					context.fillStyle = this.foregroundMap[i];
+				}
 				if (this.clip) {	// Clip tile boundaries if clipping is enabled
-					context.save();
 					context.rect(p.x * tileSize, p.y * tileSize, tileSize, tileSize);
 					context.clip();
 				}
 				for (let j = 0, length = this.tiles[i].length; j < length; j++) {
 					context.fillText(this.tiles[i][j], p.x * tileSize + c.x, p.y * tileSize + c.y);
 				}
-				if (this.clip) {
-					context.restore();
-				}
+				context.restore();
 			}
 		}
 		context.restore();
@@ -324,6 +407,8 @@ Tily.TileLayer = (function() {
 			font: this.font,
 			foreground: this.foreground,
 			background: this.background,
+			foregroundMap: this.foregroundMap,
+			backgroundMap: this.backgroundMap,
 			opacity: this.opacity,
 			compositeMode: this.compositeMode,
 			clip: this.clip,
@@ -347,6 +432,8 @@ Tily.TileLayer = (function() {
 		layer.font = data.font;
 		layer.foreground = data.foreground;
 		layer.background = data.background;
+		layer.foregroundMap = data.foregroundMap;
+		layer.backgroundMap = data.backgroundMap;
 		layer.opacity = data.opacity;
 		layer.compositeMode = data.compositeMode;
 		layer.clip = data.clip;

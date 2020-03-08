@@ -149,10 +149,10 @@ Tily.ActiveTileLayer = (function(_super) {
 			context.textAlign = "left";
 			context.textBaseline = "top";
 		}
-		context.fillText(this.text, p.x, p.y);
 		if (this.inheritedOutline !== null) {
 			context.strokeText(this.text, p.x, p.y);
 		}
+		context.fillText(this.text, p.x, p.y);
 		
 		// Render sub-layers contained in this layer
 		for (let i = 0, length = this.layers.length; i < length; i++) {

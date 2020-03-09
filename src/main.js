@@ -187,7 +187,7 @@ Tily.Main = (function() {
 		this.context.save();
 		this.context.clearRect(0, 0, this.width, this.height);
 		if (typeof this.options.beforeDrawFunction == "function") {
-			this.options.beforeDrawFunction.call(this, elapsedTime);
+			this.options.beforeDrawFunction.call(this, this.canvas, this.context, this.width, this.height, elapsedTime);
 		}
 		
 		// Draw the active buffer and handle buffer fade transition
@@ -211,7 +211,7 @@ Tily.Main = (function() {
 			this.activeBuffer.draw(this.context, elapsedTime, width, height);
 		}
 		if (typeof this.options.afterDrawFunction == "function") {
-			this.options.afterDrawFunction.call(this, elapsedTime);
+			this.options.afterDrawFunction.call(this, this.canvas, this.context, this.width, this.height, elapsedTime);
 		}
 		this.context.restore();
 		if (this.options.showFPS) {

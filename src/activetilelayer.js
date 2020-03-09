@@ -150,6 +150,7 @@ Tily.ActiveTileLayer = (function(_super) {
 			context.textBaseline = "top";
 		}
 		if (this.inheritedOutline !== null) {
+			context.miterLimit = 2;
 			context.strokeText(this.text, p.x, p.y);
 		}
 		context.fillText(this.text, p.x, p.y);

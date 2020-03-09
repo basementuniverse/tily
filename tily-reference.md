@@ -126,6 +126,8 @@ Specify the z-ordering for this layer:
 const layer = buffer.addLayer(null, z);
 ```
 
+_Note: once a layer is added to a buffer, you can move it around using `buffer.moveLayer()`_
+
 The resulting layer object:
 ```
 // layer
@@ -223,10 +225,9 @@ The resulting active tile object:
     rotation: 0,            // radians
     scale: vec2,
     zIndex: 0,
-    outline: '',
-    shadow: '',
-    compositeMode: '',
-
+    outline: '',            // a string like 'size colour' eg. '0.1 black', size measured in tiles
+    shadow: '',             // a string like 'blur x y colour' eg. '0.1 0.2 0.2 black', blur and offsets measured in tiles
+    compositeMode: '',      // a js canvas globalCompositeOperation mode
     getData(),
     static fromData(data),
 

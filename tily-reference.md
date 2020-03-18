@@ -242,7 +242,11 @@ The resulting active tile object:
     animateOffset(x, y, { ... }),
     animateOpacity(opacity, { ... }),
     animateRotation(angle, { ... }),
-    animateScale(x, y, { ... })
+    animateScale(x, y, { ... }),
+
+    pauseAnimations(inherit = true),
+    runAnimations(inherit = true),
+    resetAnimations(inherit = true)
 }
 ```
 

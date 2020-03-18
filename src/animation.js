@@ -80,6 +80,39 @@ Tily.Animation = (function(_super) {
 		 */
 		this.running = true;
 	}
+
+	/**
+	 * Pause this animation.
+	 * @name pause
+	 * @function
+	 * @instance
+	 * @memberof Tily.Animation
+	 */
+	Animation.prototype.pause = function() {
+		this.running = false;
+	};
+
+	/**
+	 * Un-pause this animation.
+	 * @name run
+	 * @function
+	 * @instance
+	 * @memberof Tily.Animation
+	 */
+	Animation.prototype.run = function() {
+		this.running = true;
+	};
+
+	/**
+	 * Reset this animation.
+	 * @name reset
+	 * @function
+	 * @instance
+	 * @memberof Tily.Animation
+	 */
+	Animation.prototype.reset = function() {
+		this.currentTime = 0;
+	};
 	
 	/**
 	 * Update the animation.

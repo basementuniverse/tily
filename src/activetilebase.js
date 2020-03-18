@@ -241,6 +241,51 @@ Tily.ActiveTileBase = (function() {
 	 * @type {Boolean}
 	 */
 	createInheritedProperty("centered", "inheritedCentered");
+
+	/**
+	 * Pause all animations below this layer.
+	 * @name pauseAnimations
+	 * @function
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @param {Boolean} [inherit] If true (default) then pass down to child layers
+	 */
+	ActiveTileBase.prototype.pauseAnimations = function(inherit = true) {
+		this.animations.forEach(a => a.pause());
+		if (inherit) {
+			this.layers.forEach(l => l.pauseAnimations(inherit));
+		}
+	};
+
+	/**
+	 * Un-pause all animations below this layer.
+	 * @name runAnimations
+	 * @function
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @param {Boolean} [inherit] If true (default) then pass down to child layers
+	 */
+	ActiveTileBase.prototype.runAnimations = function(inherit = true) {
+		this.animations.forEach(a => a.run());
+		if (inherit) {
+			this.layers.forEach(l => l.runAnimations(inherit));
+		}
+	};
+
+	/**
+	 * Reset all animations below this layer.
+	 * @name resetAnimations
+	 * @function
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @param {Boolean} [inherit] If true (default) then pass down to child layers
+	 */
+	ActiveTileBase.prototype.resetAnimations = function(inherit = true) {
+		this.animations.forEach(a => a.reset());
+		if (inherit) {
+			this.layers.forEach(l => l.resetAnimations(inherit));
+		}
+	};
 	
 	/**
 	 * Animate this active tile's foreground colour.

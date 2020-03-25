@@ -199,13 +199,13 @@ Tily.BufferBase = (function() {
 			...options
 		};
 		var offset = vec2(x, y);
-		if (options.unit == "px") {	// Adjust the offset position if moving in pixels
+		if (options && options.unit == "px") {	// Adjust the offset position if moving in pixels
 			offset = vec2.div(offset, this.tileSize);
 		}
 		if (this.offsetTransition) {
 			this.offset = this.offsetTransition.update(0);
 		}
-		if (options.relative === true) {	// Add the current position if moving relatively
+		if (options && options.relative === true) {	// Add the current position if moving relatively
 			offset = vec2.add(this.offset, offset);
 		}
 		const transition = new Tily.OffsetTransition(vec2(this.offset), vec2(offset), options);

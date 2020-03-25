@@ -286,6 +286,21 @@ Tily.ActiveTileBase = (function() {
 			this.layers.forEach(l => l.resetAnimations(inherit));
 		}
 	};
+
+	/**
+	 * Stop and remove all animations below this layer.
+	 * @name stopAnimations
+	 * @function
+	 * @instance
+	 * @memberof Tily.ActiveTileBase
+	 * @param {Boolean} [inherit] If true (default) then pass down to child layers
+	 */
+	ActiveTileBase.prototype.stopAnimations = function(inherit = true) {
+		this.animations = [];
+		if (inherit) {
+			this.layers.forEach(l => { l.animations = []; });
+		}
+	};
 	
 	/**
 	 * Animate this active tile's foreground colour.
@@ -391,7 +406,7 @@ Tily.ActiveTileBase = (function() {
 	ActiveTileBase.prototype.animateOffset = function(x, y, options) {
 		const current = vec2(this.inheritedOffset);
 		var offset = vec2(x, y);
-		if (options.relative === true) {	// Add the current offset if moving relatively
+		if (options && options.relative === true) {	// Add the current offset if moving relatively
 			offset = vec2.add(current, offset);
 		}
 		const animation = new Tily.OffsetAnimation(this, current, vec2(offset), options);
@@ -419,7 +434,7 @@ Tily.ActiveTileBase = (function() {
 	 */
 	ActiveTileBase.prototype.animateRotation = function(angle, options) {
 		const current = this.inheritedRotation;
-		if (options.relative === true) {	// Add the current angle if rotating relatively
+		if (options && options.relative === true) {	// Add the current angle if rotating relatively
 			angle += current;
 		}
 		const animation = new Tily.RotationAnimation(this, current, angle, options);

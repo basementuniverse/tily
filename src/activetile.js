@@ -138,6 +138,27 @@ Tily.ActiveTile = (function(_super) {
 		 */
 		this.destroyed = false;
 	}
+	/**
+	 * Animate this active tile's position.
+	 * @name move
+	 * @function
+	 * @instance
+	 * @memberof Tily.ActiveTile
+	 * @param {String} direction The movement direction, either 'up', 'down', 'left', 'right'.
+	 * @param {AnimationOptions} [options] An optional options object.
+	 */
+	ActiveTile.prototype.move = function(direction, options) {
+		const directions = {
+			up: vec2(0, -1),
+			down: vec2(0, 1),
+			left: vec2(-1, 0),
+			right: vec2(1, 0)
+		};
+		this.position = vec2.add(this.position, directions[direction]);
+		const animation = new Tily.OffsetAnimation(this, vec2.mul(directions[direction], -1), vec2(), options);
+		this.animations.push(animation);
+		return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
+	};
 	
 	/**
 	 * Add an active tile layer to this active tile at the specified z-index. If the z-index is

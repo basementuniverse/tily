@@ -236,6 +236,7 @@ The resulting active tile object:
     removeLayer(z),
     removeAllLayers(),
 
+    move(direction, { ... }),   // direction is a string like 'up', 'down', 'left' or 'right'
     animateForeground(fg, { repeat, reverse, alternate, time, easeFunction, callback }),
     animateOutline(outline, { ... }),
     animateShadow(shadow, { ... }),

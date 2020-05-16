@@ -12,6 +12,9 @@
 
 Math.randomBetween = (min, max) => Math.random() * (max - min) + min;
 Math.randomIntBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+Object.defineProperty(Array.prototype, 'shuffle', { value: function() {
+    return this.map(a => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map(a => a[1]);
+} });
 
 window.addEventListener("load", function() {
 	var tily = new Tily.Main(document.querySelector("#tily")),

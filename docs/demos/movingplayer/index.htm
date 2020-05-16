@@ -10,6 +10,9 @@
 <script src="scripts/maze.js"></script>
 <script>
 
+const randomBetween = (min, max) => Math.random() * (max - min) + min;
+const randomIntBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 window.addEventListener("load", function() {
 	var tily = new Tily.Main(document.querySelector("#tily")),
 		hammer = new Hammer.Manager(document, { recognizers: [

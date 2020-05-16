@@ -15,6 +15,9 @@
 <script src="scripts/building_icons.js"></script>
 <script>
 
+Math.randomBetween = (min, max) => Math.random() * (max - min) + min;
+Math.randomIntBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 WebFontConfig = {
 	custom: {
 		urls: [

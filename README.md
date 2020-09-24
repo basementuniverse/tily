@@ -33,7 +33,3 @@ Just load `tily.min.js` in your page and create a [`Tily.Main`](https://basement
 - [Lots of animations and transitions](https://basementuniverse.github.io/tily/demos/animations/index.htm)
 - [An infinite procedurally-generated buffer](https://basementuniverse.github.io/tily/demos/proceduralbuffer/index.htm)
 - [Map Painter](https://basementuniverse.github.io/tily/demos/mappainter/index.htm)
-
-### Notes
-
-Tily includes [vec2.js](https://github.com/basementuniverse/vec2) ~and [common.js](https://github.com/basementuniverse/commonjs)~. See their repositories for documentation.

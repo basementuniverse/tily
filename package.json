@@ -1,0 +1,30 @@
+{
+  "name": "tily",
+  "version": "1.0.0",
+  "description": "A font-based tile engine",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basementuniverse/tily.git"
+  },
+  "author": "basementuniverse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/basementuniverse/tily/issues"
+  },
+  "homepage": "https://github.com/basementuniverse/tily#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-wrap": "^0.15.0",
+    "jsdoc": "^3.6.6"
+  }
+}

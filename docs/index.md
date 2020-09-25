@@ -1,12 +1,12 @@
 # API
 
-[API documentation](api/index.html)
+- [API documentation](api/index.html)
 
 # Guides
 
-[Overview](guides/overview.html)
-[Buffers](guides/buffers.html)
-[Active Tiles](guides/activetiles.html)
+- [Overview](guides/overview.html)
+- [Buffers](guides/buffers.html)
+- [Active Tiles](guides/activetiles.html)
 
 # Demos
 

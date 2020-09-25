@@ -30,8 +30,8 @@ var tily = new Tily.Main(document.querySelector("#tily-canvas"));
 
 ### Demos
 
-- [Moving a player around the screen](https://basementuniverse.github.io/tily/demos/movingplayer/index.htm)
-- [A really big buffer](https://basementuniverse.github.io/tily/demos/largebuffer/index.htm)
-- [Lots of animations and transitions](https://basementuniverse.github.io/tily/demos/animations/index.htm)
-- [An infinite procedurally-generated buffer](https://basementuniverse.github.io/tily/demos/proceduralbuffer/index.htm)
-- [Map Painter](https://basementuniverse.github.io/tily/demos/mappainter/index.htm)
+- [Moving a player around the screen](https://basementuniverse.github.io/tily/demos/movingplayer/index.html)
+- [A really big buffer](https://basementuniverse.github.io/tily/demos/largebuffer/index.html)
+- [Lots of animations and transitions](https://basementuniverse.github.io/tily/demos/animations/index.html)
+- [An infinite procedurally-generated buffer](https://basementuniverse.github.io/tily/demos/proceduralbuffer/index.html)
+- [Map Painter](https://basementuniverse.github.io/tily/demos/mappainter/index.html)

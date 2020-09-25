@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Tily Guide - Buffers</title>
-    <script src="../scripts/prettify/prettify.js"></script>
-    <script src="../scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="../styles/prettify.css">
-    <link type="text/css" rel="stylesheet" href="../styles/jsdoc.css">
+    <script src="../api/scripts/prettify/prettify.js"></script>
+    <script src="../api/scripts/prettify/lang-css.js"></script>
+    <link type="text/css" rel="stylesheet" href="../api/styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="../api/styles/jsdoc.css">
 </head>
+
 <body>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
+    <nav>
+        <h2><a href="../index.html">Home</a></h2>
+        <h3>Guides</h3>
+        <ul>
+            <li><a href="overview.html">Overview</a>
+                <ul class='methods'>
+                    <li data-type='method'><a href="overview.html#the-starting-point">The Starting Point</a></li>
+                    <li data-type='method'><a href="overview.html#buffers">Buffers</a></li>
+                    <li data-type='method'><a href="overview.html#layers">Layers</a></li>
+                    <li data-type='method'><a href="overview.html#active-tiles">Active Tiles</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="buffers.html">Buffers</a>
+                <ul class='methods'>
+                    <li data-type='method'><a href="buffers.html#creating-a-buffer">Creating a Buffer</a></li>
+                    <li data-type='method'><a href="buffers.html#activating-a-buffer">Activating a Buffer</a></li>
+                    <li data-type='method'><a href="buffers.html#adding-layers-and-tiles">Adding Layers and Tiles</a></li>
+                    <li data-type='method'><a href="buffers.html#creating-a-cell-buffer">Creating a Cell-Buffer</a></li>
+                    <li data-type='method'><a href="buffers.html#panning-and-zooming">Panning and Zooming</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="activetiles.html">Creating Active Tiles</a>
+                <ul class='methods'>
+                    <li data-type='method'><a href="activetiles.html#creating-an-active-tile">Creating an Active Tile</a></li>
+                    <li data-type='method'><a href="activetiles.html#adding-layers">Adding Layers</a></li>
+                    <li data-type='method'><a href="activetiles.html#transforming-active-tiles">Transforming Active Tiles</a></li>
+                    <li data-type='method'><a href="activetiles.html#animating-active-tiles">Animating Active Tiles</a></li>
+                    <li data-type='method'><a href="activetiles.html#text-animations">Text Animations</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
-<label for="nav-trigger" class="overlay"></label>
-
-<nav>
-<h2><a href="../index.html">Home</a></h2>
-<h3>Guides</h3>
-<ul><li><a href="overview.htm">Overview</a><ul class='methods'><li data-type='method'><a href="overview.htm#the-starting-point">The Starting Point</a></li><li data-type='method'><a href="overview.htm#buffers">Buffers</a></li><li data-type='method'><a href="overview.htm#layers">Layers</a></li><li data-type='method'><a href="overview.htm#active-tiles">Active Tiles</a></li></ul></li></ul>
-<ul><li><a href="buffers.htm">Buffers</a><ul class='methods'><li data-type='method'><a href="buffers.htm#creating-a-buffer">Creating a Buffer</a></li><li data-type='method'><a href="buffers.htm#activating-a-buffer">Activating a Buffer</a></li><li data-type='method'><a href="buffers.htm#adding-layers-and-tiles">Adding Layers and Tiles</a></li><li data-type='method'><a href="buffers.htm#creating-a-cell-buffer">Creating a Cell-Buffer</a></li><li data-type='method'><a href="buffers.htm#panning-and-zooming">Panning and Zooming</a></li></ul></li></ul>
-<ul><li><a href="activetiles.htm">Creating Active Tiles</a><ul class='methods'><li data-type='method'><a href="activetiles.htm#creating-an-active-tile">Creating an Active Tile</a></li><li data-type='method'><a href="activetiles.htm#adding-layers">Adding Layers</a></li><li data-type='method'><a href="activetiles.htm#transforming-active-tiles">Transforming Active Tiles</a></li><li data-type='method'><a href="activetiles.htm#animating-active-tiles">Animating Active Tiles</a></li><li data-type='method'><a href="activetiles.htm#text-animations">Text Animations</a></li></ul></li></ul>
-</nav>
-
-<div id="main">
-<section class="readme">
-<h1 id="-tily-logo-images-tily-svg-tily-logo-tily"><img src="../images/tily.svg" alt="Tily Logo" title="Tily Logo"> Tily</h1>
-<h2 id="buffers">Buffers</h2>
-<hr>
-<h2 id="creating-a-buffer">Creating a Buffer</h2>
-<p>For these examples, we&#39;ll assume that you have included <code>tily.min.js</code> and you&#39;ve got a canvas element with the id <code>tily-canvas</code> somewhere on the page.</p>
-<p>Anyway, here&#39;s how to create a buffer:</p>
-<pre class="prettyprint source"><code>// First we create a Tily instance
+    <div id="main">
+        <section class="readme">
+            <h1 id="-tily-logo-images-tily-svg-tily-logo-tily"><img src="../images/tily.svg" alt="Tily Logo" title="Tily Logo"> Tily</h1>
+            <h2 id="buffers">Buffers</h2>
+            <hr>
+            <h2 id="creating-a-buffer">Creating a Buffer</h2>
+            <p>For these examples, we&#39;ll assume that you have included <code>tily.min.js</code> and you&#39;ve got a
+                canvas element with the id <code>tily-canvas</code> somewhere on the page.</p>
+            <p>Anyway, here&#39;s how to create a buffer:</p>
+            <pre class="prettyprint source"><code>// First we create a Tily instance
 var tily = new Tily.Main(document.querySelector("#tily-canvas"));
 
 // Create a buffer that is 32 tiles wide by 24 tiles high
 var buffer = new Tily.Buffer(32, 24);
 </code></pre>
 
-<h2 id="activating-a-buffer">Activating a Buffer</h2>
-<p>We need to activate the buffer to start rendering it:</p>
-<pre class="prettyprint source"><code>// Activate the buffer immediately
+            <h2 id="activating-a-buffer">Activating a Buffer</h2>
+            <p>We need to activate the buffer to start rendering it:</p>
+            <pre class="prettyprint source"><code>// Activate the buffer immediately
 tily.activateBuffer(buffer);
 
 // We could also fade the buffer in with a 1-second animation
@@ -59,10 +81,13 @@ tily.activateBuffer(buffer, { time: 1 }).then(function() { console.log("Done!");
 tily.activateBuffer(buffer, { time: 1, finishedCallback: function() { console.log("Done!"); } });
 </code></pre>
 
-<p>So, we&#39;ve created a buffer and activated it. But, of course, you won&#39;t be able to see anything because we haven&#39;t added any layers or tiles to the buffer yet.</p>
-<h2 id="adding-layers-and-tiles">Adding Layers and Tiles</h2>
-<p>Let&#39;s add two layers. The bottom layer (we&#39;ll call this the <em>grass</em> layer) will be filled with coloured tiles and the top layer will have a few string characters randomly placed (we&#39;ll call this the <em>trees</em> layer):</p>
-<pre class="prettyprint source"><code>var tily = new Tily.Main(document.querySelector("#tily-canvas"));
+            <p>So, we&#39;ve created a buffer and activated it. But, of course, you won&#39;t be able to see anything
+                because we haven&#39;t added any layers or tiles to the buffer yet.</p>
+            <h2 id="adding-layers-and-tiles">Adding Layers and Tiles</h2>
+            <p>Let&#39;s add two layers. The bottom layer (we&#39;ll call this the <em>grass</em> layer) will be filled
+                with coloured tiles and the top layer will have a few string characters randomly placed (we&#39;ll call
+                this the <em>trees</em> layer):</p>
+            <pre class="prettyprint source"><code>var tily = new Tily.Main(document.querySelector("#tily-canvas"));
 
 // First, set up some options for our buffer
 var options = {
@@ -95,16 +120,27 @@ treesLayer.setTile(7, 2, "#");
 tily.activateBuffer(buffer);
 </code></pre>
 
-<p>Check out the result <a href="buffers_1.htm">here</a>!</p>
-<p>Some notes about the above code:</p>
-<ul>
-<li>The <a href="../global.html#BufferOptions"><code>clampCamera</code></a> option means that the camera offset and scale will be clamped such that the canvas is always filled with tiles. In other words, the camera won&#39;t be able to go off the edge of the buffer.</li>
-<li>Notice that when we created each layer, we passed in the buffer as an argument. This is technically optional, because when we add them to the buffer it will automatically make sure they have a reference to the buffer. However in order to set or fill tiles, the layer will need to know about the buffer in which it is contained (so it knows the dimensions). It&#39;s probably best to pass the buffer into the constructor like this, so that you can avoid errors.</li>
-<li>When we filled the grass layer with tiles we didn&#39;t pass any other arguments in. We could have defined an area to fill by setting top-left and bottom-right corners, but by not passing any arguments in, it just fills the entire layer. In this case, <code>grassLayer.fill(&quot; &quot;)</code> is the same as <code>grassLayer.fill(&quot; &quot;, 0, 0, 32, 24)</code>.</li>
-</ul>
-<h2 id="creating-a-cell-buffer">Creating a Cell-Buffer</h2>
-<p>Creating a cell-buffer is pretty much the same, except that we add layers to each cell as we generate them. Cells are generated using a cell function. Here&#39;s an example of this:</p>
-<pre class="prettyprint source"><code>var tily = new Tily.Main(document.querySelector("#tily-canvas"));
+            <p>Check out the result <a href="buffers_1.html">here</a>!</p>
+            <p>Some notes about the above code:</p>
+            <ul>
+                <li>The <a href="../api/global.html#BufferOptions"><code>clampCamera</code></a> option means that the camera
+                    offset and scale will be clamped such that the canvas is always filled with tiles. In other words,
+                    the camera won&#39;t be able to go off the edge of the buffer.</li>
+                <li>Notice that when we created each layer, we passed in the buffer as an argument. This is technically
+                    optional, because when we add them to the buffer it will automatically make sure they have a
+                    reference to the buffer. However in order to set or fill tiles, the layer will need to know about
+                    the buffer in which it is contained (so it knows the dimensions). It&#39;s probably best to pass the
+                    buffer into the constructor like this, so that you can avoid errors.</li>
+                <li>When we filled the grass layer with tiles we didn&#39;t pass any other arguments in. We could have
+                    defined an area to fill by setting top-left and bottom-right corners, but by not passing any
+                    arguments in, it just fills the entire layer. In this case,
+                    <code>grassLayer.fill(&quot; &quot;)</code> is the same as
+                    <code>grassLayer.fill(&quot; &quot;, 0, 0, 32, 24)</code>.</li>
+            </ul>
+            <h2 id="creating-a-cell-buffer">Creating a Cell-Buffer</h2>
+            <p>Creating a cell-buffer is pretty much the same, except that we add layers to each cell as we generate
+                them. Cells are generated using a cell function. Here&#39;s an example of this:</p>
+            <pre class="prettyprint source"><code>var tily = new Tily.Main(document.querySelector("#tily-canvas"));
 
 // First, set up some options for our buffer
 var options = {
@@ -163,11 +199,18 @@ var buffer = new Tily.CellBuffer(options);
 tily.activateBuffer(buffer);
 </code></pre>
 
-<p>And there you go, <a href="buffers_2.htm">infinite Tily tartan</a>!</p>
-<h2 id="panning-and-zooming">Panning and Zooming</h2>
-<p>Each buffer handles its own offset position (for panning the camera) and scale (for zooming the camera). You can either set the <a href="../Tily.BufferBase.html#offset"><code>offset</code></a> and <a href="../Tily.BufferBase.html#scale"><code>scale</code></a> properties directly or you can use the <a href="../Tily.BufferBase.html#moveOffset"><code>moveOffset</code></a> and <a href="../Tily.BufferBase.html#zoom"><code>zoom</code></a> methods.</p>
-<p>The offset position is a <code>vec2</code> type, which is basically an object with <code>x</code> and <code>y</code> properties. It is measured in pixels. When using <a href="../Tily.BufferBase.html#moveOffset"><code>moveOffset</code></a>, the offset arguments will be measured in tiles, however you can set this to pixels instead. Here&#39;s an example:</p>
-<pre class="prettyprint source"><code>// Moves the offset to an absolute tile position with a 1-second animation
+            <p>And there you go, <a href="buffers_2.html">infinite Tily tartan</a>!</p>
+            <h2 id="panning-and-zooming">Panning and Zooming</h2>
+            <p>Each buffer handles its own offset position (for panning the camera) and scale (for zooming the camera).
+                You can either set the <a href="../api/Tily.BufferBase.html#offset"><code>offset</code></a> and <a
+                    href="../api/Tily.BufferBase.html#scale"><code>scale</code></a> properties directly or you can use the
+                <a href="../api/Tily.BufferBase.html#moveOffset"><code>moveOffset</code></a> and <a
+                    href="../api/Tily.BufferBase.html#zoom"><code>zoom</code></a> methods.</p>
+            <p>The offset position is a <code>vec2</code> type, which is basically an object with <code>x</code> and
+                <code>y</code> properties. It is measured in pixels. When using <a
+                    href="../api/Tily.BufferBase.html#moveOffset"><code>moveOffset</code></a>, the offset arguments will be
+                measured in tiles, however you can set this to pixels instead. Here&#39;s an example:</p>
+            <pre class="prettyprint source"><code>// Moves the offset to an absolute tile position with a 1-second animation
 buffer.moveOffset(3, 4, { time: 1 });
 
 // Moves the offset down and to the left by 2 tiles with a 1-second animation
@@ -177,8 +220,11 @@ buffer.moveOffset(2, 2, { time: 1, relative: true });
 buffer.moveOffset(100, 100, { time: 1, unit: "px" });
 </code></pre>
 
-<p>The scale represents the number of tiles visible along the locked axis, which can be configured when you create the buffer. For example, if the scale is <code>8</code> and the locked axis is <code>x</code> then there will always be 8 tiles visible along the x-axis, regardless of the size of the canvas. Here&#39;s an example:</p>
-<pre class="prettyprint source"><code>// Locking the y-axis when creating a buffer. This means that when
+            <p>The scale represents the number of tiles visible along the locked axis, which can be configured when you
+                create the buffer. For example, if the scale is <code>8</code> and the locked axis is <code>x</code>
+                then there will always be 8 tiles visible along the x-axis, regardless of the size of the canvas.
+                Here&#39;s an example:</p>
+            <pre class="prettyprint source"><code>// Locking the y-axis when creating a buffer. This means that when
 // the canvas is resized, tiles will scale based on the canvas height.
 var buffer = new Tily.Buffer(32, 24, { lockedAxis: "y" });
 
@@ -186,8 +232,8 @@ var buffer = new Tily.Buffer(32, 24, { lockedAxis: "y" });
 buffer.zoom(16, { time: 1});
 </code></pre>
 
-<p>You can also call a function when the offset or scale transition finishes:</p>
-<pre class="prettyprint source"><code>// Pan/zoom the camera then display a message in the console
+            <p>You can also call a function when the offset or scale transition finishes:</p>
+            <pre class="prettyprint source"><code>// Pan/zoom the camera then display a message in the console
 buffer.moveOffset(1, 1, { time: 1 }).then(function() { console.log("Done panning!"); });
 buffer.zoom(16, { time: 1 }).then(function() { console.log("Done zooming!"); });
 
@@ -196,10 +242,11 @@ buffer.zoom(16, { time: 1 }).then(function() { console.log("Done zooming!"); });
 buffer.moveOffset(1, 1, { time: 1, finishedCallback: function() { console.log("Done panning!"); } });
 buffer.zoom(16, { time: 1, finishedCallback: function() { console.log("Done zooming!"); } });
 </code></pre>
-</section>
-</div>
-<br class="clear">
-<script>prettyPrint();</script>
-<script src="../scripts/linenumber.js"></script>
+        </section>
+    </div>
+    <br class="clear">
+    <script>prettyPrint();</script>
+    <script src="../scripts/linenumber.js"></script>
 </body>
+
 </html>

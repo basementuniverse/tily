@@ -1,4 +1,4 @@
-# ![](docs/images/tily.svg) Tily
+# ![](tily.svg) Tily
 
 A basic font-based tile engine.
 
@@ -26,7 +26,8 @@ var tily = new Tily.Main(document.querySelector("#tily-canvas"));
 </script>
 ```
 
-[Documentation](https://basementuniverse.github.io/tily/index.html)
+[Quick Reference](tily-reference.md)
+[API documentation](https://basementuniverse.github.io/tily/index.html)
 
 ### Demos
 

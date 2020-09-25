@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: transition.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: transition.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>Tily.Transition = (function() {
+  "use strict";
+  
+  /**
+   * @callback easeFunction
+   * @param {any} a The starting value.
+   * @param {any} b The finishing value.
+   * @param {Number} i The interpolation value, between 0 (start) and 1 (finish).
+   * @returns {any} The interpolated value between a and b.
+   */
+  /**
+   * @callback finishedCallback
+   * @param {any} start The previous value before transitioning.
+   * @param {any} finish The new value after transitioning.
+   */
+  /**
+   * @typedef TransitionOptions
+   * @type {Object}
+   * @property {Number} [time=0] The amount of time in seconds that this transition should take
+   * to complete.
+   * @property {easeFunction} [easeFunction=Tily.utility.lerp] The easing function to use while
+   * transitioning.
+   * @property {?finishedCallback} [finishedCallback=null] A callback function that will be
+   * called once the transition has finished.
+   */
+  /**
+   * Default transition options, used as a fall-back for options passed to the constructor.
+   * @type {TransitionOptions}
+   */
+  const _defaultTransitionOptions = {
+    time: 0,
+    easeFunction: null,
+    finishedCallback: null
+  };
+  
+  /**
+   * Represents a timed transition from one value to another.
+   * @class
+   * @memberof Tily
+   * @param {any} start The starting value.
+   * @param {any} finish The finishing value.
+   * @options {TransitionOptions} [options] An optional options object for configuring the
+   * transition.
+   */
+  function Transition(start, finish, options) {
+    options = { ..._defaultTransitionOptions, ...options || {} };
+    
+    /**
+     * The starting value.
+     * @type {any}
+     */
+    this.start = start;
+    
+    /**
+     * The finishing value.
+     * @type {any}
+     */
+    this.finish = finish;
+    
+    /**
+     * The total amount of time that this transition should take.
+     * @type {Number}
+     */
+    this.totalTime = options.time;
+    
+    /**
+     * The current time elapsed since the transition began.
+     * @type {Number}
+     */
+    this.currentTime = 0;
+    
+    /**
+     * The easing function to use while transitioning.
+     * @default Tily.utility.lerp
+     * @type {easeFunction}
+     */
+    this.easeFunction = options.easeFunction || Tily.utility.lerp;
+    
+    /**
+     * A callback function that will be called once the transition has finished.
+     * @default null
+     * @type {?finishedCallback}
+     */
+    this.finishedCallback = options.finishedCallback || function(start, finish) { };
+    
+    /**
+     * True if this transition has finished and can be discarded.
+     * @type {Boolean}
+     */
+    this.finished = false;
+  }
+  
+  /**
+   * Update the transition.
+   * @name update
+   * @function
+   * @instance
+   * @memberof Tily.Transition
+   * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
+   * @returns {any} An interpolated value between the start and finish values.
+   */
+  Transition.prototype.update = function(elapsedTime) {
+    this.currentTime += elapsedTime;
+    
+    // If transition is currently in progress, ease from start to finish value
+    if (this.currentTime &lt; this.totalTime) {
+      return this.easeFunction(this.start, this.finish, this.amount);
+    }
+    
+    // Otherwise, transition has finished
+    if (this.finishedCallback &amp;&amp; !this.finished) {
+      this.finishedCallback(this.start, this.finish);
+    }
+    this.finished = true;
+    return this.finish;
+  };
+  
+  /**
+   * @name amount
+   * @description The current interpolation amount between 0 and 1 (inclusive).
+   * @instance
+   * @memberof Tily.Transition
+   * @type {Number}
+   */
+  Object.defineProperty(Transition.prototype, "amount", {
+    get: function() {
+      return Tily.utility.clamp(this.currentTime / this.totalTime);
+    }
+  });
+  return Transition;
+}());
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Tily.html">Tily</a></li></ul><h3>Classes</h3><ul><li><a href="Tily.ActiveTile.html">ActiveTile</a></li><li><a href="Tily.ActiveTileBase.html">ActiveTileBase</a></li><li><a href="Tily.ActiveTileLayer.html">ActiveTileLayer</a></li><li><a href="Tily.Animation.html">Animation</a></li><li><a href="Tily.Buffer.html">Buffer</a></li><li><a href="Tily.BufferBase.html">BufferBase</a></li><li><a href="Tily.BufferTransition.html">BufferTransition</a></li><li><a href="Tily.Cell.html">Cell</a></li><li><a href="Tily.CellBuffer.html">CellBuffer</a></li><li><a href="Tily.ForegroundAnimation.html">ForegroundAnimation</a></li><li><a href="Tily.Main.html">Main</a></li><li><a href="Tily.OffsetAnimation.html">OffsetAnimation</a></li><li><a href="Tily.OffsetTransition.html">OffsetTransition</a></li><li><a href="Tily.OpacityAnimation.html">OpacityAnimation</a></li><li><a href="Tily.OutlineAnimation.html">OutlineAnimation</a></li><li><a href="Tily.RotationAnimation.html">RotationAnimation</a></li><li><a href="Tily.ScaleAnimation.html">ScaleAnimation</a></li><li><a href="Tily.ScaleTransition.html">ScaleTransition</a></li><li><a href="Tily.ShadowAnimation.html">ShadowAnimation</a></li><li><a href="Tily.TextAnimation.html">TextAnimation</a></li><li><a href="Tily.TileLayer.html">TileLayer</a></li><li><a href="Tily.Transition.html">Transition</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Sep 25 2020 22:30:48 GMT+0100 (British Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

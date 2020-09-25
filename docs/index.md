@@ -1,4 +1,4 @@
-# ![](docs/images/tily.svg) Tily
+# ![](images/tily.svg) Tily
 
 A basic font-based tile engine.
 
@@ -26,14 +26,12 @@ var tily = new Tily.Main(document.querySelector("#tily-canvas"));
 </script>
 ```
 
-[Quick Reference](tily-reference.md)
-
-[API documentation](https://basementuniverse.github.io/tily/index.html)
+[API documentation](api/index.html)
 
 ### Demos
 
-- [Moving a player around the screen](https://basementuniverse.github.io/tily/demos/movingplayer/index.html)
-- [A really big buffer](https://basementuniverse.github.io/tily/demos/largebuffer/index.html)
-- [Lots of animations and transitions](https://basementuniverse.github.io/tily/demos/animations/index.html)
-- [An infinite procedurally-generated buffer](https://basementuniverse.github.io/tily/demos/proceduralbuffer/index.html)
-- [Map Painter](https://basementuniverse.github.io/tily/demos/mappainter/index.html)
+- [Moving a player around the screen](demos/movingplayer/index.html)
+- [A really big buffer](demos/largebuffer/index.html)
+- [Lots of animations and transitions](demos/animations/index.html)
+- [An infinite procedurally-generated buffer](demos/proceduralbuffer/index.html)
+- [Map Painter](demos/mappainter/index.html)

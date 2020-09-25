@@ -1,4 +1,4 @@
-# ![](tily.svg) Tily Quick Reference
+# ![](docs/images/tily.svg) Tily Quick Reference
 
 ## Initialise Tily
 

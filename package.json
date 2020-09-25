@@ -9,7 +9,7 @@
   "scripts": {
     "build": "gulp",
     "build-docs": "jsdoc -c jsdoc-conf.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "http-server -a localhost -p 8081 -o tests/index.html"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-jsmin": "^0.1.5",
     "gulp-wrap": "^0.15.0",
+    "http-server": "^0.12.3",
     "jsdoc": "^3.6.6"
   }
 }

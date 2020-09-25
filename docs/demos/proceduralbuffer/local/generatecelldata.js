@@ -1,7 +1,7 @@
 // Cell settings
 var settings = {
   cellSize: 16,
-  seed: 12345
+  seed: 100
 };
 
 // Character codes for the scenery_icons font
@@ -23,7 +23,7 @@ function generateCellData(cellX, cellY) {
   var waterNoise = new SimplexNoise(waterSeed),
     treeNoise = new SimplexNoise(treeSeed),
     mountainNoise = new SimplexNoise(mountainSeed);
-  
+
   // Create a cell and some layers
   var cell = new Tily.Cell({  // Using shim object for cellbuffer
       options: { cellWidth: settings.cellSize, cellHeight: settings.cellSize }
@@ -34,7 +34,7 @@ function generateCellData(cellX, cellY) {
     treeTrunks = new Tily.TileLayer(cell),
     mountains = new Tily.TileLayer(cell),
     mountainSnow = new Tily.TileLayer(cell);
-  
+
   // Set layer properties
   land.font = "scenery_icons";
   land.foreground = "#009245";
@@ -50,7 +50,7 @@ function generateCellData(cellX, cellY) {
   mountains.foreground = "#504b48";
   mountainSnow.font = "scenery_icons";
   mountainSnow.foreground = "#e6e6e6";
-  
+
   // Add the layers to the cell
   cell.addLayer(land);
   cell.addLayer(water);
@@ -58,7 +58,7 @@ function generateCellData(cellX, cellY) {
   cell.addLayer(trees);
   cell.addLayer(mountains);
   cell.addLayer(mountainSnow);
-  
+
   // Fill in layer tiles with simplex noise terrain
   for (var y = 0; y < settings.cellSize; y++) {
     for (var x = 0; x < settings.cellSize; x++) {

@@ -1,10 +1,10 @@
-// Note: you will need to install alea and simplex-noise libraries and preferably have tily.min.js
+// Note: you will need to install alea and simplex-noise libraries and have tily.min.js
 // as a local file to run this server
 var http = require("http"),
   url = require("url"),
   Alea = require("alea"),
   SimplexNoise = require("simplex-noise"),
-  tily = require("./tily.min.js"),
+  Tily = require("./tily.min.js.js.js"),
   settings = {
     ip: "127.0.0.1",
     port: 1337,
@@ -27,10 +27,7 @@ http.createServer(function(request, response) {
   var urlParts = url.parse(request.url, true),
     cellX = urlParts.query.x || 0,
     cellY = urlParts.query.y || 0;
-  
-  // Tily exports an object with both Tily and vec2 properties, so get a shortcut to Tily
-  var Tily = tily.Tily;
-  
+
   // Initialise seeded PRNGs and noise generators
   var waterSeed = new Alea((settings.seed + 1) % 65536),
     treeSeed = new Alea((settings.seed + 2) % 65536),
@@ -38,7 +35,7 @@ http.createServer(function(request, response) {
   var waterNoise = new SimplexNoise(waterSeed),
     treeNoise = new SimplexNoise(treeSeed),
     mountainNoise = new SimplexNoise(mountainSeed);
-  
+
   // Create a cell and some layers
   var cell = new Tily.Cell({  // Using shim object for cellbuffer
       options: { cellWidth: settings.cellSize, cellHeight: settings.cellSize }
@@ -49,7 +46,7 @@ http.createServer(function(request, response) {
     treeTrunks = new Tily.TileLayer(cell),
     mountains = new Tily.TileLayer(cell),
     mountainSnow = new Tily.TileLayer(cell);
-  
+
   // Set layer properties
   land.font = "scenery_icons";
   land.foreground = "#009245";
@@ -65,7 +62,7 @@ http.createServer(function(request, response) {
   mountains.foreground = "#504b48";
   mountainSnow.font = "scenery_icons";
   mountainSnow.foreground = "#e6e6e6";
-  
+
   // Add the layers to the cell
   cell.addLayer(land);
   cell.addLayer(water);
@@ -73,7 +70,7 @@ http.createServer(function(request, response) {
   cell.addLayer(trees);
   cell.addLayer(mountains);
   cell.addLayer(mountainSnow);
-  
+
   // Fill in layer tiles with simplex noise terrain
   for (var y = 0; y < settings.cellSize; y++) {
     for (var x = 0; x < settings.cellSize; x++) {
@@ -96,7 +93,7 @@ http.createServer(function(request, response) {
       }
     }
   }
-  
+
   // Respond with the cell data
   response.writeHead(
     200,

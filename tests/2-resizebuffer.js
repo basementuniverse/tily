@@ -7,7 +7,7 @@ QUnit.module("Resize buffer/tile layers", {
     this.testBuffer.addLayer(new Tily.TileLayer());
     this.testBuffer.addLayer(new Tily.TileLayer());
     this.testBuffer.addLayer(new Tily.TileLayer());
-    
+
     // Fill layers with tiles
     for (var x = 0; x < 5; x++) {
       for (var y = 0; y < 5; y++) {

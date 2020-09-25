@@ -1,9 +1,7 @@
 (function() {
 <%= contents %>
 if (typeof module !== "undefined") {  // Node.js
-  module.exports = {
-    Tily: Tily
-  };
+  module.exports = Tily;
 }
 if (typeof define !== "undefined" && define.amd) {  // AMD
   define(function() { return Tily; });

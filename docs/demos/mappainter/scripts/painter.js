@@ -1,6 +1,9 @@
+const randomBetween = (min, max) => Math.random() * (max - min) + min;
+const randomIntBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 var painter = (function() {
   "use strict";
-  
+
   // Resize the buffer and fill in empty parts with land tiles
   function resize(width, height) {
     buffer.resize(width, height);
@@ -12,7 +15,7 @@ var painter = (function() {
       }
     }
   }
-  
+
   // Handle click/tap events
   function click(p) {
     switch (tool) {
@@ -23,7 +26,7 @@ var painter = (function() {
         break;
     }
   }
-  
+
   // Handle drag events
   function drag(p, dragStart) {
     switch (tool) {
@@ -39,7 +42,7 @@ var painter = (function() {
         break;
     }
   }
-  
+
   // Draw tiles onto the buffer
   function draw(p) {
     switch (tool) {
@@ -52,7 +55,7 @@ var painter = (function() {
       case "office": drawOffice(p); break;
       default: break;
     }
-    
+
     // Check water shores and road borders around the clicked tile
     var t = null;
     for (var x = Math.max(p.x - 1, 0); x <= Math.min(p.x + 1, buffer.size.width); x++) {
@@ -64,7 +67,7 @@ var painter = (function() {
       }
     }
   }
-  
+
   // Check water tiles and create shore active tiles for the borders
   function checkShores(p) {
     var x = p.x,
@@ -114,7 +117,7 @@ var painter = (function() {
       buffer.addActiveTile(shore);
     }
   }
-  
+
   // Remove shore active tiles
   function removeShores(p) {
     var tileInfo = buffer.getTileInfo(p.x, p.y);
@@ -124,7 +127,7 @@ var painter = (function() {
       }
     }
   }
-  
+
   // Check road tiles and create the proper road types
   function checkRoads(p) {
     var x = p.x,
@@ -220,7 +223,7 @@ var painter = (function() {
       }
     }
   }
-  
+
   // Erase scenery tiles from the buffer
   function erase(p, exceptRoads) {
     layers.treeTrunks.setTile(p.x, p.y, "");
@@ -232,46 +235,46 @@ var painter = (function() {
       layers.roadMarkings.setTile(p.x, p.y, "");
       layers.roadBridges.setTile(p.x, p.y, "");
     }
-    
+
     // Remove house/office active tiles
     var tileInfo = buffer.getTileInfo(p.x, p.y);
     for (var i = tileInfo.activeTiles.length; i--;) {
       buffer.removeActiveTile(tileInfo.activeTiles[i]);
     }
   }
-  
+
   // Draw grass tiles
   function drawLand(p) {
     // Remove water
     layers.water.setTile(p.x, p.y, "");
-    
+
     // Remove all other tiles
     erase(p);
-    
+
     // Draw random grass tiles
     var c = [" ", " ", " ", "a", "a", "b", "b", "c", "c", "ab", "bc", "ac", "abc"];
-    layers.land.setTile(p.x, p.y, c[Math.randomIntBetween(0, c.length - 1)]);
+    layers.land.setTile(p.x, p.y, c[randomIntBetween(0, c.length - 1)]);
   }
-  
+
   // Draw water tiles
   function drawWater(p) {
     layers.water.setTile(p.x, p.y, sceneryIcons.water);
-    
+
     // Remove all other tiles except roads
     erase(p, true);
-    
+
     // If there is a road tile at this position, add a road bridge tile
     var road = layers.roads.getTile(p.x, p.y)
     if (road != "") {
       layers.roadMarkings.setTile(p.x, p.y, roadBridges[road]);
     }
   }
-  
+
   // Draw tree tiles
   function drawTree(p) {
     // Cannot place trees on water
     if (layers.water.getTile(p.x, p.y) == sceneryIcons.water) { return; }
-    
+
     // Select random trees and their corresponding tree trunks
     var trees = [
         "w", "x", "y", "z", "0", "wx", "wy", "wz", "w0", "xy", "xz", "x0", "yz", "y0",
@@ -281,55 +284,55 @@ var painter = (function() {
         "1", "2", "3", "4", "5", "12", "13", "14", "15", "23", "24", "25", "34", "35",
         "45", "123", "124", "125", "134", "135", "145"
       ],
-      c = Math.randomIntBetween(0, trees.length - 1);
-    
+      c = randomIntBetween(0, trees.length - 1);
+
     // Remove all other tiles
     erase(p);
-    
+
     // Draw trees and tree trunks
     layers.treeTrunks.setTile(p.x, p.y, trunks[c]);
     layers.trees.setTile(p.x, p.y, trees[c]);
   }
-  
+
   // Draw mountain tiles
   function drawMountain(p) {
     // Cannot place mountains on water
     if (layers.water.getTile(p.x, p.y) == sceneryIcons.water) { return; }
-    
+
     // Remove all other tiles
     erase(p);
-    
+
     // Draw mountains and mountain snow
     layers.mountains.setTile(p.x, p.y, sceneryIcons.mountain);
     layers.mountainSnow.setTile(p.x, p.y, sceneryIcons.mountainsnow);
   }
-  
+
   // Draw road tiles
   function drawRoad(p) {
     // Remove all other tiles
     erase(p);
-    
+
     // Mark roads with a space (actual road tiles will be placed in checkRoads())
     layers.roads.setTile(p.x, p.y, " ");
   }
-  
+
   // Draw house active tiles
   function drawHouse(p) {
     // Cannot place house tiles on water
     if (layers.water.getTile(p.x, p.y) == sceneryIcons.water) { return; }
-    
+
     // Remove all other tiles
     erase(p);
-    
+
     // Create a random house active tile
-    switch (Math.randomIntBetween(1, 3)) {
+    switch (randomIntBetween(1, 3)) {
       case 1: buffer.addActiveTile(house1(p)); break;
       case 2: buffer.addActiveTile(house2(p)); break;
       case 3: buffer.addActiveTile(house3(p)); break;
       default: break;
     }
   }
-  
+
   // House 1
   function house1(p) {
     var house = new Tily.ActiveTile(p.x, p.y),
@@ -352,7 +355,7 @@ var painter = (function() {
     house.addLayer(windows);
     return house;
   }
-  
+
   // House 2
   function house2(p) {
     var house = new Tily.ActiveTile(p.x, p.y),
@@ -375,7 +378,7 @@ var painter = (function() {
     house.addLayer(windows);
     return house;
   }
-  
+
   // House 3
   function house3(p) {
     var house = new Tily.ActiveTile(p.x, p.y),
@@ -398,24 +401,24 @@ var painter = (function() {
     house.addLayer(windows);
     return house;
   }
-  
+
   // Draw office active tiles
   function drawOffice(p) {
     // Cannot place office tiles on water
     if (layers.water.getTile(p.x, p.y) == sceneryIcons.water) { return; }
-    
+
     // Remove all other tiles
     erase(p);
-    
+
     // Create a random house active tile
-    switch (Math.randomIntBetween(1, 3)) {
+    switch (randomIntBetween(1, 3)) {
       case 1: buffer.addActiveTile(office1(p)); break;
       case 2: buffer.addActiveTile(office2(p)); break;
       case 3: buffer.addActiveTile(office3(p)); break;
       default: break;
     }
   }
-  
+
   // Office 1
   function office1(p) {
     var office = new Tily.ActiveTile(p.x, p.y),
@@ -442,7 +445,7 @@ var painter = (function() {
     office.addLayer(windows);
     return office;
   }
-  
+
   // Office 2
   function office2(p) {
     var office = new Tily.ActiveTile(p.x, p.y),
@@ -465,7 +468,7 @@ var painter = (function() {
     office.addLayer(windows);
     return office;
   }
-  
+
   // Office 3
   function office3(p) {
     var office = new Tily.ActiveTile(p.x, p.y),
@@ -492,7 +495,7 @@ var painter = (function() {
     office.addLayer(logo1);
     return office;
   }
-  
+
   // Download a text file
   function download(filename, text) {
     var element = document.createElement('a');
@@ -503,7 +506,7 @@ var painter = (function() {
     element.click();
     document.body.removeChild(element);
   }
-  
+
   var DEFAULT_WIDTH = 16,
     DEFAULT_HEIGHT = 16,
     MIN_WIDTH = 4,
@@ -527,7 +530,7 @@ var painter = (function() {
     previousTool = "pan",
     previousTile = null;
   return {
-    
+
     // Initialise the buffer painter
     initialise: function(canvas) {
       tily = new Tily.Main(canvas);
@@ -536,7 +539,7 @@ var painter = (function() {
         [Hammer.Pan],
         [Hammer.Pinch]
       ] });
-      
+
       // Toolbar button events
       var toolChanged = function(e, t) {
         if (e) {
@@ -557,7 +560,7 @@ var painter = (function() {
       document.querySelector("#button-road").addEventListener("click", toolChanged, false);
       document.querySelector("#button-house").addEventListener("click", toolChanged, false);
       document.querySelector("#button-office").addEventListener("click", toolChanged, false);
-      
+
       // Toolbar size input events
       var widthInput = document.querySelector("#input-width"),
         heightInput = document.querySelector("#input-height"),
@@ -570,7 +573,7 @@ var painter = (function() {
         };
       widthInput.addEventListener("change", sizeChanged);
       heightInput.addEventListener("change", sizeChanged);
-      
+
       // User input events
       var dragStart = null,
         pinchStart = null;
@@ -638,7 +641,7 @@ var painter = (function() {
           default: break;
         }
       });
-      
+
       // Set up dropzone
       Dropzone.autoDiscover = false;
       Dropzone.autoProcessQueue = false;
@@ -650,7 +653,7 @@ var painter = (function() {
         };
         reader.readAsText(file);
       });
-      
+
       // Create initial buffer
       widthInput.value = DEFAULT_WIDTH;
       heightInput.value = DEFAULT_HEIGHT;
@@ -658,55 +661,55 @@ var painter = (function() {
         clampCamera: true,
         initialScale: 8
       });
-      
+
       // Create buffer layers
       // Land
       layers.land = new Tily.TileLayer(buffer);
       layers.land.font = "scenery_icons";
       layers.land.background = "#39b54a";
       layers.land.foreground = "#009245";
-      
+
       // Water
       layers.water = new Tily.TileLayer(buffer);
       layers.water.font = "scenery_icons";
       layers.water.background = "#29abe2";
       layers.water.foreground = "#79c8e9";
-      
+
       // Tree trunks
       layers.treeTrunks = new Tily.TileLayer(buffer);
       layers.treeTrunks.font = "scenery_icons";
       layers.treeTrunks.foreground = "#754c24";
-      
+
       // Trees
       layers.trees = new Tily.TileLayer(buffer);
       layers.trees.font = "scenery_icons";
       layers.trees.foreground = "#006837";
-      
+
       // Mountains
       layers.mountains = new Tily.TileLayer(buffer);
       layers.mountains.font = "scenery_icons";
       layers.mountains.foreground = "#504b48";
-      
+
       // Mountain snow
       layers.mountainSnow = new Tily.TileLayer(buffer);
       layers.mountainSnow.font = "scenery_icons";
       layers.mountainSnow.foreground = "#e6e6e6";
-      
+
       // Roads
       layers.roads = new Tily.TileLayer(buffer);
       layers.roads.font = "road_icons";
       layers.roads.foreground = "#4d4d4d";
-      
+
       // Road markings
       layers.roadMarkings = new Tily.TileLayer(buffer);
       layers.roadMarkings.font = "road_icons";
       layers.roadMarkings.foreground = "#e6e6e6";
-      
+
       // Road bridges
       layers.roadBridges = new Tily.TileLayer(buffer);
       layers.roadBridges.font = "road_icons";
       layers.roadBridges.foreground = "#7d756f";
-      
+
       // Add layers to the buffer
       buffer.addLayer(layers.land);
       buffer.addLayer(layers.water);
@@ -717,7 +720,7 @@ var painter = (function() {
       buffer.addLayer(layers.roads);
       buffer.addLayer(layers.roadMarkings);
       buffer.addLayer(layers.roadBridges);
-      
+
       // Fill land layer with tiles
       for (var x = 0; x < DEFAULT_WIDTH; x++) {
         for (var y = 0; y < DEFAULT_HEIGHT; y++) {
@@ -726,7 +729,7 @@ var painter = (function() {
       }
       tily.activateBuffer(buffer);
     },
-    
+
     // Load a buffer from the specified data
     load: function(data) {
       buffer = Tily.Buffer.deserialize(data);
@@ -743,7 +746,7 @@ var painter = (function() {
       document.querySelector("#input-width").value = buffer.size.width;
       document.querySelector("#input-height").value = buffer.size.height;
     },
-    
+
     // Save and download the buffer as JSON data
     save: function() {
       download("map.json", buffer.serialize());

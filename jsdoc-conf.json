@@ -1,0 +1,12 @@
+{
+  "recurseDepth": 1,
+  "source": {
+    "include": ["src/", "docs/index.md"],
+    "exclude": ["src/wrapper.js"],
+    "includePattern": ".+\\.js$"
+  },
+  "opts": {
+    "destination": "./docs/api/",
+    "recurse": true
+  }
+}

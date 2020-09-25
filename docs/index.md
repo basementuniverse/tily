@@ -1,14 +1,14 @@
-# ![](images/tily.svg) Tily
+# API
 
-[API documentation](docs/index.html)
+[API documentation](api/index.html)
 
-## Guides
+# Guides
 
 [Overview](guides/overview.html)
 [Buffers](guides/buffers.html)
 [Active Tiles](guides/activetiles.html)
 
-## Demos
+# Demos
 
 - [Moving a player around the screen](demos/movingplayer/index.html)
 - [A really big buffer](demos/largebuffer/index.html)

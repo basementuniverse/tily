@@ -6,6 +6,7 @@
     "doc": "docs",
     "test": "tests"
   },
+  "types": "./types/index.d.ts",
   "scripts": {
     "build": "gulp",
     "build-docs": "jsdoc -c jsdoc-conf.json",

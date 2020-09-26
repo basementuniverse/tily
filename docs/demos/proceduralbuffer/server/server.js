@@ -4,7 +4,7 @@ var http = require("http"),
   url = require("url"),
   Alea = require("alea"),
   SimplexNoise = require("simplex-noise"),
-  Tily = require("./tily.min.js.js.js.js"),
+  Tily = require("./tily.min.js"),
   settings = {
     ip: "127.0.0.1",
     port: 1337,

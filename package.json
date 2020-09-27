@@ -28,6 +28,7 @@
     "gulp-jsmin": "^0.1.5",
     "gulp-wrap": "^0.15.0",
     "http-server": "^0.12.3",
-    "jsdoc": "^3.6.6"
+    "jsdoc": "^3.6.6",
+    "typescript": "^4.0.3"
   }
 }

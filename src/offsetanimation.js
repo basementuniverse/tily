@@ -1,7 +1,7 @@
 Tily.OffsetAnimation = (function(_super) {
   "use strict";
   Tily.utility.__extends(OffsetAnimation, _super);
-  
+
   /**
    * Represents an offset animation for moving active tiles.
    * @class
@@ -23,14 +23,14 @@ Tily.OffsetAnimation = (function(_super) {
     }
     _super.call(this, activeTile, start, finish, options);
   }
-  
+
   /**
    * Update the animation and set the active tile offset.
    * @name update
    * @function
    * @instance
    * @memberof Tily.OffsetAnimation
-   * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
+   * @param {number} elapsedTime The number of seconds that have elapsed since the last update.
    */
   OffsetAnimation.prototype.update = function(elapsedTime) {
     const amount = _super.prototype.update.call(this, elapsedTime);

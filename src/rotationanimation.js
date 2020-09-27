@@ -1,7 +1,7 @@
 Tily.RotationAnimation = (function(_super) {
   "use strict";
   Tily.utility.__extends(RotationAnimation, _super);
-  
+
   /**
    * Represents a rotation animation for rotating active tiles.
    * @class
@@ -19,10 +19,10 @@ Tily.RotationAnimation = (function(_super) {
      * The rotation direction. This should be 'cw' for clockwise, 'ccw' for counter-clockwise.
      * If this is not 'cw' or 'ccw', the rotation will be in the direction of the smallest
      * change in angle.
-     * @type {String}
+     * @type {string}
      */
     this.direction = options.direction;
-    
+
     // Set up the actual start and finish values based on the direction, or if no valid
     // direction is specified then calculate one from the start and finish angles
     if (this.direction == "cw") {
@@ -39,15 +39,15 @@ Tily.RotationAnimation = (function(_super) {
     }
     _super.call(this, activeTile, start, finish, options);
   }
-  
+
   /**
    * Update the animation.
    * @name update
    * @function
    * @instance
    * @memberof Tily.RotationAnimation
-   * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
-   * @returns {Number} 
+   * @param {number} elapsedTime The number of seconds that have elapsed since the last update.
+   * @returns {number}
    */
   RotationAnimation.prototype.update = function(elapsedTime) {
     const amount = _super.prototype.update.call(this, elapsedTime);

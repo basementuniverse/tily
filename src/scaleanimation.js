@@ -1,7 +1,7 @@
 Tily.ScaleAnimation = (function(_super) {
   "use strict";
   Tily.utility.__extends(ScaleAnimation, _super);
-  
+
   /**
    * Represents a scale animation for scaling active tiles.
    * @class
@@ -23,14 +23,14 @@ Tily.ScaleAnimation = (function(_super) {
     }
     _super.call(this, activeTile, start, finish, options);
   }
-  
+
   /**
    * Update the animation and set the active tile scale.
    * @name update
    * @function
    * @instance
    * @memberof Tily.ScaleAnimation
-   * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
+   * @param {number} elapsedTime The number of seconds that have elapsed since the last update.
    */
   ScaleAnimation.prototype.update = function(elapsedTime) {
     const amount = _super.prototype.update.call(this, elapsedTime);

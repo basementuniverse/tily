@@ -1,6 +1,6 @@
 Tily.Cell = (function() {
   "use strict";
-  
+
   /**
    * A rectangular cell of tiles displayed in a cell buffer.
    * @class
@@ -13,25 +13,25 @@ Tily.Cell = (function() {
      * @type {Tily.CellBuffer}
      */
     this.buffer = buffer;
-    
+
     /**
      * An array of layers contained in this cell.
      * @type {Tily.TilyLayer[]}
      */
     this.layers = [];
   }
-  
+
   /**
    * Check if position p is inside the region between tl and br.
    * @param {Tily.utility.vec2} p The position to check.
    * @param {Tily.utility.vec2} tl The top-left corner of the region.
    * @param {Tily.utility.vec2} br The bottom-right corner of the region.
-   * @returns {Boolean} True if the position p is inside the region.
+   * @returns {boolean} True if the position p is inside the region.
    */
   function checkBounds(p, tl, br) {
     return (p.x >= tl.x && p.x <= br.x && p.y >= tl.y && p.y <= br.y);
   }
-  
+
   /**
    * Add a layer to this cell at the specified z-index. If the z-index is undefined, add the
    * layer on top of existing layers, and if the z-index is -1, add the layer below existing
@@ -41,7 +41,7 @@ Tily.Cell = (function() {
    * @instance
    * @memberof Tily.Cell
    * @param {Tily.TileLayer} layer The layer to add.
-   * @param {Number} [z] The z-index at which to add the layer. If this is -1, the layer will be
+   * @param {number} [z] The z-index at which to add the layer. If this is -1, the layer will be
    * added below existing layers and if it is undefined the layer will be added above existing
    * layers.
    */
@@ -60,7 +60,7 @@ Tily.Cell = (function() {
     }
     return layer;
   };
-  
+
   /**
    * Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer
    * and if the z-index is -1, remove the bottom layer. The removed layer is returned.
@@ -68,7 +68,7 @@ Tily.Cell = (function() {
    * @function
    * @instance
    * @memberof Tily.Cell
-   * @param {Number} [z] The z-index of the layer to remove. If this is -1, the bottom layer will
+   * @param {number} [z] The z-index of the layer to remove. If this is -1, the bottom layer will
    * be removed and if it is undefined the top layer will be removed.
    * @returns {Tily.TileLayer} The layer that was removed.
    */
@@ -81,7 +81,7 @@ Tily.Cell = (function() {
     }
     return this.layers.splice(z, 1)[0];
   };
-  
+
   /**
    * Remove all layers from this cell.
    * @name removeAllLayers
@@ -92,7 +92,7 @@ Tily.Cell = (function() {
   Cell.prototype.removeAllLayers = function() {
     this.layers = [];
   };
-  
+
   /**
    * Move a layer from one z-index to another z-index, either an absolute value or relative to
    * the layer's current z-index.
@@ -100,11 +100,11 @@ Tily.Cell = (function() {
    * @function
    * @instance
    * @memberof Tily.Cell
-   * @param {Number} zFrom The z-index of the layer to move.
-   * @param {Number} zTo The z-index to move the layer to.
-   * @param {Boolean} relative If this is true, the layer will be moved relative to it's current
+   * @param {number} zFrom The z-index of the layer to move.
+   * @param {number} zTo The z-index to move the layer to.
+   * @param {boolean} relative If this is true, the layer will be moved relative to it's current
    * z-index.
-   * @returns {Boolean} True if a layer was moved successfully.
+   * @returns {boolean} True if a layer was moved successfully.
    */
   Cell.prototype.moveLayer = function(zFrom, zTo, relative) {
     if (this.layers.length < 2) { return false; }
@@ -114,7 +114,7 @@ Tily.Cell = (function() {
     this.layers.splice(toIndex, 0, layer);
     return true;
   };
-  
+
   /**
    * @name size
    * @description The size of this cell, as defined in the cell buffer options.
@@ -130,7 +130,7 @@ Tily.Cell = (function() {
       };
     }
   });
-  
+
   /**
    * Render this layer onto the specified context.
    * @name draw
@@ -138,10 +138,10 @@ Tily.Cell = (function() {
    * @instance
    * @memberof Tily.Cell
    * @param {CanvasRenderingContext2D} context The context to render the layer onto.
-   * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
-   * @param {Number} x The cell x-coordinate.
-   * @param {Number} y The cell y-coordinate.
-   * @param {Number} tileSize The size of each tile measured in pixels.
+   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.
+   * @param {number} x The cell x-coordinate.
+   * @param {number} y The cell y-coordinate.
+   * @param {number} tileSize The size of each tile measured in pixels.
    * @param {Tily.utility.vec2} tl The top-left tile position currently in view.
    * @param {Tily.utility.vec2} br The bottom-right tile position currently in view.
    * @param {Tily.ActiveTile[]} activeTiles A list of active tiles currently in view, sorted by
@@ -149,18 +149,18 @@ Tily.Cell = (function() {
    */
   Cell.prototype.draw = function(context, elapsedTime, x, y, tileSize, tl, br, activeTiles) {
     context.save();
-    
+
     // Translate to cell position
     const size = this.size;
     context.translate(x * tileSize * size.width, y * tileSize * size.height);
-    
+
     // Get a list of active tiles in this cell
     const activeTilesCell = activeTiles.filter(i => checkBounds(
       Tily.utility.vec2.add(i.position, i.offset),
       Tily.utility.vec2(x * size.width, y * size.height),
       Tily.utility.vec2((x + 1) * size.width, (y + 1) * size.height)
     ));
-    
+
     // Get tl and br in terms of cell offsets
     const cellOffset = Tily.utility.vec2(x * size.width, y * size.height),
       tlCell = Tily.utility.vec2.sub(tl, cellOffset),
@@ -168,14 +168,14 @@ Tily.Cell = (function() {
     var j = 0;
     for (let i = 0, length = this.layers.length; i < length; i++) {
       this.layers[i].draw(context, tileSize, tlCell, brCell);
-      
+
       // Draw active tiles on or below this layer
       while (j < activeTilesCell.length && activeTilesCell[j].zIndex < i + 1) {
         activeTilesCell[j].draw(context, elapsedTime, tileSize);
         j++;
       }
     }
-    
+
     // Draw any remaining active tiles in this cell (ie. on the top layer)
     while (j < activeTilesCell.length) {
       activeTilesCell[j].draw(context, elapsedTime, tileSize);
@@ -183,7 +183,7 @@ Tily.Cell = (function() {
     }
     context.restore();
   };
-  
+
   /**
    * Get serializable data for this cell.
    * @name getData
@@ -197,7 +197,7 @@ Tily.Cell = (function() {
       layers: this.layers.map(i => i.getData())
     };
   };
-  
+
   /**
    * Create a cell from data.
    * @name fromData
@@ -213,19 +213,19 @@ Tily.Cell = (function() {
     cell.layers = data.layers.map(i => Tily.TileLayer.fromData(cell, i));
     return cell;
   };
-  
+
   /**
    * Serialize this cell and return the serialized JSON data.
    * @name serialize
    * @function
    * @instance
    * @memberof Tily.Cell
-   * @returns {String} This cell serialized as JSON data.
+   * @returns {string} This cell serialized as JSON data.
    */
   Cell.prototype.serialize = function() {
     return JSON.stringify(this.getData());
   };
-  
+
   /**
    * Deserialize the JSON data into a cell.
    * @name deserialize
@@ -233,7 +233,7 @@ Tily.Cell = (function() {
    * @static
    * @memberof Tily.Cell
    * @param {Tily.CellBuffer} buffer The cell buffer that the cell belongs to.
-   * @param {String} s The JSON data to deserialize.
+   * @param {string} s The JSON data to deserialize.
    * @returns {Tily.Cell} The deserialized cell.
    */
   Cell.deserialize = function(buffer, s) {

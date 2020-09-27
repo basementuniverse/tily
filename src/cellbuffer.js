@@ -8,13 +8,13 @@ Tily.CellBuffer = (function(_super) {
    */
   /**
    * @callback rejectCellFunction
-   * @param {String} reason A string containing the reason that cell generation failed.
+   * @param {string} reason A string containing the reason that cell generation failed.
    */
   /**
    * @callback cellFunction
    * @param {Tily.CellBuffer} buffer The cell buffer that the resulting cell will belong to.
-   * @param {Number} x The cell x-coordinate.
-   * @param {Number} y The cell y-coordinate.
+   * @param {number} x The cell x-coordinate.
+   * @param {number} y The cell y-coordinate.
    * @param {resolveCellFunction} resolve A function to call if the cell is generated
    * successfully.
    * @param {rejectCellFunction} reject A function to call if cell generation failed.
@@ -22,15 +22,15 @@ Tily.CellBuffer = (function(_super) {
   /**
    * @typedef CellBufferOptions
    * @type {BufferOptions}
-   * @property {Number} [cellWidth=16] The width of each cell measured in tiles.
-   * @property {Number} [cellHeight=16] The height of each cell measured in tiles.
-   * @property {?Number} [minimumX=null] The minimum cell x-coordinate. If this is null, the cell
+   * @property {number} [cellWidth=16] The width of each cell measured in tiles.
+   * @property {number} [cellHeight=16] The height of each cell measured in tiles.
+   * @property {?number} [minimumX=null] The minimum cell x-coordinate. If this is null, the cell
    * buffer will scroll infinitely in the negative-x direction.
-   * @property {?Number} [minimumY=null] The minimum cell y-coordinate. If this is null, the cell
+   * @property {?number} [minimumY=null] The minimum cell y-coordinate. If this is null, the cell
    * buffer will scroll infinitely in the negative-x direction.
-   * @property {?Number} [maximumX=null] The maximum cell x-coordinate. If this is null, the cell
+   * @property {?number} [maximumX=null] The maximum cell x-coordinate. If this is null, the cell
    * buffer will scroll infinitely in the positive-x direction.
-   * @property {?Number} [maximumY=null] The maximum cell y-coordinate. If this is null, the cell
+   * @property {?number} [maximumY=null] The maximum cell y-coordinate. If this is null, the cell
    * buffer will scroll infinitely in the positive-y direction.
    * @property {?cellFunction} [cellFunction=null] A function for generating cells.
    */
@@ -75,7 +75,7 @@ Tily.CellBuffer = (function(_super) {
   /**
    * Get a string representation of the specified position for use as a hash.
    * @param {Tily.utility.vec2} p The position to hash.
-   * @returns {String} A hash string for the specified position.
+   * @returns {string} A hash string for the specified position.
    */
   function hash(p) {
     return Tily.utility.vec2.toString(p, "_");
@@ -85,7 +85,7 @@ Tily.CellBuffer = (function(_super) {
    * @typedef CellBufferTileInfo
    * @type {BufferBaseTileInfo}
    * @property {Tily.utility.vec2} cell The cell coordinate for the specified tile position.
-   * @property {String[]} layers The tile layer characters in z-index order at a tile position.
+   * @property {string[]} layers The tile layer characters in z-index order at a tile position.
    */
   /**
    * Get information about the tiles and active tiles at a tile position.
@@ -93,8 +93,8 @@ Tily.CellBuffer = (function(_super) {
    * @function
    * @instance
    * @memberof Tily.CellBuffer
-   * @param {Number} x The x-coordinate of the tile position.
-   * @param {Number} y The y-coordinate of the tile position.
+   * @param {number} x The x-coordinate of the tile position.
+   * @param {number} y The y-coordinate of the tile position.
    * @returns {CellBufferTileInfo} Information about the tiles at the specified position.
    */
   CellBuffer.prototype.getTileInfo = function(x, y) {
@@ -124,9 +124,9 @@ Tily.CellBuffer = (function(_super) {
    * @instance
    * @memberof Tily.CellBuffer
    * @param {CanvasRenderingContext2D} context The context to render the buffer onto.
-   * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
-   * @param {Number} width The width of the canvas in pixels.
-   * @param {Number} height The height of the canvas in pixels.
+   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.
+   * @param {number} width The width of the canvas in pixels.
+   * @param {number} height The height of the canvas in pixels.
    */
   CellBuffer.prototype.draw = function(context, elapsedTime, width, height) {
     this.canvas.width = width;
@@ -245,7 +245,7 @@ Tily.CellBuffer = (function(_super) {
    * @function
    * @instance
    * @memberof Tily.CellBuffer
-   * @returns {String} This buffer serialized as JSON data.
+   * @returns {string} This buffer serialized as JSON data.
    */
   CellBuffer.prototype.serialize = function() {
     const cellCache = {};
@@ -269,7 +269,7 @@ Tily.CellBuffer = (function(_super) {
    * @function
    * @static
    * @memberof Tily.CellBuffer
-   * @param {String} s The JSON data to deserialize.
+   * @param {string} s The JSON data to deserialize.
    * @returns {Tily.CellBuffer} The deserialized buffer.
    */
   CellBuffer.deserialize = function(s) {

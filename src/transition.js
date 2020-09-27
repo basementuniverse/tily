@@ -1,11 +1,11 @@
 Tily.Transition = (function() {
   "use strict";
-  
+
   /**
    * @callback easeFunction
    * @param {any} a The starting value.
    * @param {any} b The finishing value.
-   * @param {Number} i The interpolation value, between 0 (start) and 1 (finish).
+   * @param {number} i The interpolation value, between 0 (start) and 1 (finish).
    * @returns {any} The interpolated value between a and b.
    */
   /**
@@ -16,7 +16,7 @@ Tily.Transition = (function() {
   /**
    * @typedef TransitionOptions
    * @type {Object}
-   * @property {Number} [time=0] The amount of time in seconds that this transition should take
+   * @property {number} [time=0] The amount of time in seconds that this transition should take
    * to complete.
    * @property {easeFunction} [easeFunction=Tily.utility.lerp] The easing function to use while
    * transitioning.
@@ -32,7 +32,7 @@ Tily.Transition = (function() {
     easeFunction: null,
     finishedCallback: null
   };
-  
+
   /**
    * Represents a timed transition from one value to another.
    * @class
@@ -44,69 +44,69 @@ Tily.Transition = (function() {
    */
   function Transition(start, finish, options) {
     options = { ..._defaultTransitionOptions, ...options || {} };
-    
+
     /**
      * The starting value.
      * @type {any}
      */
     this.start = start;
-    
+
     /**
      * The finishing value.
      * @type {any}
      */
     this.finish = finish;
-    
+
     /**
      * The total amount of time that this transition should take.
-     * @type {Number}
+     * @type {number}
      */
     this.totalTime = options.time;
-    
+
     /**
      * The current time elapsed since the transition began.
-     * @type {Number}
+     * @type {number}
      */
     this.currentTime = 0;
-    
+
     /**
      * The easing function to use while transitioning.
      * @default Tily.utility.lerp
      * @type {easeFunction}
      */
     this.easeFunction = options.easeFunction || Tily.utility.lerp;
-    
+
     /**
      * A callback function that will be called once the transition has finished.
      * @default null
      * @type {?finishedCallback}
      */
     this.finishedCallback = options.finishedCallback || function(start, finish) { };
-    
+
     /**
      * True if this transition has finished and can be discarded.
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.finished = false;
   }
-  
+
   /**
    * Update the transition.
    * @name update
    * @function
    * @instance
    * @memberof Tily.Transition
-   * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
+   * @param {number} elapsedTime The number of seconds that have elapsed since the last update.
    * @returns {any} An interpolated value between the start and finish values.
    */
   Transition.prototype.update = function(elapsedTime) {
     this.currentTime += elapsedTime;
-    
+
     // If transition is currently in progress, ease from start to finish value
     if (this.currentTime < this.totalTime) {
       return this.easeFunction(this.start, this.finish, this.amount);
     }
-    
+
     // Otherwise, transition has finished
     if (this.finishedCallback && !this.finished) {
       this.finishedCallback(this.start, this.finish);
@@ -114,13 +114,13 @@ Tily.Transition = (function() {
     this.finished = true;
     return this.finish;
   };
-  
+
   /**
    * @name amount
    * @description The current interpolation amount between 0 and 1 (inclusive).
    * @instance
    * @memberof Tily.Transition
-   * @type {Number}
+   * @type {number}
    */
   Object.defineProperty(Transition.prototype, "amount", {
     get: function() {

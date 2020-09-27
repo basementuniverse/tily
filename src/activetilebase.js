@@ -1,6 +1,6 @@
 Tily.ActiveTileBase = (function() {
   "use strict";
-  
+
   /**
    * Implements basic functionality for active tiles and active tile layers.
    * @class
@@ -12,18 +12,18 @@ Tily.ActiveTileBase = (function() {
      * @type {Tily.ActiveTileLayer[]}
      */
     this.layers = [];
-    
+
     /**
      * The animations currently running on this active tile.
      * @type {Tily.Animation[]}
      */
     this.animations = [];
-    
+
     /**
      * The font to use when rendering this active tile. Set this to null to inherit from the
      * parent object.
      * @default null
-     * @type {?String}
+     * @type {?string}
      */
     this.font = null;
 
@@ -31,7 +31,7 @@ Tily.ActiveTileBase = (function() {
      * The font style to use when rendering this active tile. Set this to null to inherit from the
      * parent object.
      * @default null
-     * @type {?String}
+     * @type {?string}
      */
     this.fontStyle = null;
 
@@ -39,15 +39,15 @@ Tily.ActiveTileBase = (function() {
      * The font size to use when rendering this active tile. Set this to null to inherit from the
      * parent object.
      * @default null
-     * @type {?String}
+     * @type {?string}
      */
     this.fontSize = null;
-    
+
     /**
      * The foreground colour of this active tile. Set this to null to inherit from the parent
      * object.
      * @default null
-     * @type {?String}
+     * @type {?string}
      */
     this.foreground = null;
 
@@ -55,7 +55,7 @@ Tily.ActiveTileBase = (function() {
      * The outline width and colour of this active tile. Set this to null to inherit from the parent
      * object.
      * @default null
-     * @type {?String}
+     * @type {?string}
      */
     this.outline = null;
 
@@ -63,24 +63,24 @@ Tily.ActiveTileBase = (function() {
      * The shadow width, offset and colour of this active tile. Set this to null to inherit from the parent
      * object.
      * @default null
-     * @type {?String}
+     * @type {?string}
      */
     this.shadow = null;
-    
+
     /**
      * The opacity of this active tile. Set this to null to inherit from the parent object.
      * @default null
-     * @type {?Number}
+     * @type {?number}
      */
     this.opacity = null;
 
     /**
      * The composite operation to use when drawing this active tile.
      * @default "source-over"
-     * @type {String}
+     * @type {string}
      */
     this.compositeMode = "source-over";
-    
+
     /**
      * The offset of this active tile measured in tiles. Set this to null to inherit from the
      * parent object.
@@ -88,34 +88,34 @@ Tily.ActiveTileBase = (function() {
      * @type {?Tily.utility.vec2}
      */
     this.offset = null;
-    
+
     /**
      * The scale of this active tile. Set this to null to inherit from the parent object.
      * @default null
      * @type {?Tily.utility.vec2}
      */
     this.scale = null;
-    
+
     /**
      * The rotation angle of this active tile measured in radians. Set this to null to inherit
      * from the parent object.
      * @default null
-     * @type {?Number}
+     * @type {?number}
      */
     this.rotation = null;
 
     /**
      * If the text in this tile should be centered. Set this to null to inherit from the parent object.
      * @default null
-     * @type {?Boolean}
+     * @type {?boolean}
      */
     this.centered = null;
   }
-  
+
   /**
    * Define an inherited property on this object's prototype
-   * @param {String} name The name of the property that is inherited from the parent object.
-   * @param {String} inheritedName The name of the inherited property that will be defined.
+   * @param {string} name The name of the property that is inherited from the parent object.
+   * @param {string} inheritedName The name of the inherited property that will be defined.
    */
   function createInheritedProperty(name, inheritedName) {
     Object.defineProperty(ActiveTileBase.prototype, inheritedName, {
@@ -130,13 +130,13 @@ Tily.ActiveTileBase = (function() {
       }
     });
   }
-  
+
   /**
    * @name inheritedFont
    * @description The font set in this layer or inherited from the parent object if null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {String}
+   * @type {string}
    */
   createInheritedProperty("font", "inheritedFont");
 
@@ -145,7 +145,7 @@ Tily.ActiveTileBase = (function() {
    * @description The font style set in this layer or inherited from the parent object if null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {String}
+   * @type {string}
    */
   createInheritedProperty("fontStyle", "inheritedFontStyle");
 
@@ -154,17 +154,17 @@ Tily.ActiveTileBase = (function() {
    * @description The font size set in this layer or inherited from the parent object if null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {String}
+   * @type {string}
    */
   createInheritedProperty("fontSize", "inheritedFontSize");
-  
+
   /**
    * @name inheritedForeground
    * @description The foreground colour set in this layer or inherited from the parent object if
    * null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {String}
+   * @type {string}
    */
   createInheritedProperty("foreground", "inheritedForeground");
 
@@ -174,7 +174,7 @@ Tily.ActiveTileBase = (function() {
    * null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {String}
+   * @type {string}
    */
   createInheritedProperty("outline", "inheritedOutline");
 
@@ -184,16 +184,16 @@ Tily.ActiveTileBase = (function() {
    * null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {String}
+   * @type {string}
    */
   createInheritedProperty("shadow", "inheritedShadow");
-  
+
   /**
    * @name inheritedOpacity
    * @description The opacity set in this layer or inherited from the parent object if null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {Number}
+   * @type {number}
    */
   createInheritedProperty("opacity", "inheritedOpacity");
 
@@ -202,10 +202,10 @@ Tily.ActiveTileBase = (function() {
    * @description The composite operation set in this layer or inherited from the parent object if null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {String}
+   * @type {string}
    */
   createInheritedProperty("compositeMode", "inheritedCompositeMode");
-  
+
   /**
    * @name inheritedOffset
    * @description The offset set in this layer or inherited from the parent object if null.
@@ -214,7 +214,7 @@ Tily.ActiveTileBase = (function() {
    * @type {Tily.utility.vec2}
    */
   createInheritedProperty("offset", "inheritedOffset");
-  
+
   /**
    * @name inheritedScale
    * @description The scale set in this layer or inherited from the parent object if null.
@@ -223,13 +223,13 @@ Tily.ActiveTileBase = (function() {
    * @type {Tily.utility.vec2}
    */
   createInheritedProperty("scale", "inheritedScale");
-  
+
   /**
    * @name inheritedRotation
    * @description The rotation set in this layer or inherited from the parent object if null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {Number}
+   * @type {number}
    */
   createInheritedProperty("rotation", "inheritedRotation");
 
@@ -238,7 +238,7 @@ Tily.ActiveTileBase = (function() {
    * @description The centering mode in this layer or inherited from the parent object if null.
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @type {Boolean}
+   * @type {boolean}
    */
   createInheritedProperty("centered", "inheritedCentered");
 
@@ -248,7 +248,7 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Boolean} [inherit] If true (default) then pass down to child layers
+   * @param {boolean} [inherit] If true (default) then pass down to child layers
    */
   ActiveTileBase.prototype.pauseAnimations = function(inherit = true) {
     this.animations.forEach(a => a.pause());
@@ -263,7 +263,7 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Boolean} [inherit] If true (default) then pass down to child layers
+   * @param {boolean} [inherit] If true (default) then pass down to child layers
    */
   ActiveTileBase.prototype.runAnimations = function(inherit = true) {
     this.animations.forEach(a => a.run());
@@ -278,7 +278,7 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Boolean} [inherit] If true (default) then pass down to child layers
+   * @param {boolean} [inherit] If true (default) then pass down to child layers
    */
   ActiveTileBase.prototype.resetAnimations = function(inherit = true) {
     this.animations.forEach(a => a.reset());
@@ -293,7 +293,7 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Boolean} [inherit] If true (default) then pass down to child layers
+   * @param {boolean} [inherit] If true (default) then pass down to child layers
    */
   ActiveTileBase.prototype.stopAnimations = function(inherit = true) {
     this.animations = [];
@@ -301,14 +301,14 @@ Tily.ActiveTileBase = (function() {
       this.layers.forEach(l => { l.animations = []; });
     }
   };
-  
+
   /**
    * Animate this active tile's foreground colour.
    * @name animateForeground
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {String} foreground The target foreground colour.
+   * @param {string} foreground The target foreground colour.
    * @param {AnimationOptions} [options] An optional options object.
    */
   ActiveTileBase.prototype.animateForeground = function(foreground, options) {
@@ -325,7 +325,7 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {String} outline The target outline.
+   * @param {string} outline The target outline.
    * @param {AnimationOptions} [options] An optional options object.
    */
   ActiveTileBase.prototype.animateOutline = function(outline, options) {
@@ -342,7 +342,7 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {String} shadow The target shadow.
+   * @param {string} shadow The target shadow.
    * @param {AnimationOptions} [options] An optional options object.
    */
   ActiveTileBase.prototype.animateShadow = function(shadow, options) {
@@ -352,14 +352,14 @@ Tily.ActiveTileBase = (function() {
     this.animations.push(animation);
     return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
   };
-  
+
   /**
    * Animate this active tile's opacity.
    * @name animateOpacity
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Number} opacity The target opacity.
+   * @param {number} opacity The target opacity.
    * @param {AnimationOptions} [options] An optional options object.
    */
   ActiveTileBase.prototype.animateOpacity = function(opacity, options) {
@@ -368,15 +368,15 @@ Tily.ActiveTileBase = (function() {
     this.animations.push(animation);
     return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
   };
-  
+
   /**
    * Animate this active tile's scale.
    * @name animateScale
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Number} x The target x-scale.
-   * @param {Number} y The target y-scale.
+   * @param {number} x The target x-scale.
+   * @param {number} y The target y-scale.
    * @param {AnimationOptions} [options] An optional options object.
    */
   ActiveTileBase.prototype.animateScale = function(x, y, options) {
@@ -386,11 +386,11 @@ Tily.ActiveTileBase = (function() {
     this.animations.push(animation);
     return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
   };
-  
+
   /**
    * @typedef OffsetAnimationOptions
    * @type {AnimationOptions}
-   * @property {Boolean} [relative=false] True if the movement should be relative to the current
+   * @property {boolean} [relative=false] True if the movement should be relative to the current
    * offset.
    */
   /**
@@ -399,8 +399,8 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Number} x The x-coordinate of the target offset position.
-   * @param {Number} y The y-coordinate of the target offset position.
+   * @param {number} x The x-coordinate of the target offset position.
+   * @param {number} y The y-coordinate of the target offset position.
    * @param {OffsetAnimationOptions} [options] An optional options object.
    */
   ActiveTileBase.prototype.animateOffset = function(x, y, options) {
@@ -413,13 +413,13 @@ Tily.ActiveTileBase = (function() {
     this.animations.push(animation);
     return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
   };
-  
+
   /**
    * @typedef RotationAnimationOptions
    * @type {AnimationOptions}
-   * @property {Boolean} [relative=false] True if the rotation should be relative to the current
+   * @property {boolean} [relative=false] True if the rotation should be relative to the current
    * angle.
-   * @property {String} [direction=""] The rotation direction. This should be 'cw' for clockwise,
+   * @property {string} [direction=""] The rotation direction. This should be 'cw' for clockwise,
    * 'ccw' for counter-clockwise. If this is not 'cw' or 'ccw', the rotation will be in the
    * direction of the smallest change in angle.
    */
@@ -429,7 +429,7 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Number} angle The target angle in radians.
+   * @param {number} angle The target angle in radians.
    * @param {RotationAnimationOptions} [options] An optional options object.
    */
   ActiveTileBase.prototype.animateRotation = function(angle, options) {
@@ -441,7 +441,7 @@ Tily.ActiveTileBase = (function() {
     this.animations.push(animation);
     return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
   };
-  
+
   /**
    * Add an active tile layer to this active tile at the specified z-index. If the z-index is
    * undefined, add the layer on top of existing layers, and if the z-index is -1, add the layer
@@ -451,7 +451,7 @@ Tily.ActiveTileBase = (function() {
    * @instance
    * @memberof Tily.ActiveTileBase
    * @param {Tily.ActiveTileLayer} layer The layer to add.
-   * @param {Number} [z] The z-index at which to add the layer. If this is -1, the layer will be
+   * @param {number} [z] The z-index at which to add the layer. If this is -1, the layer will be
    * added below existing layers and if it is undefined the layer will be added above existing
    * layers.
    * @returns {Tily.ActiveTileLayer} The layer that was added.
@@ -466,7 +466,7 @@ Tily.ActiveTileBase = (function() {
     }
     return layer;
   };
-  
+
   /**
    * Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer
    * and if the z-index is -1, remove the bottom layer. The removed layer is returned.
@@ -474,7 +474,7 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Number} [z] The z-index of the layer to remove. If this is -1, the bottom layer will
+   * @param {number} [z] The z-index of the layer to remove. If this is -1, the bottom layer will
    * be removed and if it is undefined the top layer will be removed.
    * @returns {Tily.ActiveTileLayer} The layer that was removed.
    */
@@ -487,7 +487,7 @@ Tily.ActiveTileBase = (function() {
     }
     return this.layers.splice(z, 1)[0];
   };
-  
+
   /**
    * Remove all layers from this active tile.
    * @name removeAllLayers
@@ -498,7 +498,7 @@ Tily.ActiveTileBase = (function() {
   ActiveTileBase.prototype.removeAllLayers = function() {
     this.layers = [];
   };
-  
+
   /**
    * Move a layer from one z-index to another z-index, either an absolute value or relative to
    * the layer's current z-index.
@@ -506,11 +506,11 @@ Tily.ActiveTileBase = (function() {
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Number} zFrom The z-index of the layer to move.
-   * @param {Number} zTo The z-index to move the layer to.
-   * @param {Boolean} relative If this is true, the layer will be moved relative to it's current
+   * @param {number} zFrom The z-index of the layer to move.
+   * @param {number} zTo The z-index to move the layer to.
+   * @param {boolean} relative If this is true, the layer will be moved relative to it's current
    * z-index.
-   * @returns {Boolean} True if a layer was moved successfully.
+   * @returns {boolean} True if a layer was moved successfully.
    */
   ActiveTileBase.prototype.moveLayer = function(zFrom, zTo, relative) {
     if (this.layers.length < 2) { return false; }
@@ -520,20 +520,20 @@ Tily.ActiveTileBase = (function() {
     this.layers.splice(toIndex, 0, layer);
     return true;
   };
-  
+
   /**
    * Handle this active tile's animations.
    * @name draw
    * @function
    * @instance
    * @memberof Tily.ActiveTileBase
-   * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
+   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.
    */
   ActiveTileBase.prototype.draw = function(elapsedTime) {
     for (let i = 0, length = this.animations.length; i < length; i++) {
       this.animations[i].update(elapsedTime);
     }
-    
+
     // Remove any animations that have finished
     this.animations = this.animations.filter(i => !i.finished);
   };

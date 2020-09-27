@@ -1,28 +1,28 @@
 Tily.Main = (function() {
   "use strict";
-  
+
   /**
    * @typedef Size
    * @type {Object}
-   * @property {Number} width The width.
-   * @property {Number} height The height.
+   * @property {number} width The width.
+   * @property {number} height The height.
    */
   /**
    * @callback beforeDrawFunction
-   * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
+   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.
    */
   /**
    * @callback afterDrawFunction
-   * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
+   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.
    */
   /**
    * @typedef TilyOptions
    * @type {Object}
    * @property {?Size} [size=null] The viewport size, or null to use the canvas element
    * dimensions.
-   * @property {Boolean} [handleResize=true] True if the window resize event should be handled.
-   * @property {Boolean} [showFPS=false] True if the FPS should be displayed.
-   * @property {Boolean} [renderLoop=true] True if the render loop should be started
+   * @property {boolean} [handleResize=true] True if the window resize event should be handled.
+   * @property {boolean} [showFPS=false] True if the FPS should be displayed.
+   * @property {boolean} [renderLoop=true] True if the render loop should be started
    * automatically.
    * @property {?beforeDrawFunction} [beforeDrawFunction=null] A function that will be called
    * after clearing the context but before drawing the active buffer. In the context of the
@@ -42,11 +42,11 @@ Tily.Main = (function() {
     beforeDrawFunction: null,
     afterDrawFunction: null
   };
-  
+
   /**
    * The main Tily object. Initialises a canvas element and starts drawing tiles.
    * @class
-   * @memberof Tily 
+   * @memberof Tily
    * @param {HTMLElement} canvas The canvas element in which to draw tiles.
    * @param {TilyOptions} [options] An optional object containing options for configuring this
    * Tily instance.
@@ -60,43 +60,43 @@ Tily.Main = (function() {
       console.log("Canvas not supported!");
       return;
     }
-    
+
     /**
      * Options for configuring this Tily instance.
      * @type {TilyOptions}
      */
     this.options = { ..._defaultTilyOptions, ...options || {} };
-    
+
     /**
      * The canvas element in which to draw tiles.
      * @type {HTMLElement}
      */
     this.canvas = canvas;
-    
+
     /**
      * The context on which to draw tiles.
      * @type {CanvasRenderingContext2D}
      */
     this.context = canvas.getContext("2d");
-    
+
     /**
      * The viewport width.
-     * @type {Number}
+     * @type {number}
      */
     this.width = 0;
-    
+
     /**
      * The viewport height.
-     * @type {Number}
+     * @type {number}
      */
     this.height = 0;
-    
+
     /**
      * The buffer currently being rendered.
      * @type {Tily.BufferBase}
      */
     this.activeBuffer = null;
-    
+
     /**
      * The currently running buffer transition or null if there is no currently running
      * transition.
@@ -104,38 +104,38 @@ Tily.Main = (function() {
      * @type {?Tily.BufferTransition}
      */
     this.bufferTransition = null;
-    
+
     /**
      * A request id returned from window.requestAnimationFrame that uniquely identifies the
      * entry in the callback list for the main render loop.
-     * @type {Number}
+     * @type {number}
      */
     this.loop = null;
-    
+
     /**
      * The unix epoch time of the last rendered frame.
-     * @type {Number}
+     * @type {number}
      */
     this.lastFrameTime = new Date();
-    
+
     /**
      * The number of frames rendered in the last second.
-     * @type {Number}
+     * @type {number}
      */
     this.frameCount = 0;
-    
+
     /**
      * The number of milliseconds elapsed since the last framerate update.
-     * @type {Number}
+     * @type {number}
      */
     this.frameTime = 0;
-    
+
     /**
      * The number of frames rendered per second.
-     * @type {Number}
+     * @type {number}
      */
     this.frameRate = 0;
-    
+
     // Handle the window resize event to get the current viewport size or use a fixed size
     if (!this.options.size || this.options.handleResize) {
       const self = this;
@@ -149,13 +149,13 @@ Tily.Main = (function() {
       this.canvas.width = this.width = this.options.size.width;
       this.canvas.height = this.height = this.options.size.height;
     }
-    
+
     // Start the render loop
     if (this.options.renderLoop) {
       loop(this);
     }
   }
-  
+
   /**
    * Perform a single iteration of the render loop.
    * @param {Tily.Main} t The Tily instance being looped.
@@ -174,14 +174,14 @@ Tily.Main = (function() {
     t.draw(elapsedTime);
     t.loop = window.requestAnimationFrame(function() { loop(t) });
   }
-  
+
   /**
    * Render the Tily instance onto the canvas.
    * @name draw
    * @function
    * @instance
    * @memberof Tily.Main
-   * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
+   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.
    */
   Main.prototype.draw = function(elapsedTime) {
     this.context.save();
@@ -189,7 +189,7 @@ Tily.Main = (function() {
     if (typeof this.options.beforeDrawFunction == "function") {
       this.options.beforeDrawFunction.call(this, this.canvas, this.context, this.width, this.height, elapsedTime);
     }
-    
+
     // Draw the active buffer and handle buffer fade transition
     const width = this.width,
       height = this.height;
@@ -226,7 +226,7 @@ Tily.Main = (function() {
       this.context.restore();
     }
   };
-  
+
   /**
    * Activate a new buffer with an optional fade transition from the current buffer.
    * @name activateBuffer
@@ -243,7 +243,7 @@ Tily.Main = (function() {
     this.activeBuffer = buffer;
     return new Promise(function(resolve, reject) { transition.finishedCallback = resolve; });
   };
-  
+
   /**
    * @name size
    * @description The size of this Tily element measured in pixels.

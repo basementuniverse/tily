@@ -1,7 +1,7 @@
 Tily.ShadowAnimation = (function(_super) {
   "use strict";
   Tily.utility.__extends(ShadowAnimation, _super);
-  
+
   /**
    * Represents a shadow animation for animating active tile shadows.
    * @class
@@ -37,14 +37,14 @@ Tily.ShadowAnimation = (function(_super) {
     }
     _super.call(this, activeTile, start, finish, options);
   }
-  
+
   /**
    * Update the animation and set the active tile shadow.
    * @name update
    * @function
    * @instance
    * @memberof Tily.ShadowAnimation
-   * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
+   * @param {number} elapsedTime The number of seconds that have elapsed since the last update.
    */
   ShadowAnimation.prototype.update = function(elapsedTime) {
     const amount = _super.prototype.update.call(this, elapsedTime);

@@ -1,7 +1,7 @@
 Tily.ForegroundAnimation = (function(_super) {
   "use strict";
   Tily.utility.__extends(ForegroundAnimation, _super);
-  
+
   /**
    * Represents a foreground colour animation for changing the colour of active tiles.
    * @class
@@ -25,14 +25,14 @@ Tily.ForegroundAnimation = (function(_super) {
     }
     _super.call(this, activeTile, start, finish, options);
   }
-  
+
   /**
    * Update the animation and the set the active tile foreground colour.
    * @name update
    * @function
    * @instance
    * @memberof Tily.ForegroundAnimation
-   * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
+   * @param {number} elapsedTime The number of seconds that have elapsed since the last update.
    */
   ForegroundAnimation.prototype.update = function(elapsedTime) {
     const amount = _super.prototype.update.call(this, elapsedTime);

@@ -1,7 +1,7 @@
 Tily.OutlineAnimation = (function(_super) {
   "use strict";
   Tily.utility.__extends(OutlineAnimation, _super);
-  
+
   /**
    * Represents an outline animation for animating active tile outlines.
    * @class
@@ -35,14 +35,14 @@ Tily.OutlineAnimation = (function(_super) {
     }
     _super.call(this, activeTile, start, finish, options);
   }
-  
+
   /**
    * Update the animation and set the active tile outline.
    * @name update
    * @function
    * @instance
    * @memberof Tily.OutlineAnimation
-   * @param {Number} elapsedTime The number of seconds that have elapsed since the last update.
+   * @param {number} elapsedTime The number of seconds that have elapsed since the last update.
    */
   OutlineAnimation.prototype.update = function(elapsedTime) {
     const amount = _super.prototype.update.call(this, elapsedTime);

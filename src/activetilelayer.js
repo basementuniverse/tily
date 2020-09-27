@@ -1,7 +1,7 @@
 Tily.ActiveTileLayer = (function(_super) {
   "use strict";
   Tily.utility.__extends(ActiveTileLayer, _super);
-  
+
   /**
    * A layer displayed as part of an active tile.
    * @class
@@ -12,32 +12,32 @@ Tily.ActiveTileLayer = (function(_super) {
    */
   function ActiveTileLayer(activeTile, parent) {
     _super.call(this);
-    
+
     /**
      * The top-level active tile that this layer belongs to.
      * @type {Tily.ActiveTile}
      */
     this.activeTile = activeTile;
-    
+
     /**
      * The object that this layer belongs to.
      * @type {Tily.ActiveTile|Tily.ActiveTileLayer}
      */
     this.parent = parent;
-    
+
     /**
      * The string value to render for this active tile layer.
      * @default ""
-     * @type {String}
+     * @type {string}
      */
     this.text = "";
   }
-  
+
   /**
    * @callback animateTextFunction
-   * @param {String} t The starting text.
-   * @param {Number} i The interpolation value, between 0 (start) and 1 (finish).
-   * @returns {String} The text to use in the active tile.
+   * @param {string} t The starting text.
+   * @param {number} i The interpolation value, between 0 (start) and 1 (finish).
+   * @returns {string} The text to use in the active tile.
    */
   /**
    * Animate this active tile's text.
@@ -45,7 +45,7 @@ Tily.ActiveTileLayer = (function(_super) {
    * @function
    * @instance
    * @memberof Tily.ActiveTileLayer
-   * @param {String|String[]|animateTextFunction} text If this is a string, the active tile's
+   * @param {string|string[]|animateTextFunction} text If this is a string, the active tile's
    * text will animate through each character one-by-one. If this is an array of strings, the
    * active tile's text will animate through each string one-by-one. If this is a function, the
    * initial text value and the interpolation value will be passed to it and the active tile's
@@ -57,7 +57,7 @@ Tily.ActiveTileLayer = (function(_super) {
     this.animations.push(animation);
     return new Promise(function(resolve, reject) { animation.finishedCallback = resolve; });
   };
-  
+
   /**
    * Add an active tile layer to this active tile at the specified z-index. If the z-index is
    * undefined, add the layer on top of existing layers, and if the z-index is -1, add the layer
@@ -67,7 +67,7 @@ Tily.ActiveTileLayer = (function(_super) {
    * @instance
    * @memberof Tily.ActiveTileLayer
    * @param {Tily.ActiveTileLayer} layer The layer to add.
-   * @param {Number} [z] The z-index at which to add the layer. If this is -1, the layer will be
+   * @param {number} [z] The z-index at which to add the layer. If this is -1, the layer will be
    * added below existing layers and if it is undefined the layer will be added above existing
    * layers.
    * @returns {Tily.ActiveTileLayer} The layer that was added.
@@ -78,12 +78,12 @@ Tily.ActiveTileLayer = (function(_super) {
 
     // Make sure the layer has a reference to the top-level active tile
     layer.activeTile = this.activeTile;
-    
+
     // Make sure the layer has a reference to its parent (ie. this active tile layer)
     layer.parent = this;
     return _super.prototype.addLayer.call(this, layer, z);
   };
-  
+
   /**
    * Render this active tile layer onto the buffer context.
    * @name draw
@@ -91,8 +91,8 @@ Tily.ActiveTileLayer = (function(_super) {
    * @instance
    * @memberof Tily.ActiveTileLayer
    * @param {CanvasRenderingContext2D} context The context to draw this active tile layer onto.
-   * @param {Number} elapsedTime The time elapsed in seconds since the last draw call.
-   * @param {Number} tileSize The tile size measured in pixels.
+   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.
+   * @param {number} tileSize The tile size measured in pixels.
    */
   ActiveTileLayer.prototype.draw = function(context, elapsedTime, tileSize) {
     if (!this.parent) { return; }  // Layer doesn't belong to an active tile or another layer
@@ -154,14 +154,14 @@ Tily.ActiveTileLayer = (function(_super) {
       context.strokeText(this.text, p.x, p.y);
     }
     context.fillText(this.text, p.x, p.y);
-    
+
     // Render sub-layers contained in this layer
     for (let i = 0, length = this.layers.length; i < length; i++) {
       this.layers[i].draw(context, elapsedTime, tileSize);
     }
     context.restore();
   };
-  
+
   /**
    * Get serializable data for this active tile layer.
    * @name getData
@@ -188,7 +188,7 @@ Tily.ActiveTileLayer = (function(_super) {
       centered: this.centered
     };
   };
-  
+
   /**
    * Create an active tile layer from data.
    * @name fromData

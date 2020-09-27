@@ -1,6 +1,6 @@
 Tily.TileLayer = (function() {
   "use strict";
-  
+
   /**
    * A layer of tiles displayed in a buffer or a cell.
    * @class
@@ -13,111 +13,111 @@ Tily.TileLayer = (function() {
      * @type {Tily.Buffer|Tily.Cell}
      */
     this.container = container;
-    
+
     /**
      * The font to use for this layer's tiles.
      * @default "sans-serif"
-     * @type {String}
+     * @type {string}
      */
     this.font = "sans-serif";
-    
+
     /**
      * The colour to use for this layer's tile characters.
      * @default "white"
-     * @type {String}
+     * @type {string}
      */
     this.foreground = "white";
-    
+
     /**
      * The colour to use for this layer's tile backgrounds. If the string is empty, tile
      * backgrounds won't be rendered.
      * @default ""
-     * @type {String}
+     * @type {string}
      */
     this.background = "";
 
     /**
      * Optional map of foreground colours
      * @default null
-     * @type {String}
+     * @type {string}
      */
     this.foregroundMap = null;
 
     /**
      * Optional map of background colours
      * @default null
-     * @type {String}
+     * @type {string}
      */
     this.backgroundMap = null;
-    
+
     /**
      * The opacity of this layer's tiles.
      * @default 1
-     * @type {Number}
+     * @type {number}
      */
     this.opacity = 1;
 
     /**
      * The composite operation to use when drawing this layer.
      * @default "source-over"
-     * @type {String}
+     * @type {string}
      */
     this.compositeMode = "source-over";
-    
+
     /**
      * Whether or not to clip this layer's tiles at their edges.
      * @default false
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.clip = false;
 
     /**
      * True if the text in this layer's tiles should be centered.
      * @default false
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.centered = false;
-    
+
     /**
      * An array of strings for each tile. If any element in this array has length greater than
      * 1, the string characters will be rendered on top of each other. If any element is an
      * empty string, the tile won't be rendered.
-     * @type {String[]}
+     * @type {string[]}
      */
     this.tiles = [];
   }
-  
+
   /**
    * Return the array index from a given position.
-   * @param {Number} x The x-coordinate of the position.
-   * @param {Number} y The y-coordinate of the position.
-   * @param {Number} w The width of this layer.
-   * @returns {Number} An array index.
+   * @param {number} x The x-coordinate of the position.
+   * @param {number} y The y-coordinate of the position.
+   * @param {number} w The width of this layer.
+   * @returns {number} An array index.
    */
   function index(x, y, w) {
     return w * y + x;
   }
-  
+
   /**
    * Return the position from a given array index.
-   * @param {Number} i The array index.
-   * @param {Number} w The width of this layer.
+   * @param {number} i The array index.
+   * @param {number} w The width of this layer.
    * @returns {Tily.utility.vec2} A 2d position.
    */
   function position(i, w) {
     return Tily.utility.vec2(i % w, Math.floor(i / w));
   }
-  
+
   /**
    * Return information about the region between (x1, y1) and (x2, y2). The second corner must be
    * below and to the right of the first corner. Corners will default to the top-left and
    * bottom-right corners of the layer if undefined.
-   * @param {Number} x1 The x-coordinate of the top-left corner of the region.
-   * @param {Number} y1 The y-coordinate of the top-left corner of the region.
-   * @param {Number} x2 The x-coordinate of the bottom-right corner of the region.
-   * @param {Number} y2 The y-coordinate of the bottom-right corner of the region.
-   * @param {Number} w The width of this layer.
-   * @param {Number} h The height of this layer.
+   * @param {number} x1 The x-coordinate of the top-left corner of the region.
+   * @param {number} y1 The y-coordinate of the top-left corner of the region.
+   * @param {number} x2 The x-coordinate of the bottom-right corner of the region.
+   * @param {number} y2 The y-coordinate of the bottom-right corner of the region.
+   * @param {number} w The width of this layer.
+   * @param {number} h The height of this layer.
    * @returns {Object} An object containing the start offset into the tiles array, the width and
    * height of the region and the gap between row sections.
    */
@@ -126,11 +126,11 @@ Tily.TileLayer = (function() {
     y1 = y1 || 0;
     x2 = x2 || w;
     y2 = y2 || h;
-    
+
     // Make sure (x2, y2) is below and to the right of (x1, y1), or at the same position.
     x2 = Math.max(x1, x2);
     y2 = Math.max(y1, y2);
-    
+
     // Make sure both corners are within layer bounds
     x1 = Tily.utility.clamp(x1, 0, w);
     y1 = Tily.utility.clamp(y1, 0, h);
@@ -144,7 +144,7 @@ Tily.TileLayer = (function() {
       gap: w - width
     };
   }
-  
+
   /**
    * Get the characters at the specified tile position, or an empty string if there are no
    * characters at this tile position.
@@ -152,9 +152,9 @@ Tily.TileLayer = (function() {
    * @function
    * @instance
    * @memberof Tily.TileLayer
-   * @param {Number} x The x-coordinate of the position.
-   * @param {Number} y The y-coordinate of the position.
-   * @returns {String} The character or characters at the specified position.
+   * @param {number} x The x-coordinate of the position.
+   * @param {number} y The y-coordinate of the position.
+   * @returns {string} The character or characters at the specified position.
    */
   TileLayer.prototype.getTile = function(x, y) {
     if (
@@ -187,19 +187,19 @@ Tily.TileLayer = (function() {
     }
     return this.background;
   };
-  
+
   /**
    * Set the characters at the specified tile position.
    * @name setTile
    * @function
    * @instance
    * @memberof Tily.TileLayer
-   * @param {Number} x The x-coordinate of the position.
-   * @param {Number} y The y-coordinate of the position.
-   * @param {String} character The character or characters to set.
-   * @param {String} foreground The foreground colour for this tile, or null to use default
-   * @param {String} background The background colour for this tile, or null to use default
-   * @returns {Boolean} True if the tile was set successfully.
+   * @param {number} x The x-coordinate of the position.
+   * @param {number} y The y-coordinate of the position.
+   * @param {string} character The character or characters to set.
+   * @param {string} foreground The foreground colour for this tile, or null to use default
+   * @param {string} background The background colour for this tile, or null to use default
+   * @returns {boolean} True if the tile was set successfully.
    */
   TileLayer.prototype.setTile = function(x, y, character, foreground = null, background = null) {
     if (
@@ -223,7 +223,7 @@ Tily.TileLayer = (function() {
     }
     return false;
   };
-  
+
   /**
    * Set the characters for all tiles in a rectangular region. If x2 and y2 are not specified
    * then fill from (x1, y1) to the bottom-right corner, and if no coordinates are specified then
@@ -232,11 +232,11 @@ Tily.TileLayer = (function() {
    * @function
    * @instance
    * @memberof Tily.TileLayer
-   * @param {String} character The character or characters to set.
-   * @param {Number} [x1] The x-coordinate of the top-left corner of the region.
-   * @param {Number} [y1] The y-coordinate of the top-left corner of the region.
-   * @param {Number} [x2] The x-coordinate of the bottom-right corner of the region.
-   * @param {Number} [y2] The y-coordinate of the bottom-right corner of the region.
+   * @param {string} character The character or characters to set.
+   * @param {number} [x1] The x-coordinate of the top-left corner of the region.
+   * @param {number} [y1] The y-coordinate of the top-left corner of the region.
+   * @param {number} [x2] The x-coordinate of the bottom-right corner of the region.
+   * @param {number} [y2] The y-coordinate of the bottom-right corner of the region.
    */
   TileLayer.prototype.fill = function(character, x1, y1, x2, y2, foreground = null, background = null) {
     const r = region(x1, y1, x2, y2, this.container.size.width, this.container.size.height);
@@ -258,7 +258,7 @@ Tily.TileLayer = (function() {
       }
     }
   };
-  
+
   /**
    * Clear all tiles in a rectangular region. If x2 and y2 are not specified then clear from
    * (x1, y1) to the bottom-right corner, and if no coordinates are specified then clear the
@@ -267,10 +267,10 @@ Tily.TileLayer = (function() {
    * @function
    * @instance
    * @memberof Tily.TileLayer
-   * @param {Number} [x1] The x-coordinate of the top-left corner of the region.
-   * @param {Number} [y1] The y-coordinate of the top-left corner of the region.
-   * @param {Number} [x2] The x-coordinate of the bottom-right corner of the region.
-   * @param {Number} [y2] The y-coordinate of the bottom-right corner of the region.
+   * @param {number} [x1] The x-coordinate of the top-left corner of the region.
+   * @param {number} [y1] The y-coordinate of the top-left corner of the region.
+   * @param {number} [x2] The x-coordinate of the bottom-right corner of the region.
+   * @param {number} [y2] The y-coordinate of the bottom-right corner of the region.
    */
   TileLayer.prototype.clear = function(x1, y1, x2, y2) {
     const r = region(x1, y1, x2, y2, this.container.size.width, this.container.size.height);
@@ -286,15 +286,15 @@ Tily.TileLayer = (function() {
       }
     }
   };
-  
+
   /**
    * Rearrange the tiles in this layer so they align with the specified width and height.
    * @name resize
    * @function
    * @instance
    * @memberof Tily.TileLayer
-   * @param {Number} width The new layer width.
-   * @param {Number} height The new layer height.
+   * @param {number} width The new layer width.
+   * @param {number} height The new layer height.
    */
   TileLayer.prototype.resize = function(width, height) {
     if (width == this.container.size.width && height == this.container.size.height) { return; }
@@ -315,7 +315,7 @@ Tily.TileLayer = (function() {
       this.backgroundMap = background;
     }
   };
-  
+
   /**
    * Render this layer onto the specified context. If a tile has a string with length greater
    * than 1, draw each character of the string on top of each other.
@@ -324,7 +324,7 @@ Tily.TileLayer = (function() {
    * @instance
    * @memberof Tily.TileLayer
    * @param {CanvasRenderingContext2D} context The context to render the layer onto.
-   * @param {Number} tileSize The size of each tile measured in pixels.
+   * @param {number} tileSize The size of each tile measured in pixels.
    * @param {Tily.utility.vec2} tl The top-left tile position currently in view.
    * @param {Tily.utility.vec2} br The bottom-right tile position currently in view.
    */
@@ -338,7 +338,7 @@ Tily.TileLayer = (function() {
     context.font = (tileSize + 1) + "px " + this.font;
     context.globalAlpha = this.opacity;
     context.globalCompositeOperation = this.compositeMode;
-    
+
     // Render background tiles if a background colour or background map is defined
     if (this.background || this.backgroundMap) {
       context.fillStyle = this.background;
@@ -360,7 +360,7 @@ Tily.TileLayer = (function() {
         }
       }
     }
-    
+
     // Render foreground characters
     let c;
     if (this.centered === true) {
@@ -393,7 +393,7 @@ Tily.TileLayer = (function() {
     }
     context.restore();
   };
-  
+
   /**
    * Get serializable data for this tile layer.
    * @name getData
@@ -416,7 +416,7 @@ Tily.TileLayer = (function() {
       tiles: this.tiles
     };
   };
-  
+
   /**
    * Create a tile layer from data.
    * @name fromData

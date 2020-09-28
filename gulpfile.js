@@ -1,5 +1,3 @@
-// sudo gulp
-
 const gulp = require("gulp");
 const concat = require("gulp-concat");
 const wrap = require("gulp-wrap");
@@ -35,11 +33,15 @@ const paths = [
 ];
 
 function scripts() {
-  return gulp.src(paths)
-  .pipe(concat("tily.min.js"))
-  .pipe(wrap({ src: "src/wrapper.js" }))
-  .pipe(jsmin())
-  .pipe(gulp.dest("."));
+  const dev = process.env.DEV;
+  const filename = dev ? "tily.dev.js" : "tily.min.js";
+  let pipeline = gulp.src(paths)
+    .pipe(concat(filename))
+    .pipe(wrap({ src: "src/wrapper.js" }))
+  if (!dev) {
+    pipeline = pipeline.pipe(jsmin());
+  }
+  return pipeline.pipe(gulp.dest("."));
 }
 
 exports.default = gulp.series(scripts);

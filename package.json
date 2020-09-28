@@ -9,6 +9,7 @@
   "types": "./types/index.d.ts",
   "scripts": {
     "build": "gulp",
+    "build-dev": "export DEV=true; gulp",
     "build-docs": "jsdoc -c jsdoc-conf.json",
     "test": "http-server -a localhost -p 8081 -o tests/index.html"
   },

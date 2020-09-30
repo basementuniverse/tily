@@ -4313,15 +4313,10 @@ Tily.ShadowAnimation = (function(_super) {
   return ShadowAnimation;
 }(Tily.Animation));
 
-if (typeof module !== "undefined") {  // Node.js
+if (typeof module !== "undefined") {
   module.exports = Tily;
 }
-if (typeof define !== "undefined" && define.amd) {  // AMD
-  define(function() { return Tily; });
-}
-if (typeof exports !== "undefined") {
-  exports.Tily = Tily;
-} else if (typeof window !== "undefined") {
+if (typeof window !== "undefined") {
   window.Tily = Tily;
 }
 })();

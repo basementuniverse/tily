@@ -6,7 +6,6 @@
     "doc": "docs",
     "test": "tests"
   },
-  "types": "./types/index.d.ts",
   "scripts": {
     "build": "gulp",
     "build-dev": "export DEV=true; gulp",
@@ -29,7 +28,6 @@
     "gulp-jsmin": "^0.1.5",
     "gulp-wrap": "^0.15.0",
     "http-server": "^0.12.3",
-    "jsdoc": "^3.6.6",
-    "typescript": "^4.0.3"
+    "jsdoc": "^3.6.6"
   }
 }

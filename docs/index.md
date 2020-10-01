@@ -1,4 +1,4 @@
-# ![](images/tily.svg) Tily
+# ![](../images/tily.svg) Tily
 
 A basic font-based tile engine.
 

@@ -2,55 +2,181 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Buffer</title>
+    <title>Buffer - Documentation</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
-
 <body>
 
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-tily-reference.html">Quick Reference</a></li></ul><h3>Namespaces</h3><ul><li><a href="Tily.html">Tily</a></li></ul><h3>Classes</h3><ul><li><a href="Tily.ActiveTile.html">ActiveTile</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTile.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.ActiveTile.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateOutline">animateOutline</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateShadow">animateShadow</a></li><li data-type='method'><a href="Tily.ActiveTile.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTile.html#getData">getData</a></li><li data-type='method'><a href="Tily.ActiveTile.html#move">move</a></li><li data-type='method'><a href="Tily.ActiveTile.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTile.html#pauseAnimations">pauseAnimations</a></li><li data-type='method'><a href="Tily.ActiveTile.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTile.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.ActiveTile.html#resetAnimations">resetAnimations</a></li><li data-type='method'><a href="Tily.ActiveTile.html#runAnimations">runAnimations</a></li><li data-type='method'><a href="Tily.ActiveTile.html#stopAnimations">stopAnimations</a></li></ul></li><li><a href="Tily.ActiveTileBase.html">ActiveTileBase</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTileBase.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateOutline">animateOutline</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateShadow">animateShadow</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#pauseAnimations">pauseAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#resetAnimations">resetAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#runAnimations">runAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#stopAnimations">stopAnimations</a></li></ul></li><li><a href="Tily.ActiveTileLayer.html">ActiveTileLayer</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTileLayer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateOutline">animateOutline</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateShadow">animateShadow</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateText">animateText</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#getData">getData</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#pauseAnimations">pauseAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#resetAnimations">resetAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#runAnimations">runAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#stopAnimations">stopAnimations</a></li></ul></li><li><a href="Tily.Animation.html">Animation</a><ul class='methods'><li data-type='method'><a href="Tily.Animation.html#pause">pause</a></li><li data-type='method'><a href="Tily.Animation.html#reset">reset</a></li><li data-type='method'><a href="Tily.Animation.html#run">run</a></li><li data-type='method'><a href="Tily.Animation.html#update">update</a></li></ul></li><li><a href="Tily.Buffer.html">Buffer</a><ul class='methods'><li data-type='method'><a href="Tily.Buffer.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.Buffer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.Buffer.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.Buffer.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#draw">draw</a></li><li data-type='method'><a href="Tily.Buffer.html#getData">getData</a></li><li data-type='method'><a href="Tily.Buffer.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.Buffer.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.Buffer.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.Buffer.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.Buffer.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.Buffer.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.Buffer.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#resize">resize</a></li><li data-type='method'><a href="Tily.Buffer.html#serialize">serialize</a></li><li data-type='method'><a href="Tily.Buffer.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.Buffer.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.Buffer.html#zoom">zoom</a></li></ul></li><li><a href="Tily.BufferBase.html">BufferBase</a><ul class='methods'><li data-type='method'><a href="Tily.BufferBase.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.BufferBase.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.BufferBase.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.BufferBase.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.BufferBase.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.BufferBase.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.BufferBase.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.BufferBase.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.BufferBase.html#zoom">zoom</a></li></ul></li><li><a href="Tily.BufferTransition.html">BufferTransition</a><ul class='methods'><li data-type='method'><a href="Tily.BufferTransition.html#update">update</a></li></ul></li><li><a href="Tily.Cell.html">Cell</a><ul class='methods'><li data-type='method'><a href="Tily.Cell.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.Cell.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.Cell.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.Cell.html#draw">draw</a></li><li data-type='method'><a href="Tily.Cell.html#getData">getData</a></li><li data-type='method'><a href="Tily.Cell.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.Cell.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.Cell.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.Cell.html#serialize">serialize</a></li></ul></li><li><a href="Tily.CellBuffer.html">CellBuffer</a><ul class='methods'><li data-type='method'><a href="Tily.CellBuffer.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.CellBuffer.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.CellBuffer.html#draw">draw</a></li><li data-type='method'><a href="Tily.CellBuffer.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.CellBuffer.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.CellBuffer.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.CellBuffer.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.CellBuffer.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.CellBuffer.html#serialize">serialize</a></li><li data-type='method'><a href="Tily.CellBuffer.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.CellBuffer.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.CellBuffer.html#zoom">zoom</a></li></ul></li><li><a href="Tily.ForegroundAnimation.html">ForegroundAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.ForegroundAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.ForegroundAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.ForegroundAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.ForegroundAnimation.html#update">update</a></li></ul></li><li><a href="Tily.Main.html">Main</a><ul class='methods'><li data-type='method'><a href="Tily.Main.html#activateBuffer">activateBuffer</a></li><li data-type='method'><a href="Tily.Main.html#draw">draw</a></li></ul></li><li><a href="Tily.OffsetAnimation.html">OffsetAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.OffsetAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.OffsetAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.OffsetAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.OffsetAnimation.html#update">update</a></li></ul></li><li><a href="Tily.OffsetTransition.html">OffsetTransition</a><ul class='methods'><li data-type='method'><a href="Tily.OffsetTransition.html#update">update</a></li></ul></li><li><a href="Tily.OpacityAnimation.html">OpacityAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.OpacityAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.OpacityAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.OpacityAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.OpacityAnimation.html#update">update</a></li></ul></li><li><a href="Tily.OutlineAnimation.html">OutlineAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.OutlineAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.OutlineAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.OutlineAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.OutlineAnimation.html#update">update</a></li></ul></li><li><a href="Tily.RotationAnimation.html">RotationAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.RotationAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.RotationAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.RotationAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.RotationAnimation.html#update">update</a></li></ul></li><li><a href="Tily.ScaleAnimation.html">ScaleAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.ScaleAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.ScaleAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.ScaleAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.ScaleAnimation.html#update">update</a></li></ul></li><li><a href="Tily.ScaleTransition.html">ScaleTransition</a><ul class='methods'><li data-type='method'><a href="Tily.ScaleTransition.html#update">update</a></li></ul></li><li><a href="Tily.ShadowAnimation.html">ShadowAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.ShadowAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.ShadowAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.ShadowAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.ShadowAnimation.html#update">update</a></li></ul></li><li><a href="Tily.TextAnimation.html">TextAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.TextAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.TextAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.TextAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.TextAnimation.html#update">update</a></li></ul></li><li><a href="Tily.TileLayer.html">TileLayer</a><ul class='methods'><li data-type='method'><a href="Tily.TileLayer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.TileLayer.html#clear">clear</a></li><li data-type='method'><a href="Tily.TileLayer.html#draw">draw</a></li><li data-type='method'><a href="Tily.TileLayer.html#fill">fill</a></li><li data-type='method'><a href="Tily.TileLayer.html#getData">getData</a></li><li data-type='method'><a href="Tily.TileLayer.html#getTile">getTile</a></li><li data-type='method'><a href="Tily.TileLayer.html#resize">resize</a></li><li data-type='method'><a href="Tily.TileLayer.html#setTile">setTile</a></li></ul></li><li><a href="Tily.Transition.html">Transition</a><ul class='methods'><li data-type='method'><a href="Tily.Transition.html#update">update</a></li></ul></li></ul>
+</nav>
+
 <div id="main">
-
-    <h1 class="page-title">Class: Buffer</h1>
-
     
+    <h1 class="page-title">Buffer</h1>
+    
+
+    <!--container.tmpl-->
+
 
 
 
 
 <section>
 
-<header>
+
+
+<header data-tmpl="container.tmpl">
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="Tily.html">Tily</a>.</span>Buffer<span class="signature">(width, height, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+        <h2>
+            <span class="ancestors"><a href="Tily.html">Tily</a>.</span>
+        
+        Buffer
+        </h2>
         
     
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Fields &amp; Properties</dt><dd><ul>
+            <li><a href="#activeTiles">activeTiles</a></li>
+            
+            <li><a href="#activeTilesMap">activeTilesMap</a></li>
+            
+            <li><a href="#canvas">canvas</a></li>
+            
+            <li><a href="#context">context</a></li>
+            
+            <li><a href="#layers">layers</a></li>
+            
+            <li><a href="#offset">offset</a></li>
+            
+            <li><a href="#offsetPixels">offsetPixels</a></li>
+            
+            <li><a href="#offsetTransition">offsetTransition</a></li>
+            
+            <li><a href="#options">options</a></li>
+            
+            <li><a href="#scale">scale</a></li>
+            
+            <li><a href="#scaleTransition">scaleTransition</a></li>
+            
+            <li><a href="#size">size</a></li>
+            
+            <li><a href="#tileSize">tileSize</a></li>
+            
+            <li><a href="#viewSize">viewSize</a></li>
+            </ul></dd><dt>Methods</dt><dd><ul>
+            <li><a href="#deserialize">deserialize</a></li>
+            
+            <li><a href="#fromData">fromData</a></li>
+            
+            <li><a href="#addActiveTile">addActiveTile</a></li>
+            
+            <li><a href="#addLayer">addLayer</a></li>
+            
+            <li><a href="#draw">draw</a></li>
+            
+            <li><a href="#getData">getData</a></li>
+            
+            <li><a href="#getPosition">getPosition</a></li>
+            
+            <li><a href="#getTileInfo">getTileInfo</a></li>
+            
+            <li><a href="#moveLayer">moveLayer</a></li>
+            
+            <li><a href="#moveOffset">moveOffset</a></li>
+            
+            <li><a href="#removeActiveTile">removeActiveTile</a></li>
+            
+            <li><a href="#removeAllActiveTiles">removeAllActiveTiles</a></li>
+            
+            <li><a href="#removeAllLayers">removeAllLayers</a></li>
+            
+            <li><a href="#removeLayer">removeLayer</a></li>
+            
+            <li><a href="#resize">resize</a></li>
+            
+            <li><a href="#serialize">serialize</a></li>
+            
+            <li><a href="#updateActiveTilesMap">updateActiveTilesMap</a></li>
+            
+            <li><a href="#updateTransitions">updateTransitions</a></li>
+            
+            <li><a href="#zoom">zoom</a></li>
+            </ul></dd></dl></div>
 </header>
 
 <article>
     <div class="container-overview">
     
-        
+        <!--method.tmpl-->
+<div class="method-details">
+
+
+
+
 
     
 
     
-    <h4 class="name" id="Buffer"><span class="type-signature"></span>new Buffer<span class="signature">(width, height, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+      <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line14">14</a>
+  </code>
+</div>
 
     
+
+    <h4 class="name" id="Buffer">
+      <a href="#params-Buffer"><span class="type-signature"></span>new Buffer</a><span class="signature">(width, height, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    A buffer containing tile layers that can be rendered in the Tily canvas.
+    <p>A buffer containing tile layers that can be rendered in the Tily canvas.</p>
 </div>
 
 
@@ -60,11 +186,61 @@
 
 
 
+<div class="collapse_" id="methodCollapse-Buffer">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-Buffer" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -112,7 +288,7 @@
 
             
 
-            <td class="description last">The width of the buffer in tiles.</td>
+            <td class="description last"><p>The width of the buffer in tiles.</p></td>
         </tr>
 
     
@@ -143,7 +319,7 @@
 
             
 
-            <td class="description last">The height of the buffer in tiles.</td>
+            <td class="description last"><p>The height of the buffer in tiles.</p></td>
         </tr>
 
     
@@ -176,57 +352,14 @@
 
             
 
-            <td class="description last">An optional options object for configuring the buffer.</td>
+            <td class="description last"><p>An optional options object for configuring the buffer.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line14">line 14</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -246,6 +379,14 @@
 
 
 
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * A buffer containing tile layers that can be rendered in the Tily canvas.\n   * @class\n   * @extends Tily.BufferBase\n   * @memberof Tily\n   * @param {number} width The width of the buffer in tiles.\n   * @param {number} height The height of the buffer in tiles.\n   * @param {BufferOptions} [options] An optional options object for configuring the buffer.\n   */","meta":{"range":[464,716],"filename":"buffer.js","lineno":14,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{"id":"astnode100003326","name":"Buffer","type":"FunctionDeclaration","paramnames":["width","height","options"]},"vars":{"this.layers":"Tily.Buffer#layers","this.size.width":"Tily.Buffer#size.width","this.size.height":"Tily.Buffer#size.height"},"shortpath":"buffer.js"},"description":"<p>A buffer containing tile layers that can be rendered in the Tily canvas.</p>","kind":"class","augments":["Tily.BufferBase"],"memberof":"Tily","params":[{"type":{"names":["number"]},"description":"<p>The width of the buffer in tiles.</p>","name":"width"},{"type":{"names":["number"]},"description":"<p>The height of the buffer in tiles.</p>","name":"height"},{"type":{"names":["BufferOptions"]},"optional":true,"description":"<p>An optional options object for configuring the buffer.</p>","name":"options"}],"name":"Buffer","longname":"Tily.Buffer","scope":"static","___id":"T000003R000006","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"Buffer","signature":"<span class=\"signature\">(width, height, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>."]}
+</pre>
+-->
+</div>
 
     
     </div>
@@ -267,9 +408,7 @@
 
     
 
-    
-
-    
+     
 
     
 
@@ -277,33 +416,48 @@
         <h3 class="subsection-title">Members</h3>
 
         
-            
-<h4 class="name" id="activeTiles"><span class="type-signature"></span>activeTiles<span class="type-signature"> :Array.&lt;<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line58">58</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="activeTiles">
+  <span class="type-signature"></span>activeTiles<span class="type-signature"> :Array.&lt;<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>></span>
+</h4>
 
 
 
 
 <div class="description">
-    An array of active tiles contained in this buffer.
+    <p>An array of active tiles contained in this buffer.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -333,19 +487,6 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line58">line 58</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -353,35 +494,59 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="activeTilesMap"><span class="type-signature"></span>activeTilesMap<span class="type-signature"> :Object</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line65">65</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="activeTilesMap">
+  <span class="type-signature"></span>activeTilesMap<span class="type-signature"> :Object</span>
+</h4>
 
 
 
 
 <div class="description">
-    A map of active tiles, with hashed tile positions as keys and an array of tiles at a
-position as values.
+    <p>A map of active tiles, with hashed tile positions as keys and an array of tiles at a
+position as values.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -411,19 +576,6 @@ position as values.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line65">line 65</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -431,34 +583,58 @@ position as values.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="canvas"><span class="type-signature"></span>canvas<span class="type-signature"> :HTMLElement</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line46">46</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="canvas">
+  <span class="type-signature"></span>canvas<span class="type-signature"> :HTMLElement</span>
+</h4>
 
 
 
 
 <div class="description">
-    The canvas element to render this buffer onto.
+    <p>The canvas element to render this buffer onto.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">HTMLElement</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -488,19 +664,6 @@ position as values.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line46">line 46</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -508,34 +671,58 @@ position as values.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="context"><span class="type-signature"></span>context<span class="type-signature"> :CanvasRenderingContext2D</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line52">52</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="context">
+  <span class="type-signature"></span>context<span class="type-signature"> :CanvasRenderingContext2D</span>
+</h4>
 
 
 
 
 <div class="description">
-    The canvas context to render onto.
+    <p>The canvas context to render onto.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">CanvasRenderingContext2D</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -565,12 +752,82 @@ position as values.
     
 
     
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+        
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line21">21</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="layers">
+  <span class="type-signature"></span>layers<span class="type-signature"> :Array.&lt;<a href="Tily.TileLayer.html">Tily.TileLayer</a>></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>The layers contained in this buffer.</p>
+</div>
+
+
+<div>
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line52">line 52</a>
-    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -585,106 +842,58 @@ position as values.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="layers"><span class="type-signature"></span>layers<span class="type-signature"> :Array.&lt;<a href="Tily.TileLayer.html">Tily.TileLayer</a>></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line77">77</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="offset">
+  <span class="type-signature"></span>offset<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The layers contained in this buffer.
+    <p>A camera offset position for this buffer measured in pixels.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;<a href="Tily.TileLayer.html">Tily.TileLayer</a>></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line21">line 21</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<!-- details.tmpl -->
 
 
 
 
 
 
-        
-            
-<h4 class="name" id="offset"><span class="type-signature"></span>offset<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span></h4>
 
 
-
-
-<div class="description">
-    A camera offset position for this buffer measured in pixels.
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
+<dl class="dl-horizontal">
 
     
 
@@ -714,19 +923,6 @@ position as values.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line77">line 77</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -734,34 +930,58 @@ position as values.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="offsetPixels"><span class="type-signature"></span>offsetPixels<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line217">217</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="offsetPixels">
+  <span class="type-signature"></span>offsetPixels<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The offset of this buffer measured in pixels, as a Tily.utility.vec2 object.
+    <p>The offset of this buffer measured in pixels, as a Tily.utility.vec2 object.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -791,19 +1011,6 @@ position as values.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line217">line 217</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -811,35 +1018,59 @@ position as values.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="offsetTransition"><span class="type-signature">(nullable) </span>offsetTransition<span class="type-signature"> :<a href="Tily.OffsetTransition.html">Tily.OffsetTransition</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line85">85</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="offsetTransition">
+  <span class="type-signature">(nullable) </span>offsetTransition<span class="type-signature"> :<a href="Tily.OffsetTransition.html">Tily.OffsetTransition</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The currently running offset transition or null if there is no transition currently
-running.
+    <p>The currently running offset transition or null if there is no transition currently
+running.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.OffsetTransition.html">Tily.OffsetTransition</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -865,23 +1096,10 @@ running.
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>null</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line85">line 85</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -894,34 +1112,58 @@ running.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="options"><span class="type-signature"></span>options<span class="type-signature"> :<a href="global.html#BufferOptions">BufferOptions</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line71">71</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="options">
+  <span class="type-signature"></span>options<span class="type-signature"> :<a href="global.html#BufferOptions">BufferOptions</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    Options for configuring this buffer.
+    <p>Options for configuring this buffer.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="global.html#BufferOptions">BufferOptions</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -951,19 +1193,6 @@ running.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line71">line 71</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -971,34 +1200,58 @@ running.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="scale"><span class="type-signature"></span>scale<span class="type-signature"> :number</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line91">91</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="scale">
+  <span class="type-signature"></span>scale<span class="type-signature"> :number</span>
+</h4>
 
 
 
 
 <div class="description">
-    The number of tiles currently visible along the locked axis.
+    <p>The number of tiles currently visible along the locked axis.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1028,19 +1281,6 @@ running.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line91">line 91</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1048,35 +1288,59 @@ running.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="scaleTransition"><span class="type-signature">(nullable) </span>scaleTransition<span class="type-signature"> :<a href="Tily.ScaleTransition.html">Tily.ScaleTransition</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line99">99</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="scaleTransition">
+  <span class="type-signature">(nullable) </span>scaleTransition<span class="type-signature"> :<a href="Tily.ScaleTransition.html">Tily.ScaleTransition</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The currently running scale transition or null if there is no transition currently
-running.
+    <p>The currently running scale transition or null if there is no transition currently
+running.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.ScaleTransition.html">Tily.ScaleTransition</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1102,23 +1366,10 @@ running.
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>null</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line99">line 99</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -1131,34 +1382,58 @@ running.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="size"><span class="type-signature"></span>size<span class="type-signature"> :<a href="global.html#Size">Size</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line105">105</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="size">
+  <span class="type-signature"></span>size<span class="type-signature"> :<a href="global.html#Size">Size</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The size of this buffer measured in tiles.
+    <p>The size of this buffer measured in tiles.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="global.html#Size">Size</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1188,19 +1463,6 @@ running.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line105">line 105</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1208,34 +1470,58 @@ running.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="tileSize"><span class="type-signature"></span>tileSize<span class="type-signature"> :number</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line111">111</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="tileSize">
+  <span class="type-signature"></span>tileSize<span class="type-signature"> :number</span>
+</h4>
 
 
 
 
 <div class="description">
-    The side length of each tile measured in pixels.
+    <p>The side length of each tile measured in pixels.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1265,19 +1551,6 @@ running.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line111">line 111</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1285,34 +1558,58 @@ running.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="viewSize"><span class="type-signature"></span>viewSize<span class="type-signature"> :<a href="global.html#Size">Size</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line117">117</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="viewSize">
+  <span class="type-signature"></span>viewSize<span class="type-signature"> :<a href="global.html#Size">Size</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The size of the viewport measured in tiles.
+    <p>The size of the viewport measured in tiles.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="global.html#Size">Size</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1342,12 +1639,114 @@ running.
     
 
     
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+        
+    
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line117">line 117</a>
-    </li></ul></dd>
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line283">283</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".deserialize">
+      <a href="#params-deserialize"><span class="type-signature">(static) </span>deserialize</a><span class="signature">(s)</span><span class="type-signature"> &rarr; {<a href="Tily.Buffer.html">Tily.Buffer</a>}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Deserialize the JSON data into a buffer.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-deserialize">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -1362,41 +1761,14 @@ running.
 
 
 
-        
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".deserialize"><span class="type-signature">(static) </span>deserialize<span class="signature">(s)</span><span class="type-signature"> &rarr; {<a href="Tily.Buffer.html">Tily.Buffer</a>}</span></h4>
-    
-
-    
 
 
-
-<div class="description">
-    Deserialize the JSON data into a buffer.
-</div>
-
+  <div id="params-deserialize" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -1434,57 +1806,14 @@ running.
 
             
 
-            <td class="description last">The JSON data to deserialize.</td>
+            <td class="description last"><p>The JSON data to deserialize.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line283">line 283</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -1498,18 +1827,17 @@ running.
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    The deserialized buffer.
+    <p>The deserialized buffer.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1522,26 +1850,67 @@ running.
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Deserialize the JSON data into a buffer.\n   * @name deserialize\n   * @function\n   * @static\n   * @memberof Tily.Buffer\n   * @param {string} s The JSON data to deserialize.\n   * @returns {Tily.Buffer} The deserialized buffer.\n   */","meta":{"filename":"buffer.js","lineno":283,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Deserialize the JSON data into a buffer.</p>","name":"deserialize","kind":"function","scope":"static","memberof":"Tily.Buffer","params":[{"type":{"names":["string"]},"description":"<p>The JSON data to deserialize.</p>","name":"s"}],"returns":[{"type":{"names":["Tily.Buffer"]},"description":"<p>The deserialized buffer.</p>"}],"longname":"Tily.Buffer.deserialize","___id":"T000002R000380","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".deserialize","signature":"<span class=\"signature\">(s)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.Buffer.html\">Tily.Buffer</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>."]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line252">252</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id=".fromData"><span class="type-signature">(static) </span>fromData<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="Tily.Buffer.html">Tily.Buffer</a>}</span></h4>
-    
+
+    <h4 class="name" id=".fromData">
+      <a href="#params-fromData"><span class="type-signature">(static) </span>fromData</a><span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="Tily.Buffer.html">Tily.Buffer</a>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Create a buffer from data.
+    <p>Create a buffer from data.</p>
 </div>
 
 
@@ -1551,11 +1920,61 @@ running.
 
 
 
+<div class="collapse_" id="methodCollapse-fromData">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-fromData" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -1593,57 +2012,14 @@ running.
 
             
 
-            <td class="description last">Serialized buffer data.</td>
+            <td class="description last"><p>Serialized buffer data.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line252">line 252</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -1657,18 +2033,17 @@ running.
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    A buffer created from the provided data.
+    <p>A buffer created from the provided data.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1681,26 +2056,67 @@ running.
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Create a buffer from data.\n   * @name fromData\n   * @function\n   * @static\n   * @memberof Tily.Buffer\n   * @param {Object} data Serialized buffer data.\n   * @returns {Tily.Buffer} A buffer created from the provided data.\n   */","meta":{"filename":"buffer.js","lineno":252,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Create a buffer from data.</p>","name":"fromData","kind":"function","scope":"static","memberof":"Tily.Buffer","params":[{"type":{"names":["Object"]},"description":"<p>Serialized buffer data.</p>","name":"data"}],"returns":[{"type":{"names":["Tily.Buffer"]},"description":"<p>A buffer created from the provided data.</p>"}],"longname":"Tily.Buffer.fromData","___id":"T000002R000370","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".fromData","signature":"<span class=\"signature\">(data)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.Buffer.html\">Tily.Buffer</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>."]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line140">140</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="addActiveTile"><span class="type-signature"></span>addActiveTile<span class="signature">(&hellip;tiles)</span><span class="type-signature"> &rarr; {<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>|array}</span></h4>
-    
+
+    <h4 class="name" id="addActiveTile">
+      <a href="#params-addActiveTile"><span class="type-signature"></span>addActiveTile</a><span class="signature">(&hellip;tiles)</span><span class="type-signature"> &rarr; {<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>|array}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Add an active tile or multiple active tiles to this buffer.
+    <p>Add an active tile or multiple active tiles to this buffer.</p>
 </div>
 
 
@@ -1710,11 +2126,66 @@ running.
 
 
 
+<div class="collapse_" id="methodCollapse-addActiveTile">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.BufferBase.html#addActiveTile">Tily.BufferBase#addActiveTile</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-addActiveTile" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -1764,62 +2235,14 @@ running.
 
             
 
-            <td class="description last">The tile(s) to add.</td>
+            <td class="description last"><p>The tile(s) to add.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.BufferBase.html#addActiveTile">Tily.BufferBase#addActiveTile</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line140">line 140</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -1833,18 +2256,17 @@ running.
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    The tile(s) that were added
+    <p>The tile(s) that were added</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1860,28 +2282,69 @@ running.
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Add an active tile or multiple active tiles to this buffer.\n   * @name addActiveTile\n   * @function\n   * @instance\n   * @memberof Tily.BufferBase\n   * @param {...Tily.ActiveTile} tiles The tile(s) to add.\n   * @returns {Tily.ActiveTile|array} The tile(s) that were added\n   */","meta":{"filename":"bufferbase.js","lineno":140,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"bufferbase.js"},"name":"addActiveTile","longname":"Tily.Buffer#addActiveTile","kind":"function","description":"<p>Add an active tile or multiple active tiles to this buffer.</p>","scope":"instance","memberof":"Tily.Buffer","returns":[{"type":{"names":["Tily.ActiveTile","array"]},"description":"<p>The tile(s) that were added</p>"}],"params":[{"type":{"names":["Tily.ActiveTile"]},"variable":true,"description":"<p>The tile(s) to add.</p>","name":"tiles"}],"inherits":"Tily.BufferBase#addActiveTile","inherited":true,"___id":"T000002R001329","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"addActiveTile","signature":"<span class=\"signature\">(&hellip;tiles)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.ActiveTile.html\">Tily.ActiveTile</a>|array}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line26">26</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="addLayer"><span class="type-signature"></span>addLayer<span class="signature">(layer<span class="signature-attributes">opt, nullable</span>, z<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Tily.TileLayer.html">Tily.TileLayer</a>}</span></h4>
-    
+
+    <h4 class="name" id="addLayer">
+      <a href="#params-addLayer"><span class="type-signature"></span>addLayer</a><span class="signature">(layer<span class="signature-attributes">opt, nullable</span>, z<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Tily.TileLayer.html">Tily.TileLayer</a>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Add a layer to this buffer at the specified z-index. If the z-index is undefined, add the
+    <p>Add a layer to this buffer at the specified z-index. If the z-index is undefined, add the
 layer on top of existing layers, and if the z-index is -1, add the layer below existing
-layers.
+layers.</p>
 </div>
 
 
@@ -1891,11 +2354,61 @@ layers.
 
 
 
+<div class="collapse_" id="methodCollapse-addLayer">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-addLayer" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -1947,7 +2460,7 @@ layers.
 
             
 
-            <td class="description last">The layer to add. If null, add an empty new layer.</td>
+            <td class="description last"><p>The layer to add. If null, add an empty new layer.</p></td>
         </tr>
 
     
@@ -1980,59 +2493,16 @@ layers.
 
             
 
-            <td class="description last">The z-index at which to add the layer. If this is -1, the layer will be
+            <td class="description last"><p>The z-index at which to add the layer. If this is -1, the layer will be
 added below existing layers and if it is undefined the layer will be added above existing
-layers.</td>
+layers.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line26">line 26</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -2046,18 +2516,17 @@ layers.</td>
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    The layer that was added.
+    <p>The layer that was added.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2070,26 +2539,67 @@ layers.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Add a layer to this buffer at the specified z-index. If the z-index is undefined, add the\n   * layer on top of existing layers, and if the z-index is -1, add the layer below existing\n   * layers.\n   * @name addLayer\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   * @param {?Tily.TileLayer} [layer] The layer to add. If null, add an empty new layer.\n   * @param {number} [z] The z-index at which to add the layer. If this is -1, the layer will be\n   * added below existing layers and if it is undefined the layer will be added above existing\n   * layers.\n   * @returns {Tily.TileLayer} The layer that was added.\n   */","meta":{"filename":"buffer.js","lineno":26,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Add a layer to this buffer at the specified z-index. If the z-index is undefined, add the\nlayer on top of existing layers, and if the z-index is -1, add the layer below existing\nlayers.</p>","name":"addLayer","kind":"function","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["Tily.TileLayer"]},"optional":true,"nullable":true,"description":"<p>The layer to add. If null, add an empty new layer.</p>","name":"layer"},{"type":{"names":["number"]},"optional":true,"description":"<p>The z-index at which to add the layer. If this is -1, the layer will be\nadded below existing layers and if it is undefined the layer will be added above existing\nlayers.</p>","name":"z"}],"returns":[{"type":{"names":["Tily.TileLayer"]},"description":"<p>The layer that was added.</p>"}],"longname":"Tily.Buffer#addLayer","___id":"T000002R000314","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"addLayer","signature":"<span class=\"signature\">(layer<span class=\"signature-attributes\">opt, nullable</span>, z<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.TileLayer.html\">Tily.TileLayer</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line148">148</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="draw"><span class="type-signature"></span>draw<span class="signature">(context, elapsedTime, width, height)</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="draw">
+      <a href="#params-draw"><span class="type-signature"></span>draw</a><span class="signature">(context, elapsedTime, width, height)</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Render this buffer's layers onto the specified context.
+    <p>Render this buffer's layers onto the specified context.</p>
 </div>
 
 
@@ -2099,11 +2609,61 @@ layers.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-draw">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-draw" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -2141,7 +2701,7 @@ layers.</td>
 
             
 
-            <td class="description last">The context to render the buffer onto.</td>
+            <td class="description last"><p>The context to render the buffer onto.</p></td>
         </tr>
 
     
@@ -2164,7 +2724,7 @@ layers.</td>
 
             
 
-            <td class="description last">The time elapsed in seconds since the last draw call.</td>
+            <td class="description last"><p>The time elapsed in seconds since the last draw call.</p></td>
         </tr>
 
     
@@ -2187,7 +2747,7 @@ layers.</td>
 
             
 
-            <td class="description last">The width of the canvas in pixels.</td>
+            <td class="description last"><p>The width of the canvas in pixels.</p></td>
         </tr>
 
     
@@ -2210,57 +2770,14 @@ layers.</td>
 
             
 
-            <td class="description last">The height of the canvas in pixels.</td>
+            <td class="description last"><p>The height of the canvas in pixels.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line148">line 148</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -2280,22 +2797,59 @@ layers.</td>
 
 
 
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Render this buffer's layers onto the specified context.\n   * @name draw\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   * @param {CanvasRenderingContext2D} context The context to render the buffer onto.\n   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.\n   * @param {number} width The width of the canvas in pixels.\n   * @param {number} height The height of the canvas in pixels.\n   */","meta":{"filename":"buffer.js","lineno":148,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Render this buffer's layers onto the specified context.</p>","name":"draw","kind":"function","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["CanvasRenderingContext2D"]},"description":"<p>The context to render the buffer onto.</p>","name":"context"},{"type":{"names":["number"]},"description":"<p>The time elapsed in seconds since the last draw call.</p>","name":"elapsedTime"},{"type":{"names":["number"]},"description":"<p>The width of the canvas in pixels.</p>","name":"width"},{"type":{"names":["number"]},"description":"<p>The height of the canvas in pixels.</p>","name":"height"}],"longname":"Tily.Buffer#draw","___id":"T000002R000337","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"draw","signature":"<span class=\"signature\">(context, elapsedTime, width, height)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line233">233</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="getData"><span class="type-signature"></span>getData<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
+
+    <h4 class="name" id="getData">
+      <a href="#params-getData"><span class="type-signature"></span>getData</a><span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Get serializable data for this buffer.
+    <p>Get serializable data for this buffer.</p>
 </div>
 
 
@@ -2305,24 +2859,22 @@ layers.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-getData">
+
+  
+
+  
+
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
 
-    
 
-    
 
-    
-
-    
-
-    
-
-    
+<dl class="dl-horizontal">
 
     
 
@@ -2337,10 +2889,9 @@ layers.</td>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line233">line 233</a>
-    </li></ul></dd>
+
+    
+
     
 
     
@@ -2364,16 +2915,22 @@ layers.</td>
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    This buffer's data.
+    <p>This buffer's data.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2386,27 +2943,68 @@ layers.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Get serializable data for this buffer.\n   * @name getData\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   * @returns {Object} This buffer's data.\n   */","meta":{"filename":"buffer.js","lineno":233,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Get serializable data for this buffer.</p>","name":"getData","kind":"function","scope":"instance","memberof":"Tily.Buffer","returns":[{"type":{"names":["Object"]},"description":"<p>This buffer's data.</p>"}],"longname":"Tily.Buffer#getData","___id":"T000002R000362","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getData","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Object}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line249">249</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="getPosition"><span class="type-signature"></span>getPosition<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a>}</span></h4>
-    
+
+    <h4 class="name" id="getPosition">
+      <a href="#params-getPosition"><span class="type-signature"></span>getPosition</a><span class="signature">(x, y)</span><span class="type-signature"> &rarr; {<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Return the tile position for the specified pixel position, based on the current offset and
-scale.
+    <p>Return the tile position for the specified pixel position, based on the current offset and
+scale.</p>
 </div>
 
 
@@ -2416,84 +3014,22 @@ scale.
 
 
 
+<div class="collapse_" id="methodCollapse-getPosition">
 
-    <h5>Parameters:</h5>
-    
+  
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+  
 
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>x</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The x-coordinate of the pixel position.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>y</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The y-coordinate of the pixel position.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
+<!-- details.tmpl -->
 
 
 
 
 
 
-<dl class="details">
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2523,19 +3059,6 @@ scale.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line249">line 249</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -2545,69 +3068,12 @@ scale.
 
 
 
+  <div id="params-getPosition" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    The tile position currently at the specified pixel position.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="getTileInfo"><span class="type-signature"></span>getTileInfo<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {<a href="global.html#BufferTileInfo">BufferTileInfo</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get information about the tiles and active tiles at a tile position.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -2645,7 +3111,7 @@ scale.
 
             
 
-            <td class="description last">The x-coordinate of the tile position.</td>
+            <td class="description last"><p>The x-coordinate of the pixel position.</p></td>
         </tr>
 
     
@@ -2668,19 +3134,136 @@ scale.
 
             
 
-            <td class="description last">The y-coordinate of the tile position.</td>
+            <td class="description last"><p>The y-coordinate of the pixel position.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>The tile position currently at the specified pixel position.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Return the tile position for the specified pixel position, based on the current offset and\n   * scale.\n   * @name getPosition\n   * @function\n   * @instance\n   * @memberof Tily.BufferBase\n   * @param {number} x The x-coordinate of the pixel position.\n   * @param {number} y The y-coordinate of the pixel position.\n   * @returns {Tily.utility.vec2} The tile position currently at the specified pixel position.\n   */","meta":{"filename":"bufferbase.js","lineno":249,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"bufferbase.js"},"name":"getPosition","longname":"Tily.Buffer#getPosition","kind":"function","description":"<p>Return the tile position for the specified pixel position, based on the current offset and\nscale.</p>","scope":"instance","memberof":"Tily.Buffer","returns":[{"type":{"names":["Tily.utility.vec2"]},"description":"<p>The tile position currently at the specified pixel position.</p>"}],"params":[{"type":{"names":["number"]},"description":"<p>The x-coordinate of the pixel position.</p>","name":"x"},{"type":{"names":["number"]},"description":"<p>The y-coordinate of the pixel position.</p>","name":"y"}],"inherits":"Tily.BufferBase#getPosition","inherited":true,"___id":"T000002R001335","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getPosition","signature":"<span class=\"signature\">(x, y)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.utility.html#.vec2\">Tily.utility.vec2</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line132">132</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getTileInfo">
+      <a href="#params-getTileInfo"><span class="type-signature"></span>getTileInfo</a><span class="signature">(x, y)</span><span class="type-signature"> &rarr; {<a href="global.html#BufferTileInfo">BufferTileInfo</a>}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Get information about the tiles and active tiles at a tile position.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getTileInfo">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2710,19 +3293,6 @@ scale.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line132">line 132</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -2732,6 +3302,80 @@ scale.
 
 
 
+  <div id="params-getTileInfo" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The x-coordinate of the tile position.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The y-coordinate of the tile position.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
 
 
 
@@ -2739,16 +3383,23 @@ scale.
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    Information about the tiles at the specified position.
+    <p>Information about the tiles at the specified position.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2761,27 +3412,68 @@ scale.
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Get information about the tiles and active tiles at a tile position.\n   * @name getTileInfo\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   * @param {number} x The x-coordinate of the tile position.\n   * @param {number} y The y-coordinate of the tile position.\n   * @returns {BufferTileInfo} Information about the tiles at the specified position.\n   */","meta":{"filename":"buffer.js","lineno":132,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Get information about the tiles and active tiles at a tile position.</p>","name":"getTileInfo","kind":"function","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["number"]},"description":"<p>The x-coordinate of the tile position.</p>","name":"x"},{"type":{"names":["number"]},"description":"<p>The y-coordinate of the tile position.</p>","name":"y"}],"returns":[{"type":{"names":["BufferTileInfo"]},"description":"<p>Information about the tiles at the specified position.</p>"}],"longname":"Tily.Buffer#getTileInfo","overrides":"Tily.BufferBase#getTileInfo","___id":"T000002R000333","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getTileInfo","signature":"<span class=\"signature\">(x, y)</span><span class=\"type-signature\"> &rarr; {<a href=\"global.html#BufferTileInfo\">BufferTileInfo</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line88">88</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="moveLayer"><span class="type-signature"></span>moveLayer<span class="signature">(zFrom, zTo, relative)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
+
+    <h4 class="name" id="moveLayer">
+      <a href="#params-moveLayer"><span class="type-signature"></span>moveLayer</a><span class="signature">(zFrom, zTo, relative)</span><span class="type-signature"> &rarr; {boolean}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Move a layer from one z-index to another z-index, either an absolute value or relative to
-the layer's current z-index.
+    <p>Move a layer from one z-index to another z-index, either an absolute value or relative to
+the layer's current z-index.</p>
 </div>
 
 
@@ -2791,11 +3483,61 @@ the layer's current z-index.
 
 
 
+<div class="collapse_" id="methodCollapse-moveLayer">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-moveLayer" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -2833,7 +3575,7 @@ the layer's current z-index.
 
             
 
-            <td class="description last">The z-index of the layer to move.</td>
+            <td class="description last"><p>The z-index of the layer to move.</p></td>
         </tr>
 
     
@@ -2856,7 +3598,7 @@ the layer's current z-index.
 
             
 
-            <td class="description last">The z-index to move the layer to.</td>
+            <td class="description last"><p>The z-index to move the layer to.</p></td>
         </tr>
 
     
@@ -2879,58 +3621,15 @@ the layer's current z-index.
 
             
 
-            <td class="description last">If this is true, the layer will be moved relative to it's current
-z-index.</td>
+            <td class="description last"><p>If this is true, the layer will be moved relative to it's current
+z-index.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line88">line 88</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -2944,18 +3643,17 @@ z-index.</td>
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    True if a layer was moved successfully.
+    <p>True if a layer was moved successfully.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2968,26 +3666,67 @@ z-index.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Move a layer from one z-index to another z-index, either an absolute value or relative to\n   * the layer's current z-index.\n   * @name moveLayer\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   * @param {number} zFrom The z-index of the layer to move.\n   * @param {number} zTo The z-index to move the layer to.\n   * @param {boolean} relative If this is true, the layer will be moved relative to it's current\n   * z-index.\n   * @returns {boolean} True if a layer was moved successfully.\n   */","meta":{"filename":"buffer.js","lineno":88,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Move a layer from one z-index to another z-index, either an absolute value or relative to\nthe layer's current z-index.</p>","name":"moveLayer","kind":"function","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["number"]},"description":"<p>The z-index of the layer to move.</p>","name":"zFrom"},{"type":{"names":["number"]},"description":"<p>The z-index to move the layer to.</p>","name":"zTo"},{"type":{"names":["boolean"]},"description":"<p>If this is true, the layer will be moved relative to it's current\nz-index.</p>","name":"relative"}],"returns":[{"type":{"names":["boolean"]},"description":"<p>True if a layer was moved successfully.</p>"}],"longname":"Tily.Buffer#moveLayer","___id":"T000002R000323","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"moveLayer","signature":"<span class=\"signature\">(zFrom, zTo, relative)</span><span class=\"type-signature\"> &rarr; {boolean}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line185">185</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="moveOffset"><span class="type-signature"></span>moveOffset<span class="signature">(x, y, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="moveOffset">
+      <a href="#params-moveOffset"><span class="type-signature"></span>moveOffset</a><span class="signature">(x, y, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Move the offset with an optional transition animation.
+    <p>Move the offset with an optional transition animation.</p>
 </div>
 
 
@@ -2997,11 +3736,66 @@ z-index.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-moveOffset">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.BufferBase.html#moveOffset">Tily.BufferBase#moveOffset</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-moveOffset" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3049,7 +3843,7 @@ z-index.</td>
 
             
 
-            <td class="description last">The x-coordinate of the target offset position.</td>
+            <td class="description last"><p>The x-coordinate of the target offset position.</p></td>
         </tr>
 
     
@@ -3080,7 +3874,7 @@ z-index.</td>
 
             
 
-            <td class="description last">The y-coordinate of the target offset position.</td>
+            <td class="description last"><p>The y-coordinate of the target offset position.</p></td>
         </tr>
 
     
@@ -3113,19 +3907,111 @@ z-index.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Move the offset with an optional transition animation.\n   * @name moveOffset\n   * @function\n   * @instance\n   * @memberof Tily.BufferBase\n   * @param {number} x The x-coordinate of the target offset position.\n   * @param {number} y The y-coordinate of the target offset position.\n   * @param {MoveOffsetTransitionOptions} [options] An optional options object.\n   */","meta":{"filename":"bufferbase.js","lineno":185,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"bufferbase.js"},"name":"moveOffset","longname":"Tily.Buffer#moveOffset","kind":"function","description":"<p>Move the offset with an optional transition animation.</p>","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["number"]},"description":"<p>The x-coordinate of the target offset position.</p>","name":"x"},{"type":{"names":["number"]},"description":"<p>The y-coordinate of the target offset position.</p>","name":"y"},{"type":{"names":["MoveOffsetTransitionOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.BufferBase#moveOffset","inherited":true,"___id":"T000002R001332","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"moveOffset","signature":"<span class=\"signature\">(x, y, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line154">154</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="removeActiveTile">
+      <a href="#params-removeActiveTile"><span class="type-signature"></span>removeActiveTile</a><span class="signature">(tile)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Remove an active tile from this buffer.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-removeActiveTile">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -3134,7 +4020,7 @@ z-index.</td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.BufferBase.html#moveOffset">Tily.BufferBase#moveOffset</a>
+        <a href="Tily.BufferBase.html#removeActiveTile">Tily.BufferBase#removeActiveTile</a>
     </li></ul></dd>
     
 
@@ -3148,19 +4034,6 @@ z-index.</td>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line185">line 185</a>
-    </li></ul></dd>
     
 
     
@@ -3177,47 +4050,12 @@ z-index.</td>
 
 
 
+  <div id="params-removeActiveTile" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="removeActiveTile"><span class="type-signature"></span>removeActiveTile<span class="signature">(tile)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Remove an active tile from this buffer.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3255,62 +4093,14 @@ z-index.</td>
 
             
 
-            <td class="description last">The tile to remove.</td>
+            <td class="description last"><p>The tile to remove.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.BufferBase.html#removeActiveTile">Tily.BufferBase#removeActiveTile</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line154">line 154</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -3330,22 +4120,59 @@ z-index.</td>
 
 
 
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Remove an active tile from this buffer.\n   * @name removeActiveTile\n   * @function\n   * @instance\n   * @memberof Tily.BufferBase\n   * @param {Tily.ActiveTile} tile The tile to remove.\n   */","meta":{"filename":"bufferbase.js","lineno":154,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"bufferbase.js"},"name":"removeActiveTile","longname":"Tily.Buffer#removeActiveTile","kind":"function","description":"<p>Remove an active tile from this buffer.</p>","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["Tily.ActiveTile"]},"description":"<p>The tile to remove.</p>","name":"tile"}],"inherits":"Tily.BufferBase#removeActiveTile","inherited":true,"___id":"T000002R001330","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"removeActiveTile","signature":"<span class=\"signature\">(tile)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line166">166</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="removeAllActiveTiles"><span class="type-signature"></span>removeAllActiveTiles<span class="signature">()</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="removeAllActiveTiles">
+      <a href="#params-removeAllActiveTiles"><span class="type-signature"></span>removeAllActiveTiles</a><span class="signature">()</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Remove all active tiles from this buffer.
+    <p>Remove all active tiles from this buffer.</p>
 </div>
 
 
@@ -3355,12 +4182,22 @@ z-index.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-removeAllActiveTiles">
+
+  
+
+  
+
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -3390,12 +4227,128 @@ z-index.</td>
     
 
     
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Remove all active tiles from this buffer.\n   * @name removeAllActiveTiles\n   * @function\n   * @instance\n   * @memberof Tily.BufferBase\n   */","meta":{"filename":"bufferbase.js","lineno":166,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"bufferbase.js"},"name":"removeAllActiveTiles","longname":"Tily.Buffer#removeAllActiveTiles","kind":"function","description":"<p>Remove all active tiles from this buffer.</p>","scope":"instance","memberof":"Tily.Buffer","inherits":"Tily.BufferBase#removeAllActiveTiles","inherited":true,"___id":"T000002R001331","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"removeAllActiveTiles","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line77">77</a>
+  </code>
+</div>
+
+
+
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line166">line 166</a>
-    </li></ul></dd>
+
+    
+
+    <h4 class="name" id="removeAllLayers">
+      <a href="#params-removeAllLayers"><span class="type-signature"></span>removeAllLayers</a><span class="signature">()</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Remove all layers from this buffer.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-removeAllLayers">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -3424,21 +4377,66 @@ z-index.</td>
 
 
 
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Remove all layers from this buffer.\n   * @name removeAllLayers\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   */","meta":{"filename":"buffer.js","lineno":77,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Remove all layers from this buffer.</p>","name":"removeAllLayers","kind":"function","scope":"instance","memberof":"Tily.Buffer","longname":"Tily.Buffer#removeAllLayers","___id":"T000002R000320","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"removeAllLayers","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
+
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line56">56</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="removeAllLayers"><span class="type-signature"></span>removeAllLayers<span class="signature">()</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="removeLayer">
+      <a href="#params-removeLayer"><span class="type-signature"></span>removeLayer</a><span class="signature">(z<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Tily.TileLayer.html">Tily.TileLayer</a>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Remove all layers from this buffer.
+    <p>Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer
+and if the z-index is -1, remove the bottom layer. The removed layer is returned.</p>
 </div>
 
 
@@ -3448,24 +4446,22 @@ z-index.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-removeLayer">
+
+  
+
+  
+
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
 
-    
 
-    
 
-    
-
-    
-
-    
-
-    
+<dl class="dl-horizontal">
 
     
 
@@ -3480,10 +4476,9 @@ z-index.</td>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line77">line 77</a>
-    </li></ul></dd>
+
+    
+
     
 
     
@@ -3500,48 +4495,12 @@ z-index.</td>
 
 
 
+  <div id="params-removeLayer" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="removeLayer"><span class="type-signature"></span>removeLayer<span class="signature">(z<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Tily.TileLayer.html">Tily.TileLayer</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer
-and if the z-index is -1, remove the bottom layer. The removed layer is returned.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3591,58 +4550,15 @@ and if the z-index is -1, remove the bottom layer. The removed layer is returned
 
             
 
-            <td class="description last">The z-index of the layer to remove. If this is -1, the bottom layer will
-be removed and if it is undefined the top layer will be removed.</td>
+            <td class="description last"><p>The z-index of the layer to remove. If this is -1, the bottom layer will
+be removed and if it is undefined the top layer will be removed.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line56">line 56</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -3656,18 +4572,17 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    The layer that was removed.
+    <p>The layer that was removed.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -3680,26 +4595,67 @@ be removed and if it is undefined the top layer will be removed.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer\n   * and if the z-index is -1, remove the bottom layer. The removed layer is returned.\n   * @name removeLayer\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   * @param {number} [z] The z-index of the layer to remove. If this is -1, the bottom layer will\n   * be removed and if it is undefined the top layer will be removed.\n   * @returns {Tily.TileLayer} The layer that was removed.\n   */","meta":{"filename":"buffer.js","lineno":56,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer\nand if the z-index is -1, remove the bottom layer. The removed layer is returned.</p>","name":"removeLayer","kind":"function","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["number"]},"optional":true,"description":"<p>The z-index of the layer to remove. If this is -1, the bottom layer will\nbe removed and if it is undefined the top layer will be removed.</p>","name":"z"}],"returns":[{"type":{"names":["Tily.TileLayer"]},"description":"<p>The layer that was removed.</p>"}],"longname":"Tily.Buffer#removeLayer","___id":"T000002R000318","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"removeLayer","signature":"<span class=\"signature\">(z<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.TileLayer.html\">Tily.TileLayer</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line110">110</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="resize"><span class="type-signature"></span>resize<span class="signature">(width, height)</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="resize">
+      <a href="#params-resize"><span class="type-signature"></span>resize</a><span class="signature">(width, height)</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Resize this buffer's layers.
+    <p>Resize this buffer's layers.</p>
 </div>
 
 
@@ -3709,11 +4665,61 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-resize">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-resize" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3751,7 +4757,7 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">The new width.</td>
+            <td class="description last"><p>The new width.</p></td>
         </tr>
 
     
@@ -3774,57 +4780,14 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">The new height.</td>
+            <td class="description last"><p>The new height.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line110">line 110</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -3844,22 +4807,59 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Resize this buffer's layers.\n   * @name resize\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   * @param {number} width The new width.\n   * @param {number} height The new height.\n   */","meta":{"filename":"buffer.js","lineno":110,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Resize this buffer's layers.</p>","name":"resize","kind":"function","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["number"]},"description":"<p>The new width.</p>","name":"width"},{"type":{"names":["number"]},"description":"<p>The new height.</p>","name":"height"}],"longname":"Tily.Buffer#resize","___id":"T000002R000327","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"resize","signature":"<span class=\"signature\">(width, height)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="buffer.js.html">buffer.js</a>:<a href="buffer.js.html#line271">271</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="serialize"><span class="type-signature"></span>serialize<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
+
+    <h4 class="name" id="serialize">
+      <a href="#params-serialize"><span class="type-signature"></span>serialize</a><span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Serialize this buffer and return the serialized JSON data.
+    <p>Serialize this buffer and return the serialized JSON data.</p>
 </div>
 
 
@@ -3869,24 +4869,22 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-serialize">
+
+  
+
+  
+
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
 
-    
 
-    
 
-    
-
-    
-
-    
-
-    
+<dl class="dl-horizontal">
 
     
 
@@ -3901,10 +4899,9 @@ be removed and if it is undefined the top layer will be removed.</td>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="buffer.js.html">buffer.js</a>, <a href="buffer.js.html#line271">line 271</a>
-    </li></ul></dd>
+
+    
+
     
 
     
@@ -3928,16 +4925,22 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    This buffer serialized as JSON data.
+    <p>This buffer serialized as JSON data.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -3950,26 +4953,67 @@ be removed and if it is undefined the top layer will be removed.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Serialize this buffer and return the serialized JSON data.\n   * @name serialize\n   * @function\n   * @instance\n   * @memberof Tily.Buffer\n   * @returns {string} This buffer serialized as JSON data.\n   */","meta":{"filename":"buffer.js","lineno":271,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"buffer.js"},"description":"<p>Serialize this buffer and return the serialized JSON data.</p>","name":"serialize","kind":"function","scope":"instance","memberof":"Tily.Buffer","returns":[{"type":{"names":["string"]},"description":"<p>This buffer serialized as JSON data.</p>"}],"longname":"Tily.Buffer#serialize","___id":"T000002R000378","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"serialize","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {string}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line321">321</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="updateActiveTilesMap"><span class="type-signature"></span>updateActiveTilesMap<span class="signature">(tl, br)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>>}</span></h4>
-    
+
+    <h4 class="name" id="updateActiveTilesMap">
+      <a href="#params-updateActiveTilesMap"><span class="type-signature"></span>updateActiveTilesMap</a><span class="signature">(tl, br)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Update the active tiles map and get a list of active tiles currently in view.
+    <p>Update the active tiles map and get a list of active tiles currently in view.</p>
 </div>
 
 
@@ -3979,11 +5023,66 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-updateActiveTilesMap">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.BufferBase.html#updateActiveTilesMap">Tily.BufferBase#updateActiveTilesMap</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-updateActiveTilesMap" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -4021,7 +5120,7 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">The top-left tile position currently in view.</td>
+            <td class="description last"><p>The top-left tile position currently in view.</p></td>
         </tr>
 
     
@@ -4044,62 +5143,14 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">The bottom-right tile position currently in view.</td>
+            <td class="description last"><p>The bottom-right tile position currently in view.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.BufferBase.html#updateActiveTilesMap">Tily.BufferBase#updateActiveTilesMap</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line321">line 321</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -4113,18 +5164,17 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    A list of active tiles current in view, sorted by z-index.
+    <p>A list of active tiles current in view, sorted by z-index.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -4137,26 +5187,67 @@ be removed and if it is undefined the top layer will be removed.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Update the active tiles map and get a list of active tiles currently in view.\n   * @name updateActiveTilesMap\n   * @function\n   * @instance\n   * @memberof Tily.BufferBase\n   * @param {Tily.utility.vec2} tl The top-left tile position currently in view.\n   * @param {Tily.utility.vec2} br The bottom-right tile position currently in view.\n   * @returns {Tily.ActiveTile[]} A list of active tiles current in view, sorted by z-index.\n   */","meta":{"filename":"bufferbase.js","lineno":321,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"bufferbase.js"},"name":"updateActiveTilesMap","longname":"Tily.Buffer#updateActiveTilesMap","kind":"function","description":"<p>Update the active tiles map and get a list of active tiles currently in view.</p>","scope":"instance","memberof":"Tily.Buffer","returns":[{"type":{"names":["Array.<Tily.ActiveTile>"]},"description":"<p>A list of active tiles current in view, sorted by z-index.</p>"}],"params":[{"type":{"names":["Tily.utility.vec2"]},"description":"<p>The top-left tile position currently in view.</p>","name":"tl"},{"type":{"names":["Tily.utility.vec2"]},"description":"<p>The bottom-right tile position currently in view.</p>","name":"br"}],"inherits":"Tily.BufferBase#updateActiveTilesMap","inherited":true,"___id":"T000002R001337","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"updateActiveTilesMap","signature":"<span class=\"signature\">(tl, br)</span><span class=\"type-signature\"> &rarr; {Array.&lt;<a href=\"Tily.ActiveTile.html\">Tily.ActiveTile</a>>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line292">292</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="updateTransitions"><span class="type-signature"></span>updateTransitions<span class="signature">(elapsedTime)</span><span class="type-signature"> &rarr; {<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a>}</span></h4>
-    
+
+    <h4 class="name" id="updateTransitions">
+      <a href="#params-updateTransitions"><span class="type-signature"></span>updateTransitions</a><span class="signature">(elapsedTime)</span><span class="type-signature"> &rarr; {<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Update offset and scale transitions.
+    <p>Update offset and scale transitions.</p>
 </div>
 
 
@@ -4166,11 +5257,66 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-updateTransitions">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.BufferBase.html#updateTransitions">Tily.BufferBase#updateTransitions</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-updateTransitions" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -4208,62 +5354,14 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">The time elapsed in seconds since the last draw call.</td>
+            <td class="description last"><p>The time elapsed in seconds since the last draw call.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.BufferBase.html#updateTransitions">Tily.BufferBase#updateTransitions</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line292">line 292</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -4277,18 +5375,17 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    The interpolated offset position.
+    <p>The interpolated offset position.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -4301,26 +5398,67 @@ be removed and if it is undefined the top layer will be removed.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Update offset and scale transitions.\n   * @name updateTransitions\n   * @function\n   * @instance\n   * @memberof Tily.BufferBase\n   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.\n   * @returns {Tily.utility.vec2} The interpolated offset position.\n   */","meta":{"filename":"bufferbase.js","lineno":292,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"bufferbase.js"},"name":"updateTransitions","longname":"Tily.Buffer#updateTransitions","kind":"function","description":"<p>Update offset and scale transitions.</p>","scope":"instance","memberof":"Tily.Buffer","returns":[{"type":{"names":["Tily.utility.vec2"]},"description":"<p>The interpolated offset position.</p>"}],"params":[{"type":{"names":["number"]},"description":"<p>The time elapsed in seconds since the last draw call.</p>","name":"elapsedTime"}],"inherits":"Tily.BufferBase#updateTransitions","inherited":true,"___id":"T000002R001336","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"updateTransitions","signature":"<span class=\"signature\">(elapsedTime)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.utility.html#.vec2\">Tily.utility.vec2</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="bufferbase.js.html">bufferbase.js</a>:<a href="bufferbase.js.html#line230">230</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="zoom"><span class="type-signature"></span>zoom<span class="signature">(scale, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="zoom">
+      <a href="#params-zoom"><span class="type-signature"></span>zoom</a><span class="signature">(scale, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Zoom the scale with an optional transition animation.
+    <p>Zoom the scale with an optional transition animation.</p>
 </div>
 
 
@@ -4330,11 +5468,66 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-zoom">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.BufferBase.html#zoom">Tily.BufferBase#zoom</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-zoom" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -4382,7 +5575,7 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">The target scale.</td>
+            <td class="description last"><p>The target scale.</p></td>
         </tr>
 
     
@@ -4415,62 +5608,14 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.BufferBase.html#zoom">Tily.BufferBase#zoom</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bufferbase.js.html">bufferbase.js</a>, <a href="bufferbase.js.html#line230">line 230</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -4490,6 +5635,14 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Zoom the scale with an optional transition animation.\n   * @name zoom\n   * @function\n   * @instance\n   * @memberof Tily.BufferBase\n   * @param {number} scale The target scale.\n   * @param {TransitionOptions} [options] An optional options object.\n   */","meta":{"filename":"bufferbase.js","lineno":230,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"bufferbase.js"},"name":"zoom","longname":"Tily.Buffer#zoom","kind":"function","description":"<p>Zoom the scale with an optional transition animation.</p>","scope":"instance","memberof":"Tily.Buffer","params":[{"type":{"names":["number"]},"description":"<p>The target scale.</p>","name":"scale"},{"type":{"names":["TransitionOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.BufferBase#zoom","inherited":true,"___id":"T000002R001334","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"zoom","signature":"<span class=\"signature\">(scale, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.Buffer.html\">.Buffer</a>#"]}
+</pre>
+-->
+</div>
 
         
     
@@ -4506,17 +5659,13 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Tily.html">Tily</a></li></ul><h3>Classes</h3><ul><li><a href="Tily.ActiveTile.html">ActiveTile</a></li><li><a href="Tily.ActiveTileBase.html">ActiveTileBase</a></li><li><a href="Tily.ActiveTileLayer.html">ActiveTileLayer</a></li><li><a href="Tily.Animation.html">Animation</a></li><li><a href="Tily.Buffer.html">Buffer</a></li><li><a href="Tily.BufferBase.html">BufferBase</a></li><li><a href="Tily.BufferTransition.html">BufferTransition</a></li><li><a href="Tily.Cell.html">Cell</a></li><li><a href="Tily.CellBuffer.html">CellBuffer</a></li><li><a href="Tily.ForegroundAnimation.html">ForegroundAnimation</a></li><li><a href="Tily.Main.html">Main</a></li><li><a href="Tily.OffsetAnimation.html">OffsetAnimation</a></li><li><a href="Tily.OffsetTransition.html">OffsetTransition</a></li><li><a href="Tily.OpacityAnimation.html">OpacityAnimation</a></li><li><a href="Tily.OutlineAnimation.html">OutlineAnimation</a></li><li><a href="Tily.RotationAnimation.html">RotationAnimation</a></li><li><a href="Tily.ScaleAnimation.html">ScaleAnimation</a></li><li><a href="Tily.ScaleTransition.html">ScaleTransition</a></li><li><a href="Tily.ShadowAnimation.html">ShadowAnimation</a></li><li><a href="Tily.TextAnimation.html">TextAnimation</a></li><li><a href="Tily.TileLayer.html">TileLayer</a></li><li><a href="Tily.Transition.html">Transition</a></li></ul><h3><a href="global.html">Global</a></h3>
-</nav>
-
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Sep 27 2020 22:46:40 GMT+0100 (British Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Thu Oct 01 2020 15:59:54 GMT+0100 (British Summer Time) using the LOKE theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
 </body>
 </html>

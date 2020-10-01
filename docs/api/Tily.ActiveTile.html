@@ -2,55 +2,217 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: ActiveTile</title>
+    <title>ActiveTile - Documentation</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
-
 <body>
 
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-tily-reference.html">Quick Reference</a></li></ul><h3>Namespaces</h3><ul><li><a href="Tily.html">Tily</a></li></ul><h3>Classes</h3><ul><li><a href="Tily.ActiveTile.html">ActiveTile</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTile.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.ActiveTile.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateOutline">animateOutline</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTile.html#animateShadow">animateShadow</a></li><li data-type='method'><a href="Tily.ActiveTile.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTile.html#getData">getData</a></li><li data-type='method'><a href="Tily.ActiveTile.html#move">move</a></li><li data-type='method'><a href="Tily.ActiveTile.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTile.html#pauseAnimations">pauseAnimations</a></li><li data-type='method'><a href="Tily.ActiveTile.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTile.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.ActiveTile.html#resetAnimations">resetAnimations</a></li><li data-type='method'><a href="Tily.ActiveTile.html#runAnimations">runAnimations</a></li><li data-type='method'><a href="Tily.ActiveTile.html#stopAnimations">stopAnimations</a></li></ul></li><li><a href="Tily.ActiveTileBase.html">ActiveTileBase</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTileBase.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateOutline">animateOutline</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#animateShadow">animateShadow</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#pauseAnimations">pauseAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#resetAnimations">resetAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#runAnimations">runAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileBase.html#stopAnimations">stopAnimations</a></li></ul></li><li><a href="Tily.ActiveTileLayer.html">ActiveTileLayer</a><ul class='methods'><li data-type='method'><a href="Tily.ActiveTileLayer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateForeground">animateForeground</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateOffset">animateOffset</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateOpacity">animateOpacity</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateOutline">animateOutline</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateRotation">animateRotation</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateScale">animateScale</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateShadow">animateShadow</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#animateText">animateText</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#draw">draw</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#getData">getData</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#pauseAnimations">pauseAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#resetAnimations">resetAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#runAnimations">runAnimations</a></li><li data-type='method'><a href="Tily.ActiveTileLayer.html#stopAnimations">stopAnimations</a></li></ul></li><li><a href="Tily.Animation.html">Animation</a><ul class='methods'><li data-type='method'><a href="Tily.Animation.html#pause">pause</a></li><li data-type='method'><a href="Tily.Animation.html#reset">reset</a></li><li data-type='method'><a href="Tily.Animation.html#run">run</a></li><li data-type='method'><a href="Tily.Animation.html#update">update</a></li></ul></li><li><a href="Tily.Buffer.html">Buffer</a><ul class='methods'><li data-type='method'><a href="Tily.Buffer.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.Buffer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.Buffer.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.Buffer.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#draw">draw</a></li><li data-type='method'><a href="Tily.Buffer.html#getData">getData</a></li><li data-type='method'><a href="Tily.Buffer.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.Buffer.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.Buffer.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.Buffer.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.Buffer.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.Buffer.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.Buffer.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.Buffer.html#resize">resize</a></li><li data-type='method'><a href="Tily.Buffer.html#serialize">serialize</a></li><li data-type='method'><a href="Tily.Buffer.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.Buffer.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.Buffer.html#zoom">zoom</a></li></ul></li><li><a href="Tily.BufferBase.html">BufferBase</a><ul class='methods'><li data-type='method'><a href="Tily.BufferBase.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.BufferBase.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.BufferBase.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.BufferBase.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.BufferBase.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.BufferBase.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.BufferBase.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.BufferBase.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.BufferBase.html#zoom">zoom</a></li></ul></li><li><a href="Tily.BufferTransition.html">BufferTransition</a><ul class='methods'><li data-type='method'><a href="Tily.BufferTransition.html#update">update</a></li></ul></li><li><a href="Tily.Cell.html">Cell</a><ul class='methods'><li data-type='method'><a href="Tily.Cell.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.Cell.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.Cell.html#addLayer">addLayer</a></li><li data-type='method'><a href="Tily.Cell.html#draw">draw</a></li><li data-type='method'><a href="Tily.Cell.html#getData">getData</a></li><li data-type='method'><a href="Tily.Cell.html#moveLayer">moveLayer</a></li><li data-type='method'><a href="Tily.Cell.html#removeAllLayers">removeAllLayers</a></li><li data-type='method'><a href="Tily.Cell.html#removeLayer">removeLayer</a></li><li data-type='method'><a href="Tily.Cell.html#serialize">serialize</a></li></ul></li><li><a href="Tily.CellBuffer.html">CellBuffer</a><ul class='methods'><li data-type='method'><a href="Tily.CellBuffer.html#.deserialize">deserialize</a></li><li data-type='method'><a href="Tily.CellBuffer.html#addActiveTile">addActiveTile</a></li><li data-type='method'><a href="Tily.CellBuffer.html#draw">draw</a></li><li data-type='method'><a href="Tily.CellBuffer.html#getPosition">getPosition</a></li><li data-type='method'><a href="Tily.CellBuffer.html#getTileInfo">getTileInfo</a></li><li data-type='method'><a href="Tily.CellBuffer.html#moveOffset">moveOffset</a></li><li data-type='method'><a href="Tily.CellBuffer.html#removeActiveTile">removeActiveTile</a></li><li data-type='method'><a href="Tily.CellBuffer.html#removeAllActiveTiles">removeAllActiveTiles</a></li><li data-type='method'><a href="Tily.CellBuffer.html#serialize">serialize</a></li><li data-type='method'><a href="Tily.CellBuffer.html#updateActiveTilesMap">updateActiveTilesMap</a></li><li data-type='method'><a href="Tily.CellBuffer.html#updateTransitions">updateTransitions</a></li><li data-type='method'><a href="Tily.CellBuffer.html#zoom">zoom</a></li></ul></li><li><a href="Tily.ForegroundAnimation.html">ForegroundAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.ForegroundAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.ForegroundAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.ForegroundAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.ForegroundAnimation.html#update">update</a></li></ul></li><li><a href="Tily.Main.html">Main</a><ul class='methods'><li data-type='method'><a href="Tily.Main.html#activateBuffer">activateBuffer</a></li><li data-type='method'><a href="Tily.Main.html#draw">draw</a></li></ul></li><li><a href="Tily.OffsetAnimation.html">OffsetAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.OffsetAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.OffsetAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.OffsetAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.OffsetAnimation.html#update">update</a></li></ul></li><li><a href="Tily.OffsetTransition.html">OffsetTransition</a><ul class='methods'><li data-type='method'><a href="Tily.OffsetTransition.html#update">update</a></li></ul></li><li><a href="Tily.OpacityAnimation.html">OpacityAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.OpacityAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.OpacityAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.OpacityAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.OpacityAnimation.html#update">update</a></li></ul></li><li><a href="Tily.OutlineAnimation.html">OutlineAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.OutlineAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.OutlineAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.OutlineAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.OutlineAnimation.html#update">update</a></li></ul></li><li><a href="Tily.RotationAnimation.html">RotationAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.RotationAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.RotationAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.RotationAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.RotationAnimation.html#update">update</a></li></ul></li><li><a href="Tily.ScaleAnimation.html">ScaleAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.ScaleAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.ScaleAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.ScaleAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.ScaleAnimation.html#update">update</a></li></ul></li><li><a href="Tily.ScaleTransition.html">ScaleTransition</a><ul class='methods'><li data-type='method'><a href="Tily.ScaleTransition.html#update">update</a></li></ul></li><li><a href="Tily.ShadowAnimation.html">ShadowAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.ShadowAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.ShadowAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.ShadowAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.ShadowAnimation.html#update">update</a></li></ul></li><li><a href="Tily.TextAnimation.html">TextAnimation</a><ul class='methods'><li data-type='method'><a href="Tily.TextAnimation.html#pause">pause</a></li><li data-type='method'><a href="Tily.TextAnimation.html#reset">reset</a></li><li data-type='method'><a href="Tily.TextAnimation.html#run">run</a></li><li data-type='method'><a href="Tily.TextAnimation.html#update">update</a></li></ul></li><li><a href="Tily.TileLayer.html">TileLayer</a><ul class='methods'><li data-type='method'><a href="Tily.TileLayer.html#.fromData">fromData</a></li><li data-type='method'><a href="Tily.TileLayer.html#clear">clear</a></li><li data-type='method'><a href="Tily.TileLayer.html#draw">draw</a></li><li data-type='method'><a href="Tily.TileLayer.html#fill">fill</a></li><li data-type='method'><a href="Tily.TileLayer.html#getData">getData</a></li><li data-type='method'><a href="Tily.TileLayer.html#getTile">getTile</a></li><li data-type='method'><a href="Tily.TileLayer.html#resize">resize</a></li><li data-type='method'><a href="Tily.TileLayer.html#setTile">setTile</a></li></ul></li><li><a href="Tily.Transition.html">Transition</a><ul class='methods'><li data-type='method'><a href="Tily.Transition.html#update">update</a></li></ul></li></ul>
+</nav>
+
 <div id="main">
-
-    <h1 class="page-title">Class: ActiveTile</h1>
-
     
+    <h1 class="page-title">ActiveTile</h1>
+    
+
+    <!--container.tmpl-->
+
 
 
 
 
 <section>
 
-<header>
+
+
+<header data-tmpl="container.tmpl">
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>
-            <span class="ancestors"><a href="Tily.html">Tily</a>.</span>ActiveTile<span class="signature">(x<span class="signature-attributes">opt</span>, y<span class="signature-attributes">opt</span>, zIndex<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+        <h2>
+            <span class="ancestors"><a href="Tily.html">Tily</a>.</span>
+        
+        ActiveTile
+        </h2>
         
     
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Fields &amp; Properties</dt><dd><ul>
+            <li><a href="#animations">animations</a></li>
+            
+            <li><a href="#centered">centered</a></li>
+            
+            <li><a href="#clip">clip</a></li>
+            
+            <li><a href="#compositeMode">compositeMode</a></li>
+            
+            <li><a href="#destroyed">destroyed</a></li>
+            
+            <li><a href="#flip">flip</a></li>
+            
+            <li><a href="#font">font</a></li>
+            
+            <li><a href="#fontSize">fontSize</a></li>
+            
+            <li><a href="#fontStyle">fontStyle</a></li>
+            
+            <li><a href="#foreground">foreground</a></li>
+            
+            <li><a href="#inheritedCentered">inheritedCentered</a></li>
+            
+            <li><a href="#inheritedCompositeMode">inheritedCompositeMode</a></li>
+            
+            <li><a href="#inheritedFont">inheritedFont</a></li>
+            
+            <li><a href="#inheritedFontSize">inheritedFontSize</a></li>
+            
+            <li><a href="#inheritedFontStyle">inheritedFontStyle</a></li>
+            
+            <li><a href="#inheritedForeground">inheritedForeground</a></li>
+            
+            <li><a href="#inheritedOffset">inheritedOffset</a></li>
+            
+            <li><a href="#inheritedOpacity">inheritedOpacity</a></li>
+            
+            <li><a href="#inheritedOutline">inheritedOutline</a></li>
+            
+            <li><a href="#inheritedRotation">inheritedRotation</a></li>
+            
+            <li><a href="#inheritedScale">inheritedScale</a></li>
+            
+            <li><a href="#inheritedShadow">inheritedShadow</a></li>
+            
+            <li><a href="#layers">layers</a></li>
+            
+            <li><a href="#offset">offset</a></li>
+            
+            <li><a href="#opacity">opacity</a></li>
+            
+            <li><a href="#outline">outline</a></li>
+            
+            <li><a href="#position">position</a></li>
+            
+            <li><a href="#rotation">rotation</a></li>
+            
+            <li><a href="#scale">scale</a></li>
+            
+            <li><a href="#shadow">shadow</a></li>
+            
+            <li><a href="#wrap">wrap</a></li>
+            
+            <li><a href="#zIndex">zIndex</a></li>
+            </ul></dd><dt>Methods</dt><dd><ul>
+            <li><a href="#fromData">fromData</a></li>
+            
+            <li><a href="#addLayer">addLayer</a></li>
+            
+            <li><a href="#animateForeground">animateForeground</a></li>
+            
+            <li><a href="#animateOffset">animateOffset</a></li>
+            
+            <li><a href="#animateOpacity">animateOpacity</a></li>
+            
+            <li><a href="#animateOutline">animateOutline</a></li>
+            
+            <li><a href="#animateRotation">animateRotation</a></li>
+            
+            <li><a href="#animateScale">animateScale</a></li>
+            
+            <li><a href="#animateShadow">animateShadow</a></li>
+            
+            <li><a href="#draw">draw</a></li>
+            
+            <li><a href="#getData">getData</a></li>
+            
+            <li><a href="#move">move</a></li>
+            
+            <li><a href="#moveLayer">moveLayer</a></li>
+            
+            <li><a href="#pauseAnimations">pauseAnimations</a></li>
+            
+            <li><a href="#removeAllLayers">removeAllLayers</a></li>
+            
+            <li><a href="#removeLayer">removeLayer</a></li>
+            
+            <li><a href="#resetAnimations">resetAnimations</a></li>
+            
+            <li><a href="#runAnimations">runAnimations</a></li>
+            
+            <li><a href="#stopAnimations">stopAnimations</a></li>
+            </ul></dd></dl></div>
 </header>
 
 <article>
     <div class="container-overview">
     
-        
+        <!--method.tmpl-->
+<div class="method-details">
+
+
+
+
 
     
 
     
-    <h4 class="name" id="ActiveTile"><span class="type-signature"></span>new ActiveTile<span class="signature">(x<span class="signature-attributes">opt</span>, y<span class="signature-attributes">opt</span>, zIndex<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+      <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line14">14</a>
+  </code>
+</div>
 
     
+
+    <h4 class="name" id="ActiveTile">
+      <a href="#params-ActiveTile"><span class="type-signature"></span>new ActiveTile</a><span class="signature">(x<span class="signature-attributes">opt</span>, y<span class="signature-attributes">opt</span>, zIndex<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    A tile that can be translated, scaled, rotated and animated.
+    <p>A tile that can be translated, scaled, rotated and animated.</p>
 </div>
 
 
@@ -60,11 +222,61 @@
 
 
 
+<div class="collapse_" id="methodCollapse-ActiveTile">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-ActiveTile" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -122,7 +334,7 @@
                 </td>
             
 
-            <td class="description last">The initial x-coordinate of this active tile.</td>
+            <td class="description last"><p>The initial x-coordinate of this active tile.</p></td>
         </tr>
 
     
@@ -161,7 +373,7 @@
                 </td>
             
 
-            <td class="description last">The initial y-coordinate of this active tile.</td>
+            <td class="description last"><p>The initial y-coordinate of this active tile.</p></td>
         </tr>
 
     
@@ -200,57 +412,14 @@
                 </td>
             
 
-            <td class="description last">The initial z-index of this active tile.</td>
+            <td class="description last"><p>The initial z-index of this active tile.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line14">line 14</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -270,6 +439,14 @@
 
 
 
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * A tile that can be translated, scaled, rotated and animated.\n   * @class\n   * @extends Tily.ActiveTileBase\n   * @memberof Tily\n   * @param {number} [x=0] The initial x-coordinate of this active tile.\n   * @param {number} [y=0] The initial y-coordinate of this active tile.\n   * @param {number} [zIndex=0] The initial z-index of this active tile.\n   */","meta":{"range":[466,3360],"filename":"activetile.js","lineno":14,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{"id":"astnode100000022","name":"ActiveTile","type":"FunctionDeclaration","paramnames":["x","y","zIndex"]},"vars":{"this.position":"Tily.ActiveTile#position","this.zIndex":"Tily.ActiveTile#zIndex","this.clip":"Tily.ActiveTile#clip","this.wrap":"Tily.ActiveTile#wrap","this.flip":"Tily.ActiveTile#flip","this.font":"Tily.ActiveTile#font","this.fontStyle":"Tily.ActiveTile#fontStyle","this.fontSize":"Tily.ActiveTile#fontSize","this.foreground":"Tily.ActiveTile#foreground","this.outline":"Tily.ActiveTile#outline","this.shadow":"Tily.ActiveTile#shadow","this.opacity":"Tily.ActiveTile#opacity","this.compositeMode":"Tily.ActiveTile#compositeMode","this.offset":"Tily.ActiveTile#offset","this.scale":"Tily.ActiveTile#scale","this.rotation":"Tily.ActiveTile#rotation","this.centered":"Tily.ActiveTile#centered","this.destroyed":"Tily.ActiveTile#destroyed"},"shortpath":"activetile.js"},"description":"<p>A tile that can be translated, scaled, rotated and animated.</p>","kind":"class","augments":["Tily.ActiveTileBase"],"memberof":"Tily","params":[{"type":{"names":["number"]},"optional":true,"defaultvalue":0,"description":"<p>The initial x-coordinate of this active tile.</p>","name":"x"},{"type":{"names":["number"]},"optional":true,"defaultvalue":0,"description":"<p>The initial y-coordinate of this active tile.</p>","name":"y"},{"type":{"names":["number"]},"optional":true,"defaultvalue":0,"description":"<p>The initial z-index of this active tile.</p>","name":"zIndex"}],"name":"ActiveTile","longname":"Tily.ActiveTile","scope":"static","___id":"T000003R000002","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"ActiveTile","signature":"<span class=\"signature\">(x<span class=\"signature-attributes\">opt</span>, y<span class=\"signature-attributes\">opt</span>, zIndex<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>."]}
+</pre>
+-->
+</div>
 
     
     </div>
@@ -291,9 +468,7 @@
 
     
 
-    
-
-    
+     
 
     
 
@@ -301,33 +476,48 @@
         <h3 class="subsection-title">Members</h3>
 
         
-            
-<h4 class="name" id="animations"><span class="type-signature"></span>animations<span class="type-signature"> :Array.&lt;<a href="Tily.Animation.html">Tily.Animation</a>></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line20">20</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="animations">
+  <span class="type-signature"></span>animations<span class="type-signature"> :Array.&lt;<a href="Tily.Animation.html">Tily.Animation</a>></span>
+</h4>
 
 
 
 
 <div class="description">
-    The animations currently running on this active tile.
+    <p>The animations currently running on this active tile.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;<a href="Tily.Animation.html">Tily.Animation</a>></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -357,19 +547,6 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line20">line 20</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -377,34 +554,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="centered"><span class="type-signature"></span>centered<span class="type-signature"> :boolean</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line132">132</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="centered">
+  <span class="type-signature"></span>centered<span class="type-signature"> :boolean</span>
+</h4>
 
 
 
 
 <div class="description">
-    True if the text in this active tile should be centered.
+    <p>True if the text in this active tile should be centered.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">boolean</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -430,23 +631,10 @@
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>false</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line132">line 132</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -459,38 +647,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="clip"><span class="type-signature"></span>clip<span class="type-signature"> :boolean</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line34">34</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="clip">
+  <span class="type-signature"></span>clip<span class="type-signature"> :boolean</span>
+</h4>
 
 
 
 
 <div class="description">
-    True if this active tile should clip at the tile edges.
+    <p>True if this active tile should clip at the tile edges.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">boolean</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
 
-    
 
-    
+
+<dl class="dl-horizontal">
 
     
 
@@ -518,15 +726,6 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line34">line 34</a>
-    </li></ul></dd>
-    
-
-    
-
-    
 
     
 </dl>
@@ -536,34 +735,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="compositeMode"><span class="type-signature"></span>compositeMode<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line104">104</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="compositeMode">
+  <span class="type-signature"></span>compositeMode<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The composite operation to use when drawing this active tile.
+    <p>The composite operation to use when drawing this active tile.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -589,10 +812,6 @@
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>"source-over"</li>
@@ -600,15 +819,6 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line104">line 104</a>
-    </li></ul></dd>
-    
-
-    
-
-    
 
     
 </dl>
@@ -618,38 +828,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="destroyed"><span class="type-signature"></span>destroyed<span class="type-signature"> :boolean</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line139">139</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="destroyed">
+  <span class="type-signature"></span>destroyed<span class="type-signature"> :boolean</span>
+</h4>
 
 
 
 
 <div class="description">
-    True if this active tile should be removed in the next frame.
+    <p>True if this active tile should be removed in the next frame.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">boolean</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
 
-    
 
-    
+
+<dl class="dl-horizontal">
 
     
 
@@ -677,15 +907,6 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line139">line 139</a>
-    </li></ul></dd>
-    
-
-    
-
-    
 
     
 </dl>
@@ -695,38 +916,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="flip"><span class="type-signature"></span>flip<span class="type-signature"> :boolean</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line48">48</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="flip">
+  <span class="type-signature"></span>flip<span class="type-signature"> :boolean</span>
+</h4>
 
 
 
 
 <div class="description">
-    True if this active tile should be flipped along the x-axis.
+    <p>True if this active tile should be flipped along the x-axis.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">boolean</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
 
-    
 
-    
+
+<dl class="dl-horizontal">
 
     
 
@@ -754,15 +995,6 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line48">line 48</a>
-    </li></ul></dd>
-    
-
-    
-
-    
 
     
 </dl>
@@ -772,34 +1004,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="font"><span class="type-signature"></span>font<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line55">55</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="font">
+  <span class="type-signature"></span>font<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The font to use when rendering this active tile's layers.
+    <p>The font to use when rendering this active tile's layers.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -825,23 +1081,10 @@
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>"sans-serif"</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line55">line 55</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -854,34 +1097,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="fontSize"><span class="type-signature">(nullable) </span>fontSize<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line69">69</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="fontSize">
+  <span class="type-signature">(nullable) </span>fontSize<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The font size to use when rendering this active tile's layers. If null, fit characters to the tile.
+    <p>The font size to use when rendering this active tile's layers. If null, fit characters to the tile.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -907,23 +1174,10 @@
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>null</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line69">line 69</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -936,34 +1190,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="fontStyle"><span class="type-signature"></span>fontStyle<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line62">62</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="fontStyle">
+  <span class="type-signature"></span>fontStyle<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The font style to use when rendering this active tile's layers.
+    <p>The font style to use when rendering this active tile's layers.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -989,23 +1267,10 @@
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>"normal"</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line62">line 62</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -1018,34 +1283,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="foreground"><span class="type-signature"></span>foreground<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line76">76</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="foreground">
+  <span class="type-signature"></span>foreground<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The foreground colour, used for rendering text on this active tile's layers.
+    <p>The foreground colour, used for rendering text on this active tile's layers.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1071,23 +1360,10 @@
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>"white"</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line76">line 76</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -1100,34 +1376,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedCentered"><span class="type-signature"></span>inheritedCentered<span class="type-signature"> :boolean</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line236">236</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedCentered">
+  <span class="type-signature"></span>inheritedCentered<span class="type-signature"> :boolean</span>
+</h4>
 
 
 
 
 <div class="description">
-    The centering mode in this layer or inherited from the parent object if null.
+    <p>The centering mode in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">boolean</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1157,19 +1457,6 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line236">line 236</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1177,34 +1464,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedCompositeMode"><span class="type-signature"></span>inheritedCompositeMode<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line200">200</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedCompositeMode">
+  <span class="type-signature"></span>inheritedCompositeMode<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The composite operation set in this layer or inherited from the parent object if null.
+    <p>The composite operation set in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1234,19 +1545,6 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line200">line 200</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1254,34 +1552,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedFont"><span class="type-signature"></span>inheritedFont<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line134">134</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedFont">
+  <span class="type-signature"></span>inheritedFont<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The font set in this layer or inherited from the parent object if null.
+    <p>The font set in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1311,19 +1633,6 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line134">line 134</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1331,34 +1640,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedFontSize"><span class="type-signature"></span>inheritedFontSize<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line152">152</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedFontSize">
+  <span class="type-signature"></span>inheritedFontSize<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The font size set in this layer or inherited from the parent object if null.
+    <p>The font size set in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1388,19 +1721,6 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line152">line 152</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1408,34 +1728,58 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedFontStyle"><span class="type-signature"></span>inheritedFontStyle<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line143">143</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedFontStyle">
+  <span class="type-signature"></span>inheritedFontStyle<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The font style set in this layer or inherited from the parent object if null.
+    <p>The font style set in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1465,19 +1809,6 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line143">line 143</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1485,35 +1816,59 @@
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedForeground"><span class="type-signature"></span>inheritedForeground<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line161">161</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedForeground">
+  <span class="type-signature"></span>inheritedForeground<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The foreground colour set in this layer or inherited from the parent object if
-null.
+    <p>The foreground colour set in this layer or inherited from the parent object if
+null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1543,19 +1898,6 @@ null.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line161">line 161</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1563,34 +1905,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedOffset"><span class="type-signature"></span>inheritedOffset<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line209">209</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedOffset">
+  <span class="type-signature"></span>inheritedOffset<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The offset set in this layer or inherited from the parent object if null.
+    <p>The offset set in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1620,19 +1986,6 @@ null.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line209">line 209</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1640,34 +1993,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedOpacity"><span class="type-signature"></span>inheritedOpacity<span class="type-signature"> :number</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line191">191</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedOpacity">
+  <span class="type-signature"></span>inheritedOpacity<span class="type-signature"> :number</span>
+</h4>
 
 
 
 
 <div class="description">
-    The opacity set in this layer or inherited from the parent object if null.
+    <p>The opacity set in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1697,19 +2074,6 @@ null.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line191">line 191</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1717,35 +2081,59 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedOutline"><span class="type-signature"></span>inheritedOutline<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line171">171</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedOutline">
+  <span class="type-signature"></span>inheritedOutline<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The outline set in this layer or inherited from the parent object if
-null.
+    <p>The outline set in this layer or inherited from the parent object if
+null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1775,19 +2163,6 @@ null.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line171">line 171</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1795,34 +2170,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedRotation"><span class="type-signature"></span>inheritedRotation<span class="type-signature"> :number</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line227">227</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedRotation">
+  <span class="type-signature"></span>inheritedRotation<span class="type-signature"> :number</span>
+</h4>
 
 
 
 
 <div class="description">
-    The rotation set in this layer or inherited from the parent object if null.
+    <p>The rotation set in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1852,19 +2251,6 @@ null.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line227">line 227</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1872,34 +2258,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedScale"><span class="type-signature"></span>inheritedScale<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line218">218</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedScale">
+  <span class="type-signature"></span>inheritedScale<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The scale set in this layer or inherited from the parent object if null.
+    <p>The scale set in this layer or inherited from the parent object if null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -1929,19 +2339,6 @@ null.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line218">line 218</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -1949,35 +2346,59 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="inheritedShadow"><span class="type-signature"></span>inheritedShadow<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line181">181</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="inheritedShadow">
+  <span class="type-signature"></span>inheritedShadow<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The shadow set in this layer or inherited from the parent object if
-null.
+    <p>The shadow set in this layer or inherited from the parent object if
+null.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2007,19 +2428,6 @@ null.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line181">line 181</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -2027,34 +2435,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="layers"><span class="type-signature"></span>layers<span class="type-signature"> :Array.&lt;<a href="Tily.ActiveTileLayer.html">Tily.ActiveTileLayer</a>></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line14">14</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="layers">
+  <span class="type-signature"></span>layers<span class="type-signature"> :Array.&lt;<a href="Tily.ActiveTileLayer.html">Tily.ActiveTileLayer</a>></span>
+</h4>
 
 
 
 
 <div class="description">
-    The layers in this active tile.
+    <p>The layers in this active tile.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;<a href="Tily.ActiveTileLayer.html">Tily.ActiveTileLayer</a>></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2084,19 +2516,6 @@ null.
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line14">line 14</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -2104,34 +2523,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="offset"><span class="type-signature"></span>offset<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line111">111</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="offset">
+  <span class="type-signature"></span>offset<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    An offset from this active tile's position measured in tiles.
+    <p>An offset from this active tile's position measured in tiles.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2157,23 +2600,10 @@ null.
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>{ x: 0, y: 0 }</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line111">line 111</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -2186,34 +2616,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="opacity"><span class="type-signature"></span>opacity<span class="type-signature"> :number</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line97">97</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="opacity">
+  <span class="type-signature"></span>opacity<span class="type-signature"> :number</span>
+</h4>
 
 
 
 
 <div class="description">
-    The opacity of this active tile.
+    <p>The opacity of this active tile.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2239,23 +2693,10 @@ null.
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>1</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line97">line 97</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -2268,34 +2709,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="outline"><span class="type-signature">(nullable) </span>outline<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line83">83</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="outline">
+  <span class="type-signature">(nullable) </span>outline<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The outline width and colour for this active tile's layers.
+    <p>The outline width and colour for this active tile's layers.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2321,10 +2786,6 @@ null.
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>null</li>
@@ -2332,10 +2793,84 @@ null.
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line83">line 83</a>
-    </li></ul></dd>
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+        
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line21">21</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="position">
+  <span class="type-signature"></span>position<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
+</h4>
+
+
+
+
+<div class="description">
+    <p>The position of this active tile.</p>
+</div>
+
+
+<div>
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -2350,106 +2885,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="position"><span class="type-signature"></span>position<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line125">125</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="rotation">
+  <span class="type-signature"></span>rotation<span class="type-signature"> :number</span>
+</h4>
 
 
 
 
 <div class="description">
-    The position of this active tile.
+    <p>The rotation angle of this active tile measured in radians.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line21">line 21</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+<!-- details.tmpl -->
 
 
 
 
 
 
-        
-            
-<h4 class="name" id="rotation"><span class="type-signature"></span>rotation<span class="type-signature"> :number</span></h4>
 
 
-
-
-<div class="description">
-    The rotation angle of this active tile measured in radians.
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
+<dl class="dl-horizontal">
 
     
 
@@ -2475,23 +2962,10 @@ null.
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>0</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line125">line 125</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -2504,34 +2978,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="scale"><span class="type-signature"></span>scale<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line118">118</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="scale">
+  <span class="type-signature"></span>scale<span class="type-signature"> :<a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
+</h4>
 
 
 
 
 <div class="description">
-    The scale of this active tile.
+    <p>The scale of this active tile.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type"><a href="Tily.utility.html#.vec2">Tily.utility.vec2</a></span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2557,23 +3055,10 @@ null.
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>{ x: 1, y: 1 }</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line118">line 118</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -2586,34 +3071,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="shadow"><span class="type-signature">(nullable) </span>shadow<span class="type-signature"> :string</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line90">90</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="shadow">
+  <span class="type-signature">(nullable) </span>shadow<span class="type-signature"> :string</span>
+</h4>
 
 
 
 
 <div class="description">
-    The shadow amount, offset and colour for this active tile's layers.
+    <p>The shadow amount, offset and colour for this active tile's layers.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2639,23 +3148,10 @@ null.
     
 
     
-
-    
-
-    
     <dt class="tag-default">Default Value:</dt>
     <dd class="tag-default"><ul class="dummy">
             <li>null</li>
         </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line90">line 90</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -2668,38 +3164,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="wrap"><span class="type-signature"></span>wrap<span class="type-signature"> :boolean</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line41">41</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="wrap">
+  <span class="type-signature"></span>wrap<span class="type-signature"> :boolean</span>
+</h4>
 
 
 
 
 <div class="description">
-    True if this active tile should wrap around tile edges.
+    <p>True if this active tile should wrap around tile edges.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">boolean</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
 
-    
 
-    
+
+<dl class="dl-horizontal">
 
     
 
@@ -2727,15 +3243,6 @@ null.
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line41">line 41</a>
-    </li></ul></dd>
-    
-
-    
-
-    
 
     
 </dl>
@@ -2745,34 +3252,58 @@ null.
 
 
 
+
+
+
+
+
+</div>
+
+</div>
+
         
-            
-<h4 class="name" id="zIndex"><span class="type-signature"></span>zIndex<span class="type-signature"> :number</span></h4>
+            <!--members.tmpl-->
+<div class="member-details">
+
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line27">27</a>
+  </code>
+</div>
+
+
+
+<h4 class="name" id="zIndex">
+  <span class="type-signature"></span>zIndex<span class="type-signature"> :number</span>
+</h4>
 
 
 
 
 <div class="description">
-    The layer ordering of this active tile.
+    <p>The layer ordering of this active tile.</p>
 </div>
 
 
+<div>
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -2790,19 +3321,6 @@ null.
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line27">line 27</a>
-    </li></ul></dd>
     
 
     
@@ -2816,6 +3334,15 @@ null.
 
 
 
+
+
+
+
+
+
+</div>
+
+</div>
 
         
     
@@ -2824,20 +3351,49 @@ null.
         <h3 class="subsection-title">Methods</h3>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line311">311</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id=".fromData"><span class="type-signature">(static) </span>fromData<span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>}</span></h4>
-    
+
+    <h4 class="name" id=".fromData">
+      <a href="#params-fromData"><span class="type-signature">(static) </span>fromData</a><span class="signature">(data)</span><span class="type-signature"> &rarr; {<a href="Tily.ActiveTile.html">Tily.ActiveTile</a>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Create an active tile from data.
+    <p>Create an active tile from data.</p>
 </div>
 
 
@@ -2847,11 +3403,61 @@ null.
 
 
 
+<div class="collapse_" id="methodCollapse-fromData">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-fromData" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -2889,57 +3495,14 @@ null.
 
             
 
-            <td class="description last">Serialized active tile data.</td>
+            <td class="description last"><p>Serialized active tile data.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line311">line 311</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -2953,18 +3516,17 @@ null.
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    An active tile created from the provided data.
+    <p>An active tile created from the provided data.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2977,28 +3539,69 @@ null.
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Create an active tile from data.\n   * @name fromData\n   * @function\n   * @static\n   * @memberof Tily.ActiveTile\n   * @param {Object} data Serialized active tile data.\n   * @returns {Tily.ActiveTile} An active tile created from the provided data.\n   */","meta":{"filename":"activetile.js","lineno":311,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetile.js"},"description":"<p>Create an active tile from data.</p>","name":"fromData","kind":"function","scope":"static","memberof":"Tily.ActiveTile","params":[{"type":{"names":["Object"]},"description":"<p>Serialized active tile data.</p>","name":"data"}],"returns":[{"type":{"names":["Tily.ActiveTile"]},"description":"<p>An active tile created from the provided data.</p>"}],"longname":"Tily.ActiveTile.fromData","___id":"T000002R000081","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".fromData","signature":"<span class=\"signature\">(data)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.ActiveTile.html\">Tily.ActiveTile</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>."]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line163">163</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="addLayer"><span class="type-signature"></span>addLayer<span class="signature">(layer<span class="signature-attributes">nullable</span>, z<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Tily.ActiveTileLayer.html">Tily.ActiveTileLayer</a>}</span></h4>
-    
+
+    <h4 class="name" id="addLayer">
+      <a href="#params-addLayer"><span class="type-signature"></span>addLayer</a><span class="signature">(layer<span class="signature-attributes">nullable</span>, z<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Tily.ActiveTileLayer.html">Tily.ActiveTileLayer</a>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Add an active tile layer to this active tile at the specified z-index. If the z-index is
+    <p>Add an active tile layer to this active tile at the specified z-index. If the z-index is
 undefined, add the layer on top of existing layers, and if the z-index is -1, add the layer
-below existing layers.
+below existing layers.</p>
 </div>
 
 
@@ -3008,11 +3611,66 @@ below existing layers.
 
 
 
+<div class="collapse_" id="methodCollapse-addLayer">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Tily.ActiveTileBase.html#addLayer">Tily.ActiveTileBase#addLayer</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-addLayer" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3062,7 +3720,7 @@ below existing layers.
 
             
 
-            <td class="description last">The layer to add. If this is null, a new layer will be created.</td>
+            <td class="description last"><p>The layer to add. If this is null, a new layer will be created.</p></td>
         </tr>
 
     
@@ -3095,64 +3753,16 @@ below existing layers.
 
             
 
-            <td class="description last">The z-index at which to add the layer. If this is -1, the layer will be
+            <td class="description last"><p>The z-index at which to add the layer. If this is -1, the layer will be
 added below existing layers and if it is undefined the layer will be added above existing
-layers.</td>
+layers.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#addLayer">Tily.ActiveTileBase#addLayer</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line163">line 163</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -3166,18 +3776,17 @@ layers.</td>
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    The layer that was added.
+    <p>The layer that was added.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -3190,26 +3799,67 @@ layers.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Add an active tile layer to this active tile at the specified z-index. If the z-index is\n   * undefined, add the layer on top of existing layers, and if the z-index is -1, add the layer\n   * below existing layers.\n   * @name addLayer\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTile\n   * @param {?Tily.ActiveTileLayer} layer The layer to add. If this is null, a new layer will be created.\n   * @param {number} [z] The z-index at which to add the layer. If this is -1, the layer will be\n   * added below existing layers and if it is undefined the layer will be added above existing\n   * layers.\n   * @returns {Tily.ActiveTileLayer} The layer that was added.\n   */","meta":{"filename":"activetile.js","lineno":163,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetile.js"},"description":"<p>Add an active tile layer to this active tile at the specified z-index. If the z-index is\nundefined, add the layer on top of existing layers, and if the z-index is -1, add the layer\nbelow existing layers.</p>","name":"addLayer","kind":"function","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["Tily.ActiveTileLayer"]},"nullable":true,"description":"<p>The layer to add. If this is null, a new layer will be created.</p>","name":"layer"},{"type":{"names":["number"]},"optional":true,"description":"<p>The z-index at which to add the layer. If this is -1, the layer will be\nadded below existing layers and if it is undefined the layer will be added above existing\nlayers.</p>","name":"z"}],"returns":[{"type":{"names":["Tily.ActiveTileLayer"]},"description":"<p>The layer that was added.</p>"}],"longname":"Tily.ActiveTile#addLayer","overrides":"Tily.ActiveTileBase#addLayer","___id":"T000002R000032","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"addLayer","signature":"<span class=\"signature\">(layer<span class=\"signature-attributes\">nullable</span>, z<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.ActiveTileLayer.html\">Tily.ActiveTileLayer</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line305">305</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="animateForeground"><span class="type-signature"></span>animateForeground<span class="signature">(foreground, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="animateForeground">
+      <a href="#params-animateForeground"><span class="type-signature"></span>animateForeground</a><span class="signature">(foreground, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Animate this active tile's foreground colour.
+    <p>Animate this active tile's foreground colour.</p>
 </div>
 
 
@@ -3219,11 +3869,66 @@ layers.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-animateForeground">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.ActiveTileBase.html#animateForeground">Tily.ActiveTileBase#animateForeground</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-animateForeground" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3271,7 +3976,7 @@ layers.</td>
 
             
 
-            <td class="description last">The target foreground colour.</td>
+            <td class="description last"><p>The target foreground colour.</p></td>
         </tr>
 
     
@@ -3304,19 +4009,111 @@ layers.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Animate this active tile's foreground colour.\n   * @name animateForeground\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {string} foreground The target foreground colour.\n   * @param {AnimationOptions} [options] An optional options object.\n   */","meta":{"filename":"activetilebase.js","lineno":305,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"animateForeground","longname":"Tily.ActiveTile#animateForeground","kind":"function","description":"<p>Animate this active tile's foreground colour.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["string"]},"description":"<p>The target foreground colour.</p>","name":"foreground"},{"type":{"names":["AnimationOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.ActiveTileBase#animateForeground","inherited":true,"___id":"T000002R001259","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"animateForeground","signature":"<span class=\"signature\">(foreground, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line396">396</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="animateOffset">
+      <a href="#params-animateOffset"><span class="type-signature"></span>animateOffset</a><span class="signature">(x, y, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Animate this active tile's offset.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-animateOffset">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -3325,7 +4122,7 @@ layers.</td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#animateForeground">Tily.ActiveTileBase#animateForeground</a>
+        <a href="Tily.ActiveTileBase.html#animateOffset">Tily.ActiveTileBase#animateOffset</a>
     </li></ul></dd>
     
 
@@ -3339,19 +4136,6 @@ layers.</td>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line305">line 305</a>
-    </li></ul></dd>
     
 
     
@@ -3368,47 +4152,12 @@ layers.</td>
 
 
 
+  <div id="params-animateOffset" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="animateOffset"><span class="type-signature"></span>animateOffset<span class="signature">(x, y, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Animate this active tile's offset.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3456,7 +4205,7 @@ layers.</td>
 
             
 
-            <td class="description last">The x-coordinate of the target offset position.</td>
+            <td class="description last"><p>The x-coordinate of the target offset position.</p></td>
         </tr>
 
     
@@ -3487,7 +4236,7 @@ layers.</td>
 
             
 
-            <td class="description last">The y-coordinate of the target offset position.</td>
+            <td class="description last"><p>The y-coordinate of the target offset position.</p></td>
         </tr>
 
     
@@ -3520,19 +4269,111 @@ layers.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Animate this active tile's offset.\n   * @name animateOffset\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {number} x The x-coordinate of the target offset position.\n   * @param {number} y The y-coordinate of the target offset position.\n   * @param {OffsetAnimationOptions} [options] An optional options object.\n   */","meta":{"filename":"activetilebase.js","lineno":396,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"animateOffset","longname":"Tily.ActiveTile#animateOffset","kind":"function","description":"<p>Animate this active tile's offset.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["number"]},"description":"<p>The x-coordinate of the target offset position.</p>","name":"x"},{"type":{"names":["number"]},"description":"<p>The y-coordinate of the target offset position.</p>","name":"y"},{"type":{"names":["OffsetAnimationOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.ActiveTileBase#animateOffset","inherited":true,"___id":"T000002R001264","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"animateOffset","signature":"<span class=\"signature\">(x, y, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line356">356</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="animateOpacity">
+      <a href="#params-animateOpacity"><span class="type-signature"></span>animateOpacity</a><span class="signature">(opacity, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Animate this active tile's opacity.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-animateOpacity">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -3541,7 +4382,7 @@ layers.</td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#animateOffset">Tily.ActiveTileBase#animateOffset</a>
+        <a href="Tily.ActiveTileBase.html#animateOpacity">Tily.ActiveTileBase#animateOpacity</a>
     </li></ul></dd>
     
 
@@ -3555,19 +4396,6 @@ layers.</td>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line396">line 396</a>
-    </li></ul></dd>
     
 
     
@@ -3584,47 +4412,12 @@ layers.</td>
 
 
 
+  <div id="params-animateOpacity" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="animateOpacity"><span class="type-signature"></span>animateOpacity<span class="signature">(opacity, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Animate this active tile's opacity.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3672,7 +4465,7 @@ layers.</td>
 
             
 
-            <td class="description last">The target opacity.</td>
+            <td class="description last"><p>The target opacity.</p></td>
         </tr>
 
     
@@ -3705,19 +4498,111 @@ layers.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Animate this active tile's opacity.\n   * @name animateOpacity\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {number} opacity The target opacity.\n   * @param {AnimationOptions} [options] An optional options object.\n   */","meta":{"filename":"activetilebase.js","lineno":356,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"animateOpacity","longname":"Tily.ActiveTile#animateOpacity","kind":"function","description":"<p>Animate this active tile's opacity.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["number"]},"description":"<p>The target opacity.</p>","name":"opacity"},{"type":{"names":["AnimationOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.ActiveTileBase#animateOpacity","inherited":true,"___id":"T000002R001262","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"animateOpacity","signature":"<span class=\"signature\">(opacity, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line322">322</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="animateOutline">
+      <a href="#params-animateOutline"><span class="type-signature"></span>animateOutline</a><span class="signature">(outline, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Animate this active tile's outline.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-animateOutline">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -3726,7 +4611,7 @@ layers.</td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#animateOpacity">Tily.ActiveTileBase#animateOpacity</a>
+        <a href="Tily.ActiveTileBase.html#animateOutline">Tily.ActiveTileBase#animateOutline</a>
     </li></ul></dd>
     
 
@@ -3740,19 +4625,6 @@ layers.</td>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line356">line 356</a>
-    </li></ul></dd>
     
 
     
@@ -3769,47 +4641,12 @@ layers.</td>
 
 
 
+  <div id="params-animateOutline" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="animateOutline"><span class="type-signature"></span>animateOutline<span class="signature">(outline, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Animate this active tile's outline.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -3857,7 +4694,7 @@ layers.</td>
 
             
 
-            <td class="description last">The target outline.</td>
+            <td class="description last"><p>The target outline.</p></td>
         </tr>
 
     
@@ -3890,19 +4727,111 @@ layers.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Animate this active tile's outline.\n   * @name animateOutline\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {string} outline The target outline.\n   * @param {AnimationOptions} [options] An optional options object.\n   */","meta":{"filename":"activetilebase.js","lineno":322,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"animateOutline","longname":"Tily.ActiveTile#animateOutline","kind":"function","description":"<p>Animate this active tile's outline.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["string"]},"description":"<p>The target outline.</p>","name":"outline"},{"type":{"names":["AnimationOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.ActiveTileBase#animateOutline","inherited":true,"___id":"T000002R001260","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"animateOutline","signature":"<span class=\"signature\">(outline, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line426">426</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="animateRotation">
+      <a href="#params-animateRotation"><span class="type-signature"></span>animateRotation</a><span class="signature">(angle, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Animate this active tile's rotation.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-animateRotation">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -3911,7 +4840,7 @@ layers.</td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#animateOutline">Tily.ActiveTileBase#animateOutline</a>
+        <a href="Tily.ActiveTileBase.html#animateRotation">Tily.ActiveTileBase#animateRotation</a>
     </li></ul></dd>
     
 
@@ -3925,19 +4854,6 @@ layers.</td>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line322">line 322</a>
-    </li></ul></dd>
     
 
     
@@ -3954,47 +4870,12 @@ layers.</td>
 
 
 
+  <div id="params-animateRotation" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="animateRotation"><span class="type-signature"></span>animateRotation<span class="signature">(angle, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Animate this active tile's rotation.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -4042,7 +4923,7 @@ layers.</td>
 
             
 
-            <td class="description last">The target angle in radians.</td>
+            <td class="description last"><p>The target angle in radians.</p></td>
         </tr>
 
     
@@ -4075,19 +4956,111 @@ layers.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Animate this active tile's rotation.\n   * @name animateRotation\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {number} angle The target angle in radians.\n   * @param {RotationAnimationOptions} [options] An optional options object.\n   */","meta":{"filename":"activetilebase.js","lineno":426,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"animateRotation","longname":"Tily.ActiveTile#animateRotation","kind":"function","description":"<p>Animate this active tile's rotation.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["number"]},"description":"<p>The target angle in radians.</p>","name":"angle"},{"type":{"names":["RotationAnimationOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.ActiveTileBase#animateRotation","inherited":true,"___id":"T000002R001265","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"animateRotation","signature":"<span class=\"signature\">(angle, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line372">372</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="animateScale">
+      <a href="#params-animateScale"><span class="type-signature"></span>animateScale</a><span class="signature">(x, y, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Animate this active tile's scale.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-animateScale">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -4096,7 +5069,7 @@ layers.</td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#animateRotation">Tily.ActiveTileBase#animateRotation</a>
+        <a href="Tily.ActiveTileBase.html#animateScale">Tily.ActiveTileBase#animateScale</a>
     </li></ul></dd>
     
 
@@ -4110,19 +5083,6 @@ layers.</td>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line426">line 426</a>
-    </li></ul></dd>
     
 
     
@@ -4139,47 +5099,12 @@ layers.</td>
 
 
 
+  <div id="params-animateScale" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="animateScale"><span class="type-signature"></span>animateScale<span class="signature">(x, y, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Animate this active tile's scale.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -4227,7 +5152,7 @@ layers.</td>
 
             
 
-            <td class="description last">The target x-scale.</td>
+            <td class="description last"><p>The target x-scale.</p></td>
         </tr>
 
     
@@ -4258,7 +5183,7 @@ layers.</td>
 
             
 
-            <td class="description last">The target y-scale.</td>
+            <td class="description last"><p>The target y-scale.</p></td>
         </tr>
 
     
@@ -4291,19 +5216,111 @@ layers.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Animate this active tile's scale.\n   * @name animateScale\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {number} x The target x-scale.\n   * @param {number} y The target y-scale.\n   * @param {AnimationOptions} [options] An optional options object.\n   */","meta":{"filename":"activetilebase.js","lineno":372,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"animateScale","longname":"Tily.ActiveTile#animateScale","kind":"function","description":"<p>Animate this active tile's scale.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["number"]},"description":"<p>The target x-scale.</p>","name":"x"},{"type":{"names":["number"]},"description":"<p>The target y-scale.</p>","name":"y"},{"type":{"names":["AnimationOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.ActiveTileBase#animateScale","inherited":true,"___id":"T000002R001263","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"animateScale","signature":"<span class=\"signature\">(x, y, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line339">339</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="animateShadow">
+      <a href="#params-animateShadow"><span class="type-signature"></span>animateShadow</a><span class="signature">(shadow, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Animate this active tile's fshadow.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-animateShadow">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -4312,7 +5329,7 @@ layers.</td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#animateScale">Tily.ActiveTileBase#animateScale</a>
+        <a href="Tily.ActiveTileBase.html#animateShadow">Tily.ActiveTileBase#animateShadow</a>
     </li></ul></dd>
     
 
@@ -4326,19 +5343,6 @@ layers.</td>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line372">line 372</a>
-    </li></ul></dd>
     
 
     
@@ -4355,47 +5359,12 @@ layers.</td>
 
 
 
+  <div id="params-animateShadow" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="animateShadow"><span class="type-signature"></span>animateShadow<span class="signature">(shadow, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Animate this active tile's fshadow.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -4443,7 +5412,7 @@ layers.</td>
 
             
 
-            <td class="description last">The target shadow.</td>
+            <td class="description last"><p>The target shadow.</p></td>
         </tr>
 
     
@@ -4476,28 +5445,122 @@ layers.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Animate this active tile's fshadow.\n   * @name animateShadow\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {string} shadow The target shadow.\n   * @param {AnimationOptions} [options] An optional options object.\n   */","meta":{"filename":"activetilebase.js","lineno":339,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"animateShadow","longname":"Tily.ActiveTile#animateShadow","kind":"function","description":"<p>Animate this active tile's fshadow.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["string"]},"description":"<p>The target shadow.</p>","name":"shadow"},{"type":{"names":["AnimationOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"inherits":"Tily.ActiveTileBase#animateShadow","inherited":true,"___id":"T000002R001261","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"animateShadow","signature":"<span class=\"signature\">(shadow, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line202">202</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="draw">
+      <a href="#params-draw"><span class="type-signature"></span>draw</a><span class="signature">(context, elapsedTime, tileSize)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Render this active tile onto the container context.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-draw">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#animateShadow">Tily.ActiveTileBase#animateShadow</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Tily.ActiveTileBase.html#draw">Tily.ActiveTileBase#draw</a>
     </li></ul></dd>
     
 
@@ -4509,21 +5572,6 @@ layers.</td>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line339">line 339</a>
-    </li></ul></dd>
     
 
     
@@ -4540,47 +5588,12 @@ layers.</td>
 
 
 
+  <div id="params-draw" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="draw"><span class="type-signature"></span>draw<span class="signature">(context, elapsedTime, tileSize)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Render this active tile onto the container context.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -4618,7 +5631,7 @@ layers.</td>
 
             
 
-            <td class="description last">The context to draw this active tile onto.</td>
+            <td class="description last"><p>The context to draw this active tile onto.</p></td>
         </tr>
 
     
@@ -4641,7 +5654,7 @@ layers.</td>
 
             
 
-            <td class="description last">The time elapsed in seconds since the last draw call.</td>
+            <td class="description last"><p>The time elapsed in seconds since the last draw call.</p></td>
         </tr>
 
     
@@ -4664,62 +5677,14 @@ layers.</td>
 
             
 
-            <td class="description last">The tile size measured in pixels.</td>
+            <td class="description last"><p>The tile size measured in pixels.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#draw">Tily.ActiveTileBase#draw</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line202">line 202</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -4739,22 +5704,59 @@ layers.</td>
 
 
 
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Render this active tile onto the container context.\n   * @name draw\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTile\n   * @param {CanvasRenderingContext2D} context The context to draw this active tile onto.\n   * @param {number} elapsedTime The time elapsed in seconds since the last draw call.\n   * @param {number} tileSize The tile size measured in pixels.\n   */","meta":{"filename":"activetile.js","lineno":202,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetile.js"},"description":"<p>Render this active tile onto the container context.</p>","name":"draw","kind":"function","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["CanvasRenderingContext2D"]},"description":"<p>The context to draw this active tile onto.</p>","name":"context"},{"type":{"names":["number"]},"description":"<p>The time elapsed in seconds since the last draw call.</p>","name":"elapsedTime"},{"type":{"names":["number"]},"description":"<p>The tile size measured in pixels.</p>","name":"tileSize"}],"longname":"Tily.ActiveTile#draw","overrides":"Tily.ActiveTileBase#draw","___id":"T000002R000040","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"draw","signature":"<span class=\"signature\">(context, elapsedTime, tileSize)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line280">280</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="getData"><span class="type-signature"></span>getData<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
+
+    <h4 class="name" id="getData">
+      <a href="#params-getData"><span class="type-signature"></span>getData</a><span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Get serializable data for this active tile.
+    <p>Get serializable data for this active tile.</p>
 </div>
 
 
@@ -4764,24 +5766,22 @@ layers.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-getData">
+
+  
+
+  
+
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
 
-    
 
-    
 
-    
-
-    
-
-    
-
-    
+<dl class="dl-horizontal">
 
     
 
@@ -4796,10 +5796,9 @@ layers.</td>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line280">line 280</a>
-    </li></ul></dd>
+
+    
+
     
 
     
@@ -4823,16 +5822,22 @@ layers.</td>
 
 
 
-<h5>Returns:</h5>
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    This active tile's data.
+    <p>This active tile's data.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -4845,26 +5850,67 @@ layers.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Get serializable data for this active tile.\n   * @name getData\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTile\n   * @returns {Object} This active tile's data.\n   */","meta":{"filename":"activetile.js","lineno":280,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetile.js"},"description":"<p>Get serializable data for this active tile.</p>","name":"getData","kind":"function","scope":"instance","memberof":"Tily.ActiveTile","returns":[{"type":{"names":["Object"]},"description":"<p>This active tile's data.</p>"}],"longname":"Tily.ActiveTile#getData","___id":"T000002R000061","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getData","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Object}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetile.js.html">activetile.js</a>:<a href="activetile.js.html#line141">141</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="move"><span class="type-signature"></span>move<span class="signature">(direction, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="move">
+      <a href="#params-move"><span class="type-signature"></span>move</a><span class="signature">(direction, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Animate this active tile's position.
+    <p>Animate this active tile's position.</p>
 </div>
 
 
@@ -4874,11 +5920,61 @@ layers.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-move">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-move" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -4926,7 +6022,7 @@ layers.</td>
 
             
 
-            <td class="description last">The movement direction, either 'up', 'down', 'left', 'right'.</td>
+            <td class="description last"><p>The movement direction, either 'up', 'down', 'left', 'right'.</p></td>
         </tr>
 
     
@@ -4959,49 +6055,134 @@ layers.</td>
 
             
 
-            <td class="description last">An optional options object.</td>
+            <td class="description last"><p>An optional options object.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Animate this active tile's position.\n   * @name move\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTile\n   * @param {string} direction The movement direction, either 'up', 'down', 'left', 'right'.\n   * @param {AnimationOptions} [options] An optional options object.\n   */","meta":{"filename":"activetile.js","lineno":141,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetile.js"},"description":"<p>Animate this active tile's position.</p>","name":"move","kind":"function","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["string"]},"description":"<p>The movement direction, either 'up', 'down', 'left', 'right'.</p>","name":"direction"},{"type":{"names":["AnimationOptions"]},"optional":true,"description":"<p>An optional options object.</p>","name":"options"}],"longname":"Tily.ActiveTile#move","___id":"T000002R000022","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"move","signature":"<span class=\"signature\">(direction, options<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line502">502</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="moveLayer">
+      <a href="#params-moveLayer"><span class="type-signature"></span>moveLayer</a><span class="signature">(zFrom, zTo, relative)</span><span class="type-signature"> &rarr; {boolean}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Move a layer from one z-index to another z-index, either an absolute value or relative to
+the layer's current z-index.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-moveLayer">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetile.js.html">activetile.js</a>, <a href="activetile.js.html#line141">line 141</a>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.ActiveTileBase.html#moveLayer">Tily.ActiveTileBase#moveLayer</a>
     </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -5018,48 +6199,12 @@ layers.</td>
 
 
 
+  <div id="params-moveLayer" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="moveLayer"><span class="type-signature"></span>moveLayer<span class="signature">(zFrom, zTo, relative)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Move a layer from one z-index to another z-index, either an absolute value or relative to
-the layer's current z-index.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -5097,7 +6242,7 @@ the layer's current z-index.
 
             
 
-            <td class="description last">The z-index of the layer to move.</td>
+            <td class="description last"><p>The z-index of the layer to move.</p></td>
         </tr>
 
     
@@ -5120,7 +6265,7 @@ the layer's current z-index.
 
             
 
-            <td class="description last">The z-index to move the layer to.</td>
+            <td class="description last"><p>The z-index to move the layer to.</p></td>
         </tr>
 
     
@@ -5143,63 +6288,15 @@ the layer's current z-index.
 
             
 
-            <td class="description last">If this is true, the layer will be moved relative to it's current
-z-index.</td>
+            <td class="description last"><p>If this is true, the layer will be moved relative to it's current
+z-index.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#moveLayer">Tily.ActiveTileBase#moveLayer</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line502">line 502</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -5213,18 +6310,17 @@ z-index.</td>
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    True if a layer was moved successfully.
+    <p>True if a layer was moved successfully.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -5237,26 +6333,67 @@ z-index.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Move a layer from one z-index to another z-index, either an absolute value or relative to\n   * the layer's current z-index.\n   * @name moveLayer\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {number} zFrom The z-index of the layer to move.\n   * @param {number} zTo The z-index to move the layer to.\n   * @param {boolean} relative If this is true, the layer will be moved relative to it's current\n   * z-index.\n   * @returns {boolean} True if a layer was moved successfully.\n   */","meta":{"filename":"activetilebase.js","lineno":502,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"moveLayer","longname":"Tily.ActiveTile#moveLayer","kind":"function","description":"<p>Move a layer from one z-index to another z-index, either an absolute value or relative to\nthe layer's current z-index.</p>","scope":"instance","memberof":"Tily.ActiveTile","returns":[{"type":{"names":["boolean"]},"description":"<p>True if a layer was moved successfully.</p>"}],"params":[{"type":{"names":["number"]},"description":"<p>The z-index of the layer to move.</p>","name":"zFrom"},{"type":{"names":["number"]},"description":"<p>The z-index to move the layer to.</p>","name":"zTo"},{"type":{"names":["boolean"]},"description":"<p>If this is true, the layer will be moved relative to it's current\nz-index.</p>","name":"relative"}],"inherits":"Tily.ActiveTileBase#moveLayer","inherited":true,"___id":"T000002R001268","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"moveLayer","signature":"<span class=\"signature\">(zFrom, zTo, relative)</span><span class=\"type-signature\"> &rarr; {boolean}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line245">245</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="pauseAnimations"><span class="type-signature"></span>pauseAnimations<span class="signature">(inherit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="pauseAnimations">
+      <a href="#params-pauseAnimations"><span class="type-signature"></span>pauseAnimations</a><span class="signature">(inherit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Pause all animations below this layer.
+    <p>Pause all animations below this layer.</p>
 </div>
 
 
@@ -5266,11 +6403,66 @@ z-index.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-pauseAnimations">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.ActiveTileBase.html#pauseAnimations">Tily.ActiveTileBase#pauseAnimations</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-pauseAnimations" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -5320,62 +6512,14 @@ z-index.</td>
 
             
 
-            <td class="description last">If true (default) then pass down to child layers</td>
+            <td class="description last"><p>If true (default) then pass down to child layers</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#pauseAnimations">Tily.ActiveTileBase#pauseAnimations</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line245">line 245</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -5395,22 +6539,59 @@ z-index.</td>
 
 
 
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Pause all animations below this layer.\n   * @name pauseAnimations\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {boolean} [inherit] If true (default) then pass down to child layers\n   */","meta":{"filename":"activetilebase.js","lineno":245,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"pauseAnimations","longname":"Tily.ActiveTile#pauseAnimations","kind":"function","description":"<p>Pause all animations below this layer.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["boolean"]},"optional":true,"description":"<p>If true (default) then pass down to child layers</p>","name":"inherit"}],"inherits":"Tily.ActiveTileBase#pauseAnimations","inherited":true,"___id":"T000002R001255","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"pauseAnimations","signature":"<span class=\"signature\">(inherit<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line491">491</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="removeAllLayers"><span class="type-signature"></span>removeAllLayers<span class="signature">()</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="removeAllLayers">
+      <a href="#params-removeAllLayers"><span class="type-signature"></span>removeAllLayers</a><span class="signature">()</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Remove all layers from this active tile.
+    <p>Remove all layers from this active tile.</p>
 </div>
 
 
@@ -5420,12 +6601,22 @@ z-index.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-removeAllLayers">
+
+  
+
+  
+
+<!-- details.tmpl -->
 
 
 
 
 
-<dl class="details">
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -5455,19 +6646,6 @@ z-index.</td>
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line491">line 491</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -5489,22 +6667,66 @@ z-index.</td>
 
 
 
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Remove all layers from this active tile.\n   * @name removeAllLayers\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   */","meta":{"filename":"activetilebase.js","lineno":491,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"removeAllLayers","longname":"Tily.ActiveTile#removeAllLayers","kind":"function","description":"<p>Remove all layers from this active tile.</p>","scope":"instance","memberof":"Tily.ActiveTile","inherits":"Tily.ActiveTileBase#removeAllLayers","inherited":true,"___id":"T000002R001267","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"removeAllLayers","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line470">470</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="removeLayer"><span class="type-signature"></span>removeLayer<span class="signature">(z<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Tily.ActiveTileLayer.html">Tily.ActiveTileLayer</a>}</span></h4>
-    
+
+    <h4 class="name" id="removeLayer">
+      <a href="#params-removeLayer"><span class="type-signature"></span>removeLayer</a><span class="signature">(z<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Tily.ActiveTileLayer.html">Tily.ActiveTileLayer</a>}</span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer
-and if the z-index is -1, remove the bottom layer. The removed layer is returned.
+    <p>Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer
+and if the z-index is -1, remove the bottom layer. The removed layer is returned.</p>
 </div>
 
 
@@ -5514,11 +6736,66 @@ and if the z-index is -1, remove the bottom layer. The removed layer is returned
 
 
 
+<div class="collapse_" id="methodCollapse-removeLayer">
 
-    <h5>Parameters:</h5>
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
     
 
-<table class="params">
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Tily.ActiveTileBase.html#removeLayer">Tily.ActiveTileBase#removeLayer</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-removeLayer" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -5568,63 +6845,15 @@ and if the z-index is -1, remove the bottom layer. The removed layer is returned
 
             
 
-            <td class="description last">The z-index of the layer to remove. If this is -1, the bottom layer will
-be removed and if it is undefined the top layer will be removed.</td>
+            <td class="description last"><p>The z-index of the layer to remove. If this is -1, the bottom layer will
+be removed and if it is undefined the top layer will be removed.</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Tily.ActiveTileBase.html#removeLayer">Tily.ActiveTileBase#removeLayer</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line470">line 470</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+  </div>
 
 
 
@@ -5638,18 +6867,17 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
-
-
-<h5>Returns:</h5>
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
 
         
 <div class="param-desc">
-    The layer that was removed.
+    <p>The layer that was removed.</p>
 </div>
 
 
 
-<dl>
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -5662,26 +6890,67 @@ be removed and if it is undefined the top layer will be removed.</td>
 </dl>
 
     
+</div>
+  
 
 
 
 
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer\n   * and if the z-index is -1, remove the bottom layer. The removed layer is returned.\n   * @name removeLayer\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {number} [z] The z-index of the layer to remove. If this is -1, the bottom layer will\n   * be removed and if it is undefined the top layer will be removed.\n   * @returns {Tily.ActiveTileLayer} The layer that was removed.\n   */","meta":{"filename":"activetilebase.js","lineno":470,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"removeLayer","longname":"Tily.ActiveTile#removeLayer","kind":"function","description":"<p>Remove a layer at the specified z-index. If the z-index is undefined, remove the top layer\nand if the z-index is -1, remove the bottom layer. The removed layer is returned.</p>","scope":"instance","memberof":"Tily.ActiveTile","returns":[{"type":{"names":["Tily.ActiveTileLayer"]},"description":"<p>The layer that was removed.</p>"}],"params":[{"type":{"names":["number"]},"optional":true,"description":"<p>The z-index of the layer to remove. If this is -1, the bottom layer will\nbe removed and if it is undefined the top layer will be removed.</p>","name":"z"}],"inherits":"Tily.ActiveTileBase#removeLayer","inherited":true,"___id":"T000002R001266","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"removeLayer","signature":"<span class=\"signature\">(z<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"> &rarr; {<a href=\"Tily.ActiveTileLayer.html\">Tily.ActiveTileLayer</a>}</span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
 
         
-            
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line275">275</a>
+  </code>
+</div>
+
+
+
 
     
 
     
-    <h4 class="name" id="resetAnimations"><span class="type-signature"></span>resetAnimations<span class="signature">(inherit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+
+    <h4 class="name" id="resetAnimations">
+      <a href="#params-resetAnimations"><span class="type-signature"></span>resetAnimations</a><span class="signature">(inherit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
 
     
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div class="description">
-    Reset all animations below this layer.
+    <p>Reset all animations below this layer.</p>
 </div>
 
 
@@ -5691,73 +6960,22 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+<div class="collapse_" id="methodCollapse-resetAnimations">
 
-    <h5>Parameters:</h5>
-    
+  
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+  
 
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inherit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">If true (default) then pass down to child layers</td>
-        </tr>
-
-    
-    </tbody>
-</table>
+<!-- details.tmpl -->
 
 
 
 
 
 
-<dl class="details">
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -5787,19 +7005,6 @@ be removed and if it is undefined the top layer will be removed.</td>
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line275">line 275</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -5809,47 +7014,12 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+  <div id="params-resetAnimations" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="runAnimations"><span class="type-signature"></span>runAnimations<span class="signature">(inherit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Un-pause all animations below this layer.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -5899,19 +7069,111 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">If true (default) then pass down to child layers</td>
+            <td class="description last"><p>If true (default) then pass down to child layers</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Reset all animations below this layer.\n   * @name resetAnimations\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {boolean} [inherit] If true (default) then pass down to child layers\n   */","meta":{"filename":"activetilebase.js","lineno":275,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"resetAnimations","longname":"Tily.ActiveTile#resetAnimations","kind":"function","description":"<p>Reset all animations below this layer.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["boolean"]},"optional":true,"description":"<p>If true (default) then pass down to child layers</p>","name":"inherit"}],"inherits":"Tily.ActiveTileBase#resetAnimations","inherited":true,"___id":"T000002R001257","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"resetAnimations","signature":"<span class=\"signature\">(inherit<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line260">260</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="runAnimations">
+      <a href="#params-runAnimations"><span class="type-signature"></span>runAnimations</a><span class="signature">(inherit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Un-pause all animations below this layer.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-runAnimations">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -5941,19 +7203,6 @@ be removed and if it is undefined the top layer will be removed.</td>
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line260">line 260</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -5963,47 +7212,12 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+  <div id="params-runAnimations" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
 
 
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="stopAnimations"><span class="type-signature"></span>stopAnimations<span class="signature">(inherit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Stop and remove all animations below this layer.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="table table-bordered">
     <thead>
     <tr>
         
@@ -6053,19 +7267,111 @@ be removed and if it is undefined the top layer will be removed.</td>
 
             
 
-            <td class="description last">If true (default) then pass down to child layers</td>
+            <td class="description last"><p>If true (default) then pass down to child layers</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
+  </div>
 
 
 
 
 
-<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Un-pause all animations below this layer.\n   * @name runAnimations\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {boolean} [inherit] If true (default) then pass down to child layers\n   */","meta":{"filename":"activetilebase.js","lineno":260,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"runAnimations","longname":"Tily.ActiveTile#runAnimations","kind":"function","description":"<p>Un-pause all animations below this layer.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["boolean"]},"optional":true,"description":"<p>If true (default) then pass down to child layers</p>","name":"inherit"}],"inherits":"Tily.ActiveTileBase#runAnimations","inherited":true,"___id":"T000002R001256","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"runAnimations","signature":"<span class=\"signature\">(inherit<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="activetilebase.js.html">activetilebase.js</a>:<a href="activetilebase.js.html#line290">290</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="stopAnimations">
+      <a href="#params-stopAnimations"><span class="type-signature"></span>stopAnimations</a><span class="signature">(inherit<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Stop and remove all animations below this layer.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-stopAnimations">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
 
     
 
@@ -6095,19 +7401,6 @@ be removed and if it is undefined the top layer will be removed.</td>
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activetilebase.js.html">activetilebase.js</a>, <a href="activetilebase.js.html#line290">line 290</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -6117,6 +7410,69 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+  <div id="params-stopAnimations" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inherit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>If true (default) then pass down to child layers</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
 
 
 
@@ -6128,6 +7484,22 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 
 
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Stop and remove all animations below this layer.\n   * @name stopAnimations\n   * @function\n   * @instance\n   * @memberof Tily.ActiveTileBase\n   * @param {boolean} [inherit] If true (default) then pass down to child layers\n   */","meta":{"filename":"activetilebase.js","lineno":290,"columnno":2,"path":"/home/gordon/Projects/tily/src","code":{},"shortpath":"activetilebase.js"},"name":"stopAnimations","longname":"Tily.ActiveTile#stopAnimations","kind":"function","description":"<p>Stop and remove all animations below this layer.</p>","scope":"instance","memberof":"Tily.ActiveTile","params":[{"type":{"names":["boolean"]},"optional":true,"description":"<p>If true (default) then pass down to child layers</p>","name":"inherit"}],"inherits":"Tily.ActiveTileBase#stopAnimations","inherited":true,"___id":"T000002R001258","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"stopAnimations","signature":"<span class=\"signature\">(inherit<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"Tily.html\">Tily</a>","<a href=\"Tily.ActiveTile.html\">.ActiveTile</a>#"]}
+</pre>
+-->
+</div>
 
         
     
@@ -6144,17 +7516,13 @@ be removed and if it is undefined the top layer will be removed.</td>
 
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Tily.html">Tily</a></li></ul><h3>Classes</h3><ul><li><a href="Tily.ActiveTile.html">ActiveTile</a></li><li><a href="Tily.ActiveTileBase.html">ActiveTileBase</a></li><li><a href="Tily.ActiveTileLayer.html">ActiveTileLayer</a></li><li><a href="Tily.Animation.html">Animation</a></li><li><a href="Tily.Buffer.html">Buffer</a></li><li><a href="Tily.BufferBase.html">BufferBase</a></li><li><a href="Tily.BufferTransition.html">BufferTransition</a></li><li><a href="Tily.Cell.html">Cell</a></li><li><a href="Tily.CellBuffer.html">CellBuffer</a></li><li><a href="Tily.ForegroundAnimation.html">ForegroundAnimation</a></li><li><a href="Tily.Main.html">Main</a></li><li><a href="Tily.OffsetAnimation.html">OffsetAnimation</a></li><li><a href="Tily.OffsetTransition.html">OffsetTransition</a></li><li><a href="Tily.OpacityAnimation.html">OpacityAnimation</a></li><li><a href="Tily.OutlineAnimation.html">OutlineAnimation</a></li><li><a href="Tily.RotationAnimation.html">RotationAnimation</a></li><li><a href="Tily.ScaleAnimation.html">ScaleAnimation</a></li><li><a href="Tily.ScaleTransition.html">ScaleTransition</a></li><li><a href="Tily.ShadowAnimation.html">ShadowAnimation</a></li><li><a href="Tily.TextAnimation.html">TextAnimation</a></li><li><a href="Tily.TileLayer.html">TileLayer</a></li><li><a href="Tily.Transition.html">Transition</a></li></ul><h3><a href="global.html">Global</a></h3>
-</nav>
-
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Sep 27 2020 22:46:40 GMT+0100 (British Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Thu Oct 01 2020 15:59:54 GMT+0100 (British Summer Time) using the LOKE theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
 </body>
 </html>

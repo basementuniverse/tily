@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>opacityanimation.js - Documentation</title>
+    <title>Tutorial: Quick Reference - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -34,59 +34,253 @@
 
 <div id="main">
     
-    <h1 class="page-title">opacityanimation.js</h1>
+    <h1 class="page-title">Tutorial: Quick Reference</h1>
     
 
-    <!--container.tmpl-->
+    <section class="tutorial">
 
+<header class="tutorial-header">
+    
 
+</header>
 
-
-    <!--source.tmpl-->
-
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>Tily.OpacityAnimation = (function(_super) {
-  "use strict";
-  Tily.utility.__extends(OpacityAnimation, _super);
-
-  /**
-   * Represents an opacity animation for fading active tiles.
-   * @class
-   * @extends Tily.Animation
-   * @memberof Tily
-   * @param {Tily.ActiveTile|Tily.ActiveTileLayer} activeTile The active tile or active tile
-   * layer that this animation belongs to.
-   * @param {number} start The starting opacity.
-   * @param {number} finish The finishing opacity.
-   * @param {AnimationOptions} [options] An optional options object for configuring the
-   * animation.
-   */
-  function OpacityAnimation(activeTile, start, finish, options) {
-    _super.call(this, activeTile, start, finish, options);
-  }
-
-  /**
-   * Update the animation and set the active tile opacity.
-   * @name update
-   * @function
-   * @instance
-   * @memberof Tily.OpacityAnimation
-   * @param {number} elapsedTime The number of seconds that have elapsed since the last update.
-   */
-  OpacityAnimation.prototype.update = function(elapsedTime) {
-    const amount = _super.prototype.update.call(this, elapsedTime);
-    this.activeTile.opacity = this.easeFunction(this.start, this.finish, amount);
-  };
-  return OpacityAnimation;
-}(Tily.Animation));
+<article>
+    <h1><img src="docs/images/tily.svg" alt=""> Tily Quick Reference</h1>
+<h2>Initialise Tily</h2>
+<p>Without options:</p>
+<pre class="prettyprint source"><code>const tily = new Tily.Main(canvas);
 </code></pre>
-        </article>
-    </section>
+<p>With options:</p>
+<pre class="prettyprint source"><code>const tily = new Tily.Main(canvas, {
+    size: {                         // if null, use browser window size
+        width: 100,                 // measured in px
+        height: 100
+    },
+    handleResize: true,             // handle the resize event and resize canvas
+    showFPS: true,
+    renderLoop: true,               // start render loop automatically
+    beforeDrawFunction: (
+        canvas, context, width, height, elapsedTime
+    ) => {}                         // called before each draw
+    afterDrawFunction: (
+        canvas, context, width, height, elapsedTime
+    ) => {}                         // called after each draw
+});
+</code></pre>
+<h2>Create buffers</h2>
+<p>You draw tiles on these buffers, and they can be scrolled/zoomed etc..
+You can keep lots of them around and transition between them at any time (see next section).</p>
+<p>Without options:</p>
+<pre class="prettyprint source"><code>const buffer = new Tily.Buffer(w, h);   // w/h measured in tiles
+</code></pre>
+<p>With options:</p>
+<pre class="prettyprint source"><code>const buffer = new Tily.Buffer(w, h, {
+    lockedAxis: 'x' or 'y', // scale shows how many tiles visible on the locked axis
+    initialOffsetX: 0,      // starting offset measured in tiles
+    initialOffsetY: 0,
+    initialScale: 24,       // initially visible tiles along the locked axis
+    maximumScale: 32,
+    minimumScale: 4,
+    clampCamera: true       // clamp position and zoom to buffer edges
+});
+</code></pre>
+<p>The resulting buffer object:</p>
+<pre class="prettyprint source"><code>// buffer
+{
+    activeTiles: [],                // list of active tiles
+    activeTilesMap: {},             // keys are tile positions, elements are arrays
+    canvas, context,
+    layers: [],
+    offset: vec2,                   // measured in tiles
+    offsetPixels: vec2,
+    options: {},
+    scale: 32,
+    size: { width, height},         // measured in tiles
+    tileSize: { width, height },    // side length of tiles in px
+    viewSize: { width, height },    // measured in tiles
 
+    getData(),
+    static fromData(data),
+    serialize(),
+    static deserialize(data),
 
+    addActiveTile(...tiles),
+    removeActiveTile(tile),
+    removeAllActiveTiles(),
 
+    addLayer(layer, z),
+    removeLayer(z),
+    removeAllLayers(),
 
+    getPosition(x, y),              // pixel position to tile position
+    getTileInfo(x, y),              // info about tiles and active tiles at position
+
+    moveOffset(x, y, { unit, relative, time, easeFunction, finishedCallback }),
+    zoom(scale, { unit, relative, time, easeFunction, finishedCallback }),
+    moveLayer(from, to, relative),  // move layer by z position
+    resize(w, h)
+}
+</code></pre>
+<h2>Activate buffers</h2>
+<p>Makes a buffer visible.</p>
+<p>Activate without transition:</p>
+<pre class="prettyprint source"><code>tily.activateBuffer(buffer);
+</code></pre>
+<p>Activate with transition (fade) animation:</p>
+<pre class="prettyprint source"><code>tily.activateBuffer(buffer, { time: 1, finishedCallback: () => {} }).then(() => {});
+</code></pre>
+<h2>Add and configure layers</h2>
+<p>Buffers have multiple layers. Each layer contains a grid of characters with foreground and background colours.</p>
+<p>Create a layer and then add it:</p>
+<pre class="prettyprint source"><code>const layer = new Tily.TileLayer(buffer);
+buffer.addLayer(layer, z);
+</code></pre>
+<pre class="prettyprint source"><code>const layer = buffer.addLayer(new Tily.TileLayer(buffer), z);
+</code></pre>
+<p>Or just create the layer automatically:</p>
+<pre class="prettyprint source"><code>const layer = buffer.addLayer();
+</code></pre>
+<p>Specify the z-ordering for this layer:</p>
+<pre class="prettyprint source"><code>const layer = buffer.addLayer(null, z);
+</code></pre>
+<p><em>Note: once a layer is added to a buffer, you can move it around using <code>buffer.moveLayer()</code></em></p>
+<p>The resulting layer object:</p>
+<pre class="prettyprint source"><code>// layer
+{
+    background: 'black',
+    clip: true,                 // should each tile clip borders
+    centered: false,            // should each tile center it's text
+    container: buffer,          // the buffer this layer belongs to
+    font: 'sans serif',
+    foreground: 'white',
+    opacity: 1,
+    tiles: [],                  // array of strings for each tile
+                                // multiple characters are rendered on top of each other
+                                // leave string empty to skip a tile
+
+    getData(),
+    static fromData(container, data),
+
+    clear([x1, y1, [x2, y2]]),  // clear from x1/y1 (inclusive) to x2/y2 (exclusive)
+    fill(
+        char,
+        [x1, y1, [x2, y2]],
+        foreground = null,
+        background = null
+    ),
+    resize(w, h),
+
+    getTile(x, y),              // get the tile at x/y
+    getForeground(x, y),        // get the fg colour at x/y
+    getBackground(x, y),        // get the bg colour at x/y
+    setTile(
+        x, y,
+        char,
+        foreground = null,
+        background = null
+    )                           // set the tile at x/y
+}
+</code></pre>
+<h2>Cell buffers</h2>
+<p>Define a cell function that returns a <code>Tily.Cell</code> with layers, and the buffer will keep generating and caching them as required.</p>
+<p>Create a cell buffer:</p>
+<pre class="prettyprint source"><code>const buffer = new Tily.CellBuffer({
+    ...,
+    cellWidth: 8,
+    cellHeight: 8,
+    cellFunction: function(cellBuffer, x, y, resolve, reject) {
+        const cell = new Tily.Cell(cellBuffer);
+        cell.addLayer(...);
+        resolve(cell);
+    }
+});
+</code></pre>
+<h2>Active tiles</h2>
+<p>Active tiles can be moved around and animated. They are added to buffers and can be z-ordered between different layers.
+Active tiles also have their own layers, and layers can have layers - layer settings and animations are nested too.</p>
+<p>Create an active tile and add it to a buffer:</p>
+<pre class="prettyprint source"><code>const tile = new Tily.ActiveTile(x, y, z?);
+buffer.addActiveTile(tile);
+</code></pre>
+<pre class="prettyprint source"><code>const tile = buffer.addActiveTile(new Tily.ActiveTile(x, y));
+</code></pre>
+<p>Or just create one automatically:</p>
+<pre class="prettyprint source"><code>const tile = buffer.addActiveTile();
+</code></pre>
+<p>The resulting active tile object:</p>
+<pre class="prettyprint source"><code>// tile
+{
+    clip: true,             // clip edges
+    wrap: true,             // wrap at edges if clip is true
+    flip: true,             // flip x
+    font: 'sans serif',
+    fontStyle: '',
+    fontSize: '',
+    foreground: 'white',
+    background: 'black',
+    centered: false,        // text is centered in tile
+    layers: [],
+    offset: vec2,           // x and y 0 -> 1, offset from current position
+    opacity: 1,
+    position: vec2,         // measured in tiles
+    rotation: 0,            // radians
+    scale: vec2,
+    zIndex: 0,
+    outline: '',            // a string like 'size colour' eg. '0.1 black', size measured in tiles
+    shadow: '',             // a string like 'blur x y colour' eg. '0.1 0.2 0.2 black', blur and offsets measured in tiles
+    compositeMode: '',      // a js canvas globalCompositeOperation mode
+    getData(),
+    static fromData(data),
+
+    addLayer(layer, z),
+    moveLayer(from, to, relative),
+    removeLayer(z),
+    removeAllLayers(),
+
+    move(direction, { ... }),   // direction is a string like 'up', 'down', 'left' or 'right'
+    animateForeground(fg, { repeat, reverse, alternate, time, easeFunction, callback }),
+    animateOutline(outline, { ... }),
+    animateShadow(shadow, { ... }),
+    animateOffset(x, y, { ... }),
+    animateOpacity(opacity, { ... }),
+    animateRotation(angle, { ... }),
+    animateScale(x, y, { ... }),
+
+    pauseAnimations(inherit = true),
+    runAnimations(inherit = true),
+    resetAnimations(inherit = true)
+}
+</code></pre>
+<p><em>Note</em>: offset is useful for moving animations, transitioning from position to position.</p>
+<h2>Active tile layers</h2>
+<p>Add layers to active tiles. Each layer has a character or string.</p>
+<p>Create a layer and add it:</p>
+<pre class="prettyprint source"><code>const layer = new Tily.ActiveTileLayer(
+    tile,           // top level active tile
+    parent          // immediate parent (for nesting layers)
+);
+tile.addLayer(layer, z);
+</code></pre>
+<pre class="prettyprint source"><code>const layer = tile.addLayer(new Tily.ActiveTileLayer());
+</code></pre>
+<p>Or create one automatically:</p>
+<pre class="prettyprint source"><code>const layer = tile.addLayer();
+</code></pre>
+<p>The resulting layer object:</p>
+<pre class="prettyprint source"><code>// layer
+{
+    (same as active tile)
+
+    text: 'abc',    // characters to display for this layer
+
+    animateText('abcde', { ... }),
+    animateText(['a', 'b'], { ... }),
+    animateText((initialText, i) => {  })   // i: 0 -> 1
+}
+</code></pre>
+</article>
+
+</section>
 
 </div>
 

@@ -11,7 +11,7 @@
   "source": {
     "include": [
       "src",
-      "docs/index.md"
+      "docs/api-docs-home.md"
     ],
     "exclude": [
       "src/wrapper.js"

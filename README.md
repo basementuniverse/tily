@@ -26,8 +26,6 @@ var tily = new Tily.Main(document.querySelector("#tily-canvas"));
 </script>
 ```
 
-[Quick Reference](tily-reference.md)
-
 [Documentation](https://basementuniverse.github.io/tily/index.html)
 
 ### Demos

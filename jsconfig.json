@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "none",
+    "moduleResolution": "node",
+    "target": "es6",
+    "checkJs": true
+  },
+  "include": [
+    "./*.js",
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/wrapper.js"
+  ]
+}
